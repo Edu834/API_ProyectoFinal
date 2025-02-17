@@ -1,10 +1,10 @@
-package web.dao;
+package web.services;
 
 import java.util.List;
 
 import web.entidades.Producto;
 
-public interface ProductoDao {
+public interface ProductoService {
 
 	List<Producto> todo();
 	List<Producto> buscarPorSubcategoria(int idSubcategoria);

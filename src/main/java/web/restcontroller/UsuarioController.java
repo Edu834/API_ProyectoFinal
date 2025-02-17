@@ -12,11 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import web.entidades.LoginDTO;
 import web.entidades.Usuario;
 import web.services.UsuarioServiceImpl;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@CrossOrigin(origins = "*")
+@CrossOrigin
 @RestController
 @RequestMapping("/api/usuarios")
 public class UsuarioController {
@@ -68,9 +69,9 @@ public class UsuarioController {
 	}
 	
 	@PostMapping("/login")
-	public ResponseEntity<Usuario> login(@RequestParam String username, @RequestParam String password) {
-		Usuario usuario = usuarioService.buscarPorUsername(username);
-		if(usuario == null || !usuario.getPassword().equals(password)){
+	public ResponseEntity<Usuario> login(@RequestBody LoginDTO loginDto) {
+		Usuario usuario = usuarioService.buscarPorUsername(loginDto.getUsername());
+		if(usuario == null || !usuario.getPassword().equals(loginDto.getPassword())){
 			return ResponseEntity.badRequest().build();
 		}
 		usuario.setPassword("");

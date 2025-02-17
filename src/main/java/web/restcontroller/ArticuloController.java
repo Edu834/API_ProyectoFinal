@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import web.entidades.Articulo;
 import web.services.ArticuloServiceImpl;
 
-@CrossOrigin(origins = "*")
+@CrossOrigin
 @RestController
 @RequestMapping("/api/articulos")
 public class ArticuloController {

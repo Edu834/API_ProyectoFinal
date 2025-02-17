@@ -6,11 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import web.entidades.Usuario;
 import web.services.UsuarioServiceImpl;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @RestController
 @RequestMapping("/api/usuarios")
@@ -61,4 +65,25 @@ public class UsuarioController {
 		}
 		return ResponseEntity.ok(usuario);
 	}
+	
+	@PostMapping("/login")
+	public ResponseEntity<Usuario> login(@RequestParam String username, @RequestParam String password) {
+		Usuario usuario = usuarioService.buscarPorUsername(username);
+		if(usuario == null || !usuario.getPassword().equals(password)){
+			return ResponseEntity.badRequest().build();
+		}
+		return ResponseEntity.ok().build();
+	}
+	
+	@PostMapping("/registro")
+	public ResponseEntity<Usuario> register(@RequestBody Usuario usuario) {
+		
+		Usuario newUsuario = usuarioService.alta(usuario);
+		if (newUsuario == null) {
+			return ResponseEntity.noContent().build();
+		}
+		newUsuario.setPassword("");
+		return ResponseEntity.ok(newUsuario);
+	}
+	
 }

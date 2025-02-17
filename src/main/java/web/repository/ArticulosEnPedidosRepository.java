@@ -9,5 +9,5 @@ import web.entidades.ArticulosEnPedidoId;
 
 public interface ArticulosEnPedidosRepository extends JpaRepository<ArticulosEnPedido, ArticulosEnPedidoId>{
 	
-	List<ArticulosEnPedido> findById_Pedido_idPedido(String idPedido);
+	List<ArticulosEnPedido> findById_idPedido(String idPedido);
 }

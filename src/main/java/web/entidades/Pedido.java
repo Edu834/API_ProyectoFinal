@@ -48,5 +48,6 @@ public class Pedido implements Serializable{
 	private Usuario usuario;
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name="id_pedido")
 	private List<ArticulosEnPedido> articulosEnPedido;
 }

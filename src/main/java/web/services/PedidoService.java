@@ -10,4 +10,6 @@ public interface PedidoService {
 	List<Pedido> buscarPorUsuario(String idUsuario);
 	List<Pedido> buscarPorUsuarioyEstado(String idUsuario, String estadoPedido);
 	Pedido buscarUno(String idPedido);
+	Pedido alta(Pedido pedido);
+	Pedido modificar(Pedido pedido);
 }

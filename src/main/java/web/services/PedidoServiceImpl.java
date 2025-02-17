@@ -30,5 +30,31 @@ public class PedidoServiceImpl implements PedidoService{
 	public Pedido buscarUno(String idPedido) {
 		return perepo.findById(idPedido).orElse(null);
 	}
+	@Override
+	public Pedido alta(Pedido pedido) {
+		try {
+			if (perepo.existsById(pedido.getIdPedido())) {
+				return null;
+			}else {
+				return perepo.save(pedido);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+			}
+	}
+	@Override
+	public Pedido modificar(Pedido pedido) {
+		try {
+			if (perepo.existsById(pedido.getIdPedido())) {
+				return perepo.save(pedido);
+			}else {
+				return null;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+			}
+	}
 	
 }

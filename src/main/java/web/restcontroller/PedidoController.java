@@ -1,6 +1,7 @@
 package web.restcontroller;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +12,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import web.entidades.Articulo;
+import web.entidades.ArticuloEnPedidoDTO;
+import web.entidades.ArticulosEnPedido;
+import web.entidades.ArticulosEnPedidoId;
 import web.entidades.Pedido;
+import web.entidades.Usuario;
+import web.services.ArticuloServiceImpl;
 import web.services.PedidoServiceImpl;
+import web.services.UsuarioServiceImpl;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -24,6 +33,11 @@ public class PedidoController {
 	
 	@Autowired
 	private PedidoServiceImpl pedidoService;
+	@Autowired
+	private ArticuloServiceImpl articuloService;
+	@Autowired
+	private UsuarioServiceImpl usuarioService;
+	
 	
 	@GetMapping({"","/","/home"})
 	public ResponseEntity<List<Pedido>> cargarProductosTodo() {
@@ -76,10 +90,37 @@ public class PedidoController {
 		
 	}
 	
-	@PostMapping("/crearPedido")
-	public String postMethodName(@RequestBody String entity) {
+	@PostMapping("/añadirArticuloPedido")
+	public ResponseEntity<Pedido> añadirArticuloPedido(@RequestBody ArticuloEnPedidoDTO articuloEnPedidoDto) {
+		Usuario usuario = usuarioService.buscarUno(articuloEnPedidoDto.getIdUsuario());
+		List<Pedido> pedidosCarrito = pedidoService.buscarPorUsuarioyEstado(usuario.getIdUsuario(), "Carrito");
+		Pedido pedido = new Pedido();
 		
-		return entity;
+		if (pedidosCarrito.isEmpty()) {
+			pedido = Pedido.builder()
+					.idPedido("X")
+					.descripcion("Carrito de " + usuarioService.buscarUno(usuario.getIdUsuario()).getUsername())
+					.fecha(new Date())
+					.estado("Carrito")
+					.fechaEntrega(null)
+					.usuario(usuario)
+					.articulosEnPedido(new ArrayList<>())
+					.build();
+		}else {
+			pedido = pedidosCarrito.getFirst();
+		}
+		
+		ArticulosEnPedidoId idArticuloEnPedido = new ArticulosEnPedidoId(pedido.getIdPedido(),articuloEnPedidoDto.getIdArticulo());
+		ArticulosEnPedido articuloEnPedido = new ArticulosEnPedido(idArticuloEnPedido, articuloEnPedidoDto.getCantidad(), 0, "Disponible", null);
+		pedido.getArticulosEnPedido().add(articuloEnPedido);
+		
+		if (pedidosCarrito.isEmpty()) {
+			pedidoService.alta(pedido);
+		}else {
+			pedidoService.modificar(pedido);
+		}
+		
+		return ResponseEntity.ok(pedido);
 	}
 	
 	

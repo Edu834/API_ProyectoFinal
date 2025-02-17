@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import web.entidades.LoginDTO;
@@ -70,6 +69,7 @@ public class UsuarioController {
 	
 	@PostMapping("/login")
 	public ResponseEntity<Usuario> login(@RequestBody LoginDTO loginDto) {
+		
 		Usuario usuario = usuarioService.buscarPorUsername(loginDto.getUsername());
 		if(usuario == null || !usuario.getPassword().equals(loginDto.getPassword())){
 			return ResponseEntity.badRequest().build();

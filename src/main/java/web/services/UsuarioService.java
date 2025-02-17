@@ -10,4 +10,5 @@ public interface UsuarioService {
 	List<Usuario> buscarPorSexo(String sexo);
 	Usuario buscarUno(String idUsuario);
 	Usuario buscarPorUsername(String username);
+	Usuario alta(Usuario usuario);
 }

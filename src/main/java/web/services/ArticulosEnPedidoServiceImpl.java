@@ -22,7 +22,11 @@ public class ArticulosEnPedidoServiceImpl implements ArticulosEnPedidoService{
 	
 	@Override
 	public List<ArticulosEnPedido> buscarPorPedido(String idPedido) {
+<<<<<<< HEAD
 		return aeprepo.findById_Pedido_idPedido(idPedido);
+=======
+		return aeprepo.findById_idPedido(idPedido);
+>>>>>>> d0efdec5beb406f7742b1e94ad3061007a20eb03
 	}
 	
 	@Override

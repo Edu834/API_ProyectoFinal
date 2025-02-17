@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +13,21 @@ import org.springframework.web.bind.annotation.RestController;
 import web.entidades.Usuario;
 import web.services.UsuarioServiceImpl;
 
+=======
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import web.entidades.LoginDTO;
+import web.entidades.Usuario;
+import web.services.UsuarioServiceImpl;
+import org.springframework.web.bind.annotation.RequestBody;
+
+@CrossOrigin
+>>>>>>> d0efdec5beb406f7742b1e94ad3061007a20eb03
 @RestController
 @RequestMapping("/api/usuarios")
 public class UsuarioController {
@@ -61,4 +77,30 @@ public class UsuarioController {
 		}
 		return ResponseEntity.ok(usuario);
 	}
+<<<<<<< HEAD
+=======
+	
+	@PostMapping("/login")
+	public ResponseEntity<Usuario> login(@RequestBody LoginDTO loginDto) {
+		
+		Usuario usuario = usuarioService.buscarPorUsername(loginDto.getUsername());
+		if(usuario == null || !usuario.getPassword().equals(loginDto.getPassword())){
+			return ResponseEntity.badRequest().build();
+		}
+		usuario.setPassword("");
+		return ResponseEntity.ok(usuario);
+	}
+	
+	@PostMapping("/registro")
+	public ResponseEntity<Usuario> register(@RequestBody Usuario usuario) {
+		
+		Usuario newUsuario = usuarioService.alta(usuario);
+		if (newUsuario == null) {
+			return ResponseEntity.noContent().build();
+		}
+		newUsuario.setPassword("");
+		return ResponseEntity.ok(newUsuario);
+	}
+	
+>>>>>>> d0efdec5beb406f7742b1e94ad3061007a20eb03
 }

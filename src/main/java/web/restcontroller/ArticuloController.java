@@ -5,6 +5,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+<<<<<<< HEAD
+=======
+import org.springframework.web.bind.annotation.CrossOrigin;
+>>>>>>> d0efdec5beb406f7742b1e94ad3061007a20eb03
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 import web.entidades.Articulo;
 import web.services.ArticuloServiceImpl;
 
+<<<<<<< HEAD
+=======
+@CrossOrigin
+>>>>>>> d0efdec5beb406f7742b1e94ad3061007a20eb03
 @RestController
 @RequestMapping("/api/articulos")
 public class ArticuloController {

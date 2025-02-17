@@ -30,8 +30,6 @@ public class PedidoServiceImpl implements PedidoService{
 	public Pedido buscarUno(String idPedido) {
 		return perepo.findById(idPedido).orElse(null);
 	}
-<<<<<<< HEAD
-=======
 	@Override
 	public Pedido alta(Pedido pedido) {
 		try {
@@ -58,6 +56,5 @@ public class PedidoServiceImpl implements PedidoService{
 			return null;
 			}
 	}
->>>>>>> d0efdec5beb406f7742b1e94ad3061007a20eb03
 	
 }

@@ -12,13 +12,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import web.entidades.Articulo;
 import web.entidades.ArticuloEnPedidoDTO;
 import web.entidades.ArticulosEnPedido;
 import web.entidades.ArticulosEnPedidoId;
 import web.entidades.Pedido;
 import web.entidades.Usuario;
-import web.services.ArticuloServiceImpl;
 import web.services.PedidoServiceImpl;
 import web.services.UsuarioServiceImpl;
 
@@ -33,8 +31,6 @@ public class PedidoController {
 	
 	@Autowired
 	private PedidoServiceImpl pedidoService;
-	@Autowired
-	private ArticuloServiceImpl articuloService;
 	@Autowired
 	private UsuarioServiceImpl usuarioService;
 	

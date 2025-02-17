@@ -43,6 +43,10 @@ public class Pedido implements Serializable{
 	@Column(name="fecha_entrega")
 	private String fechaEntrega;
 	
+	@ManyToOne
+	@JoinColumn(name="id_usuario")
+	private Usuario usuario;
+	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<ArticulosEnPedido> articulosEnPedido;
 }

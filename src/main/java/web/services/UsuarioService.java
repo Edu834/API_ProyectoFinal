@@ -1,10 +1,10 @@
-package web.dao;
+package web.services;
 
 import java.util.List;
 
 import web.entidades.Usuario;
 
-public interface UsuarioDao {
+public interface UsuarioService {
 	
 	List<Usuario> todo();
 	List<Usuario> buscarPorSexo(String sexo);

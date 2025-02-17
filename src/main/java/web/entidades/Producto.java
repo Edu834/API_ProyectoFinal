@@ -30,7 +30,7 @@ public class Producto implements Serializable{
 	private String descripcion;
 	
 	@ManyToOne
-	@JoinColumn(name="subcategorias")
+	@JoinColumn(name="id_subcategoria")
 	private Subcategoria subcategoria;
 	
 }

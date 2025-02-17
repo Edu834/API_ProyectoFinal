@@ -1,13 +1,13 @@
-package web.dao;
+package web.services;
 
 import java.util.List;
 
 import web.entidades.Pedido;
 
-public interface PedidoDao {
+public interface PedidoService {
 	
 	List<Pedido> todo();
 	List<Pedido> buscarPorUsuario(String idUsuario);
-	List<Pedido> buuscarPorUsuarioyEstado(String idUsuario, String estadoPedido);
+	List<Pedido> buscarPorUsuarioyEstado(String idUsuario, String estadoPedido);
 	Pedido buscarUno(String idPedido);
 }

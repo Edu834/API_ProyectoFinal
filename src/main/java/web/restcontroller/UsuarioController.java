@@ -1,5 +1,6 @@
 package web.restcontroller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import web.entidades.LoginDTO;
+import web.entidades.Perfil;
+
 import org.springframework.web.bind.annotation.RequestBody;
 
 @CrossOrigin
@@ -83,6 +86,10 @@ public class UsuarioController {
 	@PostMapping("/registro")
 	public ResponseEntity<Usuario> register(@RequestBody Usuario usuario) {
 		
+		List<Perfil> perfiles = new ArrayList<>(); 
+		perfiles.add(new Perfil(1,"Cliente"));
+		usuario.setPerfiles(perfiles);
+		
 		Usuario newUsuario = usuarioService.alta(usuario);
 		if (newUsuario == null) {
 			return ResponseEntity.noContent().build();
@@ -91,16 +98,16 @@ public class UsuarioController {
 		return ResponseEntity.ok(newUsuario);
 	}
 	
-//	@PostMapping("/editarUsuario")
-//	public ResponseEntity<Usuario> editarUsuario(@RequestBody Usuario usuario) {
-//		
-//		Usuario newUsuario = usuarioService.alta(usuario);
-//		if (newUsuario == null) {
-//			return ResponseEntity.noContent().build();
-//		}
-//		newUsuario.setPassword("");
-//		return ResponseEntity.ok(newUsuario);
-//	}
+	@PostMapping("/editarUsuario")
+	public ResponseEntity<Usuario> editarUsuario(@RequestBody Usuario usuario) {
+		
+		Usuario updatedUsuario = usuarioService.modificar(usuario);
+		if (updatedUsuario == null) {
+			return ResponseEntity.noContent().build();
+		}
+		updatedUsuario.setPassword("");
+		return ResponseEntity.ok(updatedUsuario);
+	}
 	
 	
 }

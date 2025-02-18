@@ -47,4 +47,18 @@ public class UsuarioServiceImpl implements UsuarioService{
 			return null;
 			}
 	}
+
+	@Override
+	public Usuario modificar(Usuario usuario) {
+		try {
+			if (urepo.existsById(usuario.getIdUsuario())) {
+				return urepo.save(usuario);
+			}else {
+				return null;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+			}
+	}
 }

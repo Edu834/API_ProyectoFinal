@@ -17,6 +17,8 @@ import web.entidades.ArticulosEnPedido;
 import web.entidades.ArticulosEnPedidoId;
 import web.entidades.Pedido;
 import web.entidades.Usuario;
+import web.services.ArticuloServiceImpl;
+import web.services.ArticulosEnPedidoServiceImpl;
 import web.services.PedidoServiceImpl;
 import web.services.UsuarioServiceImpl;
 
@@ -33,6 +35,10 @@ public class PedidoController {
 	private PedidoServiceImpl pedidoService;
 	@Autowired
 	private UsuarioServiceImpl usuarioService;
+	@Autowired 
+	private ArticulosEnPedidoServiceImpl articulosEnPedidoService;
+	@Autowired 
+	private ArticuloServiceImpl articuloService;
 	
 	
 	@GetMapping({"","/","/home"})
@@ -118,6 +124,56 @@ public class PedidoController {
 		
 		return ResponseEntity.ok(pedido);
 	}
+	
+	@PostMapping("/eliminarArticuloPedido")
+	public ResponseEntity<Pedido> eliminarArticuloPedido(@RequestBody ArticulosEnPedidoId articulosEnPedidoId) {
+		Pedido pedido = pedidoService.buscarUno(articulosEnPedidoId.getIdPedido());
+		ArticulosEnPedido artEnPedido = articulosEnPedidoService.buscarUno(articulosEnPedidoId);
+		
+		if (pedido.getArticulosEnPedido().indexOf(artEnPedido) == -1) {
+			return ResponseEntity.notFound().build();
+		}
+		
+		pedido.getArticulosEnPedido().remove(artEnPedido);
+		pedidoService.modificar(pedido);
+		return ResponseEntity.ok(pedido);
+	}
+	
+	@PostMapping("/cambiarCantidadArticuloPedido/{accion}")
+	public ResponseEntity<Pedido> cambiarCantidadArticuloPedido(@RequestBody ArticulosEnPedidoId articulosEnPedidoId, @PathVariable String accion) {
+		Pedido pedido = pedidoService.buscarUno(articulosEnPedidoId.getIdPedido());
+		ArticulosEnPedido artEnPedido = articulosEnPedidoService.buscarUno(articulosEnPedidoId);
+		
+		if (artEnPedido != null) {
+			if (accion.toUpperCase().equals("AUMENTAR")) {
+				if (artEnPedido.getCantidad() >= articuloService.buscarUno(articulosEnPedidoId.getIdArticulo()).getStock()) {
+					artEnPedido.setCantidad(artEnPedido.getCantidad());
+				}else {
+					artEnPedido.setCantidad(artEnPedido.getCantidad() + 1);
+				}
+				
+			}else if (accion.toUpperCase().equals("DISMINUIR")) {
+				if (artEnPedido.getCantidad() <= 1) {
+					artEnPedido.setCantidad(artEnPedido.getCantidad());
+				}else {
+					artEnPedido.setCantidad(artEnPedido.getCantidad() - 1);
+				}
+				
+			}else {
+				return ResponseEntity.badRequest().build();
+			}
+		}else {
+			return ResponseEntity.notFound().build();
+		}
+		
+		pedido.getArticulosEnPedido().add(artEnPedido);
+		pedidoService.modificar(pedido);
+		
+		return ResponseEntity.ok(pedido);
+	}
+	
+	
+	
 	
 	
 }

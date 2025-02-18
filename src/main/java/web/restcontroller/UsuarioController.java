@@ -91,4 +91,16 @@ public class UsuarioController {
 		return ResponseEntity.ok(newUsuario);
 	}
 	
+//	@PostMapping("/editarUsuario")
+//	public ResponseEntity<Usuario> editarUsuario(@RequestBody Usuario usuario) {
+//		
+//		Usuario newUsuario = usuarioService.alta(usuario);
+//		if (newUsuario == null) {
+//			return ResponseEntity.noContent().build();
+//		}
+//		newUsuario.setPassword("");
+//		return ResponseEntity.ok(newUsuario);
+//	}
+	
+	
 }

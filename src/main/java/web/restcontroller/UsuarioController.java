@@ -89,7 +89,7 @@ public class UsuarioController {
 		List<Perfil> perfiles = new ArrayList<>(); 
 		perfiles.add(new Perfil(1,"Cliente"));
 		usuario.setPerfiles(perfiles);
-		
+		System.out.println(usuario);
 		Usuario newUsuario = usuarioService.alta(usuario);
 		if (newUsuario == null) {
 			return ResponseEntity.noContent().build();

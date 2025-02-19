@@ -76,6 +76,7 @@ public class UsuarioController {
 	public ResponseEntity<Usuario> login(@RequestBody LoginDTO loginDto) {
 		
 		Usuario usuario = usuarioService.buscarPorUsername(loginDto.getUsername());
+
 		if(usuario == null || !usuario.getPassword().equals(loginDto.getPassword())){
 			return ResponseEntity.badRequest().build();
 		}
@@ -86,10 +87,10 @@ public class UsuarioController {
 	@PostMapping("/registro")
 	public ResponseEntity<Usuario> register(@RequestBody Usuario usuario) {
 		
-		List<Perfil> perfiles = new ArrayList<>(); 
+		List<Perfil> perfiles = new ArrayList<>();
 		perfiles.add(new Perfil(1,"Cliente"));
 		usuario.setPerfiles(perfiles);
-		System.out.println(usuario);
+		
 		Usuario newUsuario = usuarioService.alta(usuario);
 		if (newUsuario == null) {
 			return ResponseEntity.noContent().build();
@@ -101,7 +102,9 @@ public class UsuarioController {
 	@PostMapping("/editarUsuario")
 	public ResponseEntity<Usuario> editarUsuario(@RequestBody Usuario usuario) {
 		
+		usuario.setPerfiles(usuarioService.buscarUno(usuario.getIdUsuario()).getPerfiles());
 		Usuario updatedUsuario = usuarioService.modificar(usuario);
+		
 		if (updatedUsuario == null) {
 			return ResponseEntity.noContent().build();
 		}

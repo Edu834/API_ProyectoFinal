@@ -38,5 +38,5 @@ public class ArticulosEnPedido implements Serializable{
     @Temporal(TemporalType.DATE)
     @Column(name = "fecha_devuelta")
     private Date fechaDevuelta;
-
+    
 }

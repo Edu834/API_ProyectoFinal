@@ -26,20 +26,35 @@ CREATE TABLE subcategorias (
     FOREIGN KEY (id_categoria) REFERENCES Categorias(id_categoria)
 );
 
+CREATE TABLE galerias (
+	id_galeria INT AUTO_INCREMENT PRIMARY KEY,
+    foto_frontal VARCHAR(255),
+    foto_trasera VARCHAR(255),
+    foto_modelo_frontal VARCHAR(255),
+    foto_modelo_trasera VARCHAR(255),
+    foto_modelo_costado VARCHAR(255),
+    foto_modelo_cerca VARCHAR(255)
+);
+
 -- Tabla de Productos
 CREATE TABLE productos (
     id_producto VARCHAR(255) PRIMARY KEY,
     id_subcategoria INT,
+    id_galeria INT,
     nombre VARCHAR(255) NOT NULL,
     descripcion TEXT,
     marca VARCHAR(255),
-    FOREIGN KEY (id_subcategoria) REFERENCES Subcategorias(id_subcategoria)
+    
+    FOREIGN KEY (id_subcategoria) REFERENCES Subcategorias(id_subcategoria),
+    FOREIGN KEY (id_galeria) REFERENCES galerias(id_galeria)
 );
 
 -- Tabla de Usuarios
 CREATE TABLE usuarios (
     id_usuario VARCHAR(255) PRIMARY KEY,
     username VARCHAR(255) UNIQUE NOT NULL,
+    firstname VARCHAR(255),
+    lastname VARCHAR(255),
     password VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     direccion TEXT,
@@ -52,15 +67,6 @@ CREATE TABLE usuarios (
 CREATE TABLE perfiles (
     id_perfil INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(255) NOT NULL
-);
-
--- Tabla de Usuario_con_Perfiles
-CREATE TABLE usuario_con_perfiles (
-    id_usuario VARCHAR(255),
-    id_perfil INT,
-    PRIMARY KEY (id_usuario, id_perfil),
-    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE,
-    FOREIGN KEY (id_perfil) REFERENCES Perfiles(id_perfil) ON DELETE CASCADE
 );
 
 -- Tabla de Pedidos
@@ -86,6 +92,15 @@ CREATE TABLE articulos (
     precio DECIMAL(10, 2) NOT NULL,
     descripcion TEXT,
     FOREIGN KEY (id_producto) REFERENCES Productos(id_producto)
+);
+
+-- Tabla de Usuario_con_Perfiles
+CREATE TABLE usuario_con_perfiles (
+    id_usuario VARCHAR(255),
+    id_perfil INT,
+    PRIMARY KEY (id_usuario, id_perfil),
+    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE,
+    FOREIGN KEY (id_perfil) REFERENCES Perfiles(id_perfil) ON DELETE CASCADE
 );
 
 CREATE TABLE articulos_con_estados (

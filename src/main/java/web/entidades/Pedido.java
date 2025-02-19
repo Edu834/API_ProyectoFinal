@@ -47,7 +47,22 @@ public class Pedido implements Serializable{
 	@JoinColumn(name="id_usuario")
 	private Usuario usuario;
 	
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name="id_pedido")
 	private List<ArticulosEnPedido> articulosEnPedido;
+	
+	public void addArticulo(ArticulosEnPedido articulo) {
+		
+		int pos = articulosEnPedido.indexOf(articulo);
+		
+		if (pos != -1) {
+			articulosEnPedido.get(pos).setCantidad(articulosEnPedido.get(pos).getCantidad() + articulo.getCantidad());
+		}else {
+			articulosEnPedido.add(articulo);
+		}
+	}
+	
+	
+	
+	
 }

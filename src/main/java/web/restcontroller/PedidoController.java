@@ -109,12 +109,23 @@ public class PedidoController {
 					.articulosEnPedido(new ArrayList<>())
 					.build();
 		}else {
-			pedido = pedidosCarrito.getFirst();
+			pedido = pedidosCarrito.get(0);
 		}
 		
+		pedidoService.buscarUno(pedido.getIdPedido());
 		ArticulosEnPedidoId idArticuloEnPedido = new ArticulosEnPedidoId(pedido.getIdPedido(),articuloEnPedidoDto.getIdArticulo());
-		ArticulosEnPedido articuloEnPedido = new ArticulosEnPedido(idArticuloEnPedido, articuloEnPedidoDto.getCantidad(), 0, "Disponible", null);
-		pedido.getArticulosEnPedido().add(articuloEnPedido);
+		ArticulosEnPedido artExistente = articulosEnPedidoService.buscarUno(idArticuloEnPedido);
+		ArticulosEnPedido newarticuloEnPedido = new ArticulosEnPedido(idArticuloEnPedido, articuloEnPedidoDto.getCantidad(), 0, "Disponible", null);
+		
+//		pedido.addArticulo(newarticuloEnPedido);
+		if (artExistente != null) {
+			artExistente.setCantidad(artExistente.getCantidad() + articuloEnPedidoDto.getCantidad());
+//			pedido.addArticulo(newarticuloEnPedido);
+			pedido.getArticulosEnPedido().add(artExistente);
+		}else {
+//			pedido.addArticulo(newarticuloEnPedido);
+			pedido.getArticulosEnPedido().add(newarticuloEnPedido);
+		}
 		
 		if (pedidosCarrito.isEmpty()) {
 			pedidoService.alta(pedido);

@@ -32,11 +32,13 @@ public class Pedido implements Serializable{
 	@Id
 	@Column(name="id_pedido")
 	private String idPedido;
+	
 	private String descripcion;
 	
 	@Temporal(TemporalType.DATE)
 	@Column(name="fecha")
 	private Date fecha;
+	
 	private String estado;
 	
 	@Temporal(TemporalType.DATE)

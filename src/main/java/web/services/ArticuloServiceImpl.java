@@ -39,5 +39,9 @@ public class ArticuloServiceImpl implements ArticuloService{
 		return arepo.findById(idArticulo).orElse(null);
 	}
 
-	
+	@Override
+	public List<Articulo> buscarPorRangoPrecio(int min, int max) {
+		return arepo.findByPrecioBetween(min, max);
+	}
+
 }

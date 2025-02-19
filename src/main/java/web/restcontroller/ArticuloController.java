@@ -71,6 +71,17 @@ public class ArticuloController {
 		return ResponseEntity.ok(articulo);
 	}
 	
+	@GetMapping("/buscarPorPrecio/{min}/{max}")
+	public ResponseEntity<List<Articulo>> buscarUno(@PathVariable int min, @PathVariable int max) {
+		
+		List<Articulo> articulos= articuloService.buscarPorRangoPrecio(min,max);
+		
+		if (articulos.isEmpty()) {
+			return ResponseEntity.noContent().build();
+		}
+		return ResponseEntity.ok(articulos);
+	}
+	
 	public boolean esNumerico(String cadena) {
 	    try {
 	        Integer.parseInt(cadena); 

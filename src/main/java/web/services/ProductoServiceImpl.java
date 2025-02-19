@@ -44,5 +44,10 @@ public class ProductoServiceImpl implements ProductoService{
 		return prepo.findById(idProducto).orElse(null);
 	}
 
+	@Override
+	public List<Producto> buscarPorSexo(String sexo) {
+		return prepo.findBySexo(sexo);
+	}
+
 	
 }

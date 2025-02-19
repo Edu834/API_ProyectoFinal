@@ -11,5 +11,6 @@ public interface ProductoService {
 	List<Producto> buscarPorCategoria(int idCategoria);
 	List<Producto> buscarPorMarca(String marca);
 	List<Producto> buscarPorNombre(String nombre);
+	List<Producto> buscarPorSexo(String sexo);
 	Producto buscarUno(String idProducto);
 }

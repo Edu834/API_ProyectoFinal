@@ -28,6 +28,7 @@ public class Producto implements Serializable{
 	private String nombre;
 	private String marca;
 	private String descripcion;
+	private String sexo;
 	
 	@ManyToOne
 	@JoinColumn(name="id_subcategoria")

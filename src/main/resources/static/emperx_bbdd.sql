@@ -44,9 +44,10 @@ CREATE TABLE productos (
     nombre VARCHAR(255) NOT NULL,
     descripcion TEXT,
     marca VARCHAR(255),
-    
+    sexo ENUM('M', 'H', 'UNISEX'),
     FOREIGN KEY (id_subcategoria) REFERENCES Subcategorias(id_subcategoria),
-    FOREIGN KEY (id_galeria) REFERENCES galerias(id_galeria)
+    FOREIGN KEY (id_galeria) REFERENCES galerias(id_galeria),
+    CONSTRAINT chk_sexo_prod CHECK (sexo IN ('M', 'H', 'UNISEX'))
 );
 
 -- Tabla de Usuarios
@@ -58,9 +59,9 @@ CREATE TABLE usuarios (
     password VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     direccion TEXT,
-    sexo ENUM('M', 'F'),
+    sexo ENUM('M', 'H'),
     telefono VARCHAR(20),
-    CONSTRAINT chk_sexo CHECK (sexo IN ('M', 'F'))
+    CONSTRAINT chk_sexo CHECK (sexo IN ('M', 'H'))
 );
 
 -- Tabla de Perfiles

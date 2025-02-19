@@ -22,18 +22,18 @@ INSERT INTO subcategorias (id_categoria, nombre, descripcion) VALUES
 (3, 'Ropa de entrenamiento', 'Prendas para actividades deportivas como gimnasia y running.');
 
 -- Insertar datos en la tabla productos (ejemplos de productos de ropa)
-INSERT INTO productos (id_producto, id_subcategoria, nombre, descripcion, marca) VALUES
-('P001', 1, 'Traje de Gala Hombre', 'Traje de gala elegante para eventos formales.', 'Elegance Brand'),
-('P002', 2, 'Vestido de Noche', 'Vestido de noche para ocasiones elegantes.', 'Luxe Couture'),
-('P003', 3, 'Camiseta Básica', 'Camiseta casual de algodón para el día a día.', 'CottonWear'),
-('P004', 4, 'Jeans Ajustados', 'Jeans de corte ajustado para mujeres.', 'DenimStyle'),
-('P005', 5, 'Conjunto Deportivo', 'Conjunto deportivo cómodo para entrenar.', 'SportFit');
+INSERT INTO productos (id_producto, id_subcategoria, nombre, descripcion, marca, sexo) VALUES
+('P001', 1, 'Traje de Gala Hombre', 'Traje de gala elegante para eventos formales.', 'Elegance Brand', 'H'),
+('P002', 2, 'Vestido de Noche', 'Vestido de noche para ocasiones elegantes.', 'Luxe Couture', 'M'),
+('P003', 3, 'Camiseta Básica', 'Camiseta casual de algodón para el día a día.', 'CottonWear', 'UNISEX'),
+('P004', 4, 'Jeans Ajustados', 'Jeans de corte ajustado para mujeres.', 'DenimStyle', 'M'),
+('P005', 5, 'Conjunto Deportivo', 'Conjunto deportivo cómodo para entrenar.', 'SportFit', 'H');
 
 -- Insertar datos en la tabla usuarios (usuarios de la web)
 INSERT INTO usuarios (id_usuario, username, firstname, lastname, password, email, direccion, sexo, telefono) VALUES
 ('U001', 'johndoe', 'John', 'Doe', 'password123', 'johndoe@example.com', 'Calle Ficticia 101, Ciudad', 'M', '694567145'),
-('U002', 'janedoe', 'Jane', 'Doe','password456', 'janedoe@example.com', 'Avenida Real 202, Ciudad', 'F', '694567145'),
-('U003', 'carolsmith', 'Carol', 'Smith','password789', 'carolsmith@example.com', 'Calle Luna 303, Ciudad', 'F', '694567145');
+('U002', 'janedoe', 'Jane', 'Doe','password456', 'janedoe@example.com', 'Avenida Real 202, Ciudad', 'H', '694567145'),
+('U003', 'carolsmith', 'Carol', 'Smith','password789', 'carolsmith@example.com', 'Calle Luna 303, Ciudad', 'H', '694567145');
 
 -- Insertar datos en la tabla perfiles (tipos de usuarios)
 INSERT INTO perfiles (nombre) VALUES

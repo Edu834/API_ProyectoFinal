@@ -12,4 +12,5 @@ public interface ProductoRepository extends JpaRepository<Producto, String>{
 	public List<Producto> findBySubcategoria_idSubcategoria(int idSubcategoria);
 	public List<Producto> findByMarca(String marca);
 	public List<Producto> findByNombre(String nombre);
+	public List<Producto> findBySexo(String sexo);
 }

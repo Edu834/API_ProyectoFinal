@@ -12,7 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import web.entidades.Articulo;
+import web.entidades.Categoria;
+import web.entidades.Subcategoria;
 import web.services.ArticuloServiceImpl;
+import web.services.CategoriaServiceImpl;
+import web.services.SubcategoriaServiceImpl;
 
 @CrossOrigin
 @RestController
@@ -21,6 +25,10 @@ public class ArticuloController {
 	
 	@Autowired
 	private ArticuloServiceImpl articuloService;
+	@Autowired
+	private CategoriaServiceImpl categoriaServiceImpl;
+	@Autowired
+	private SubcategoriaServiceImpl subcategoriaServiceImpl;
 	
 	@GetMapping({"", "/","/home"})
 	public ResponseEntity<List<Articulo>> cargarArticulosTodo() {
@@ -60,6 +68,29 @@ public class ArticuloController {
 		return ResponseEntity.ok(articulos);
 	}
 	
+	@GetMapping("/buscarPorSexo/{sexo}")
+	public ResponseEntity<List<Articulo>> buscarPorSexo(@PathVariable String sexo) {
+		List<Articulo> articulos = articuloService.buscarPorSexo(sexo); 
+		List<Articulo> articulosUNISEX = articuloService.buscarPorSexo("UNISEX");
+		
+		if (articulos.isEmpty()) {
+			return ResponseEntity.noContent().build();
+		}
+		articulos.addAll(articulosUNISEX);
+		return ResponseEntity.ok(articulos);
+	}
+	@GetMapping("/buscarPorSexoYCategoria/{sexo}/{idCategoria}")
+	public ResponseEntity<List<Articulo>> buscarPorSexoYCategoria(@PathVariable String sexo, @PathVariable int idCategoria) {
+		
+		List<Articulo> articulos = articuloService.buscarPorSexoYCategoria(sexo,idCategoria); 
+		List<Articulo> articulosUNISEX = articuloService.buscarPorSexoYCategoria("UNISEX",idCategoria);
+		if (articulos.isEmpty()) {
+			return ResponseEntity.noContent().build();
+		}
+		articulos.addAll(articulosUNISEX);
+		return ResponseEntity.ok(articulos);
+	}
+	
 	@GetMapping("/buscarUno/{id}")
 	public ResponseEntity<Articulo> buscarUno(@PathVariable String id) {
 		
@@ -72,7 +103,7 @@ public class ArticuloController {
 	}
 	
 	@GetMapping("/buscarPorPrecio/{min}/{max}")
-	public ResponseEntity<List<Articulo>> buscarUno(@PathVariable int min, @PathVariable int max) {
+	public ResponseEntity<List<Articulo>> buscarPorPrecio(@PathVariable int min, @PathVariable int max) {
 		
 		List<Articulo> articulos= articuloService.buscarPorRangoPrecio(min,max);
 		
@@ -80,6 +111,28 @@ public class ArticuloController {
 			return ResponseEntity.noContent().build();
 		}
 		return ResponseEntity.ok(articulos);
+	}
+	@GetMapping("/categorias")
+	public ResponseEntity<List<Categoria>> cargarCategorias() {
+		
+		List<Categoria> categorias = categoriaServiceImpl.todo(); 
+		
+		if (categorias.isEmpty()) {
+			return ResponseEntity.noContent().build();
+		}
+		
+		return ResponseEntity.ok(categorias);
+	}
+	@GetMapping("/subcategorias")
+	public ResponseEntity<List<Subcategoria>> cargarSubcategorias() {
+		
+		List<Subcategoria> subcategorias = subcategoriaServiceImpl.todo(); 
+		
+		if (subcategorias.isEmpty()) {
+			return ResponseEntity.noContent().build();
+		}
+		
+		return ResponseEntity.ok(subcategorias);
 	}
 	
 	public boolean esNumerico(String cadena) {
@@ -90,6 +143,4 @@ public class ArticuloController {
 	        return false; 
 	    }
 	}
-	
-	
 }

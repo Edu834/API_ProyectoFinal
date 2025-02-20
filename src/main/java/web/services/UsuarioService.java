@@ -12,5 +12,4 @@ public interface UsuarioService {
 	Usuario buscarPorUsername(String username);
 	Usuario alta(Usuario usuario);
 	Usuario modificar(Usuario usuario);
-	
 }

@@ -5,7 +5,7 @@ import java.util.List;
 import web.entidades.Producto;
 
 public interface ProductoService {
-
+	
 	List<Producto> todo();
 	List<Producto> buscarPorSubcategoria(int idSubcategoria);
 	List<Producto> buscarPorCategoria(int idCategoria);

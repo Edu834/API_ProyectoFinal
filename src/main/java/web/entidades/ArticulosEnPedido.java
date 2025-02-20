@@ -39,6 +39,12 @@ public class ArticulosEnPedido implements Serializable{
     @Column(name = "fecha_devuelta")
     private Date fechaDevuelta;
     
-    //Añadir many to one pedido y articulo
+//    @ManyToOne
+//    @JoinColumn(name="id_articulo")
+//    private Articulo articulo;
+//    
+//    @ManyToOne
+//    @JoinColumn(name="id_pedido")
+//    private Pedido pedido;
     
 }

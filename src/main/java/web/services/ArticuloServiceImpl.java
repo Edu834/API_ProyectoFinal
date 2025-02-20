@@ -44,4 +44,14 @@ public class ArticuloServiceImpl implements ArticuloService{
 		return arepo.findByPrecioBetween(min, max);
 	}
 
+	@Override
+	public List<Articulo> buscarPorSexo(String sexo) {
+		return arepo.findByProducto_Sexo(sexo);
+	}
+
+	@Override
+	public List<Articulo> buscarPorSexoYCategoria(String sexo, int idCategoria) {
+		return arepo.findByProducto_SexoAndProducto_Subcategoria_Categoria_idCategoria(sexo, idCategoria);
+	}
+
 }

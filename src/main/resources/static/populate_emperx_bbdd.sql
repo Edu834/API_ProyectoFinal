@@ -41,7 +41,7 @@ INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descrip
 ('P002', 1, null, 'Slim Fit Suit', 'Traje ajustado para un look moderno', 'BrandY', 'H'),
 ('P003', 1, null, 'Formal Blazer', 'Blazer formal de corte recto, ideal para eventos', 'BrandZ', 'H'),
 ('P004', 1, null, 'Double-breasted Suit', 'Traje de doble botonadura elegante y sofisticado', 'BrandA', 'M'),
-('P005', 2, null, 'Winter Coat', 'Abrigo de lana para invierno', 'BrandB', 'M'),
+('P005', 2, null, 'Winter Coat', 'Abrigo de lana para invierno', 'BrandB', 'H'),
 ('P006', 2, null, 'Trench Coat', 'Abrigo estilo trench, ligero para la primavera', 'BrandC', 'M'),
 ('P007', 2, null, 'Leather Jacket', 'Chaqueta de cuero, ideal para la temporada de otoño', 'BrandD', 'H'),
 ('P008', 2, null, 'Blazer', 'Blazer formal con corte ajustado', 'BrandE', 'H'),

@@ -9,9 +9,10 @@ INSERT INTO estados (nombre) VALUES
 
 -- Insertar datos en la tabla categorias (ejemplos de categorías de ropa)
 INSERT INTO categorias (nombre, descripcion) VALUES
-('Ropa Formal', 'Prendas de vestir formales para ocasiones especiales.'),
-('Ropa Casual', 'Ropa cómoda y casual para uso diario.'),
-('Ropa Deportiva', 'Prendas deportivas para actividades físicas y deportivas.');
+('Ready-to-wear', 'Prendas de vestir formales para ocasiones especiales.'),
+('Bags', 'Ropa cómoda y casual para uso diario.'),
+('Shoes', 'Prendas deportivas para actividades físicas y deportivas.'),
+('Accessories', 'Prendas deportivas para actividades físicas y deportivas.');
 
 -- Insertar datos en la tabla subcategorias (ejemplos de subcategorías dentro de ropa)
 INSERT INTO subcategorias (id_categoria, nombre, descripcion) VALUES

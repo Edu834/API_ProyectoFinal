@@ -14,4 +14,5 @@ public interface ArticuloRepository extends JpaRepository<Articulo, String>{
 	public List<Articulo> findByPrecioBetween(int min, int max);
 	public List<Articulo> findByProducto_SexoAndProducto_Subcategoria_Categoria_idCategoria(String sexo, int idCategoria);
 	public List<Articulo> findByProducto_Sexo(String sexo);
+	public List<Articulo> findByProducto_Nombre(String nombre);
 }

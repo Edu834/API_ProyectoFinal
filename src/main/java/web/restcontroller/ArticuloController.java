@@ -135,6 +135,17 @@ public class ArticuloController {
 		return ResponseEntity.ok(subcategorias);
 	}
 	
+	@GetMapping("/buscarPorNombreProducto/{nombreProducto}")
+	public ResponseEntity<List<Articulo>> buscarPorNombreProducto(@PathVariable String nombreProducto) {
+		
+		List<Articulo> articulos= articuloService.buscarPorNombreProducto(nombreProducto);
+		
+		if (articulos.isEmpty()) {
+			return ResponseEntity.noContent().build();
+		}
+		return ResponseEntity.ok(articulos);
+	}
+	
 	public boolean esNumerico(String cadena) {
 	    try {
 	        Integer.parseInt(cadena); 

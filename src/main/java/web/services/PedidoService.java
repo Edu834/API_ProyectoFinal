@@ -7,8 +7,8 @@ import web.entidades.Pedido;
 public interface PedidoService {
 	
 	List<Pedido> todo();
-	List<Pedido> buscarPorUsuario(String idUsuario);
-	List<Pedido> buscarPorUsuarioyEstado(String idUsuario, String estadoPedido);
+	List<Pedido> buscarPorUsuario(int idUsuario);
+	List<Pedido> buscarPorUsuarioyEstado(int idUsuario, String estadoPedido);
 	Pedido buscarUno(String idPedido);
 	Pedido alta(Pedido pedido);
 	Pedido modificar(Pedido pedido);

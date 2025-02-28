@@ -6,6 +6,6 @@ import lombok.Data;
 public class ArticuloEnPedidoDTO {
 	
 	private String idArticulo;
-	private String idUsuario;
+	private int idUsuario;
 	private int cantidad;
 }

@@ -1,13 +1,14 @@
 package web.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import web.entidades.Usuario;
 
-public interface UsuarioRepository extends JpaRepository<Usuario, String>{
+public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
 	
-	public Usuario findByUsername(String username);
+	Optional<Usuario> findByUsername(String username);
 	public List<Usuario> findBySexo(String sexo);
 }

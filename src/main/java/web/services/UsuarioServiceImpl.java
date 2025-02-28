@@ -26,11 +26,13 @@ public class UsuarioServiceImpl implements UsuarioService{
 
 	@Override
 	public Usuario buscarPorUsername(String username) {
-		return urepo.findByUsername(username);
+	    return urepo.findByUsername(username)
+	                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
 	}
+
 	
 	@Override
-	public Usuario buscarUno(String idUsuario) {
+	public Usuario buscarUno(int idUsuario) {
 		return urepo.findById(idUsuario).orElse(null);
 	}
 

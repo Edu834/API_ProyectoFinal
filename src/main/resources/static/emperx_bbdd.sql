@@ -59,10 +59,11 @@ CREATE TABLE usuarios (
     password VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     direccion TEXT,
-    sexo ENUM('M', 'H'),
+    sexo ENUM('M', 'H', 'Undefined'),
     telefono VARCHAR(20),
     role ENUM('ADMIN', 'USER') NOT NULL DEFAULT 'USER',
-    CONSTRAINT chk_sexo CHECK (sexo IN ('M', 'H'))
+    fecha_alta DATETIME DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT chk_sexo CHECK (sexo IN ('M', 'H', 'Undefined'))
 );
 
 

@@ -3,6 +3,8 @@ package web.services;
 import java.util.List;
 
 import web.entidades.Usuario;
+import web.entidades.UsuarioDTO;
+import web.entidades.UsuarioRequest;
 
 public interface UsuarioService {
 	
@@ -12,4 +14,5 @@ public interface UsuarioService {
 	Usuario buscarPorUsername(String username);
 	Usuario alta(Usuario usuario);
 	Usuario modificar(Usuario usuario);
+	
 }

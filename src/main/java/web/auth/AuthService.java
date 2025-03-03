@@ -1,5 +1,7 @@
 package web.auth;
 
+import java.time.LocalDateTime;
+
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -41,6 +43,7 @@ public class AuthService {
             .sexo(request.getSexo())
             .email(request.getEmail())
             .telefono(request.getTelefono())
+            .fechaAlta(LocalDateTime.now())
             .role(Role.USER)
             .build();
 

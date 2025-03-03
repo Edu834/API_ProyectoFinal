@@ -1,6 +1,8 @@
 package web.entidades;
 
 import java.io.Serializable;
+import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 
@@ -22,6 +24,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import jakarta.persistence.UniqueConstraint;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -51,6 +55,9 @@ public class Usuario implements UserDetails{
 	private String direccion;
 	private String email;
 	private String sexo;
+	@Column(nullable = false, updatable = false)
+	private LocalDateTime fechaAlta;
+
 	private String telefono;
 	@Enumerated(EnumType.STRING) 
     Role role;

@@ -443,9 +443,78 @@ INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, pr
 
 
 INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES
-('A210', 3),  -- Disponible, Mal Estado
-('A210', 7)
-;
+('A001', 1),  -- Alquilado, Nuevo
+('A001', 4),
+('A002', 2),  -- Retirado, Algo Usado
+('A002', 5),
+('A003', 3),  -- Disponible, Usado
+('A003', 6),
+('A004', 1),  -- Alquilado, Mal Estado
+('A004', 7),
+('A005', 2),  -- Retirado, Nuevo
+('A005', 4),
+('A006', 3),  -- Disponible, Algo Usado
+('A006', 5),
+('A007', 1),  -- Alquilado, Usado
+('A007', 6),
+('A008', 2),  -- Retirado, Mal Estado
+('A008', 7),
+('A009', 3),  -- Disponible, Nuevo
+('A009', 4),
+('A010', 1),  -- Alquilado, Algo Usado
+('A010', 5),
+('A011', 2),  -- Retirado, Usado
+('A011', 6),
+('A012', 3),  -- Disponible, Mal Estado
+('A012', 7),
+('A013', 1),  -- Alquilado, Nuevo
+('A013', 4),
+('A014', 2),  -- Retirado, Algo Usado
+('A014', 5),
+('A015', 3),  -- Disponible, Usado
+('A015', 6),
+('A016', 1),  -- Alquilado, Mal Estado
+('A016', 7),
+('A017', 2),  -- Retirado, Nuevo
+('A017', 4),
+('A018', 3),  -- Disponible, Algo Usado
+('A018', 5),
+('A019', 1),  -- Alquilado, Usado
+('A019', 6),
+('A020', 2),  -- Retirado, Mal Estado
+('A020', 7),
+('A021', 3),  -- Disponible, Nuevo
+('A021', 4),
+('A022', 1),  -- Alquilado, Algo Usado
+('A022', 5),
+('A023', 2),  -- Retirado, Usado
+('A023', 6),
+('A024', 3),  -- Disponible, Mal Estado
+('A024', 7),
+('A025', 1),  -- Alquilado, Nuevo
+('A025', 4),
+('A026', 2),  -- Retirado, Algo Usado
+('A026', 5),
+('A027', 3),  -- Disponible, Usado
+('A027', 6),
+('A028', 1),  -- Alquilado, Mal Estado
+('A028', 7),
+('A029', 2),  -- Retirado, Nuevo
+('A029', 4),
+('A030', 3),  -- Disponible, Algo Usado
+('A030', 5),
+('A031', 1),  -- Alquilado, Usado
+('A031', 6),
+('A032', 2),  -- Retirado, Mal Estado
+('A032', 7),
+('A033', 3),  -- Disponible, Nuevo
+('A033', 4),
+('A034', 1),  -- Alquilado, Algo Usado
+('A034', 5),
+('A035', 2),  -- Retirado, Usado
+('A035', 6),
+('A036', 3),  -- Disponible, Mal Estado
+('A036', 7);
 
 INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES
 ('A037', 1),  -- Alquilado, Nuevo

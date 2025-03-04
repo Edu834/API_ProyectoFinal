@@ -66,7 +66,7 @@ public class UsuarioServiceImpl implements UsuarioService{
                 usuarioActual.setDireccion(usuario.getDireccion());
                 usuarioActual.setSexo(usuario.getSexo());
                 usuarioActual.setTelefono(usuario.getTelefono());
-
+                usuarioActual.setRole((usuario.getRole()));
                 return urepo.save(usuarioActual);
             } else {
                 return null;

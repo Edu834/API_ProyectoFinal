@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import lombok.RequiredArgsConstructor;
+import web.auth.AuthResponse;
+import web.auth.AuthService;
 import web.entidades.Usuario;
 import web.entidades.UsuarioDTO;
 import web.entidades.UsuarioRequest;
@@ -30,6 +32,8 @@ import web.services.UsuarioServiceImpl;
 public class UsuarioController {
 	@Autowired
 	private UsuarioServiceImpl usuarioService;
+	
+	private AuthService authService;
 	
 	@GetMapping({"","/","/home"})
 	public ResponseEntity<List<Usuario>> getAllUsers(@PathVariable Integer id){
@@ -61,11 +65,11 @@ public class UsuarioController {
 	}
 	
 	@PutMapping
-	public ResponseEntity<Usuario> updateUsuario (@RequestBody Usuario usuarioRequest){
-		System.out.println(usuarioRequest);
-		return ResponseEntity.ok(usuarioService.modificar(usuarioRequest));
+	public ResponseEntity<AuthResponse> updateUsuario(@RequestBody Usuario usuarioRequest) {
+	    System.out.println(usuarioRequest);
+	    return ResponseEntity.ok(authService.modificarUsuario(usuarioRequest));
 	}
-	
+
 	@GetMapping("/me")
 	public ResponseEntity<UsuarioDTO> getAuthenticatedUser() {
 	    // Obtener el usuario autenticado desde el contexto de seguridad

@@ -54,4 +54,30 @@ public class AuthService {
             .build();
         
     }
+    
+    public AuthResponse modificarUsuario(Usuario usuarioRequest) {
+        Usuario usuarioActual = userRepository.findById(usuarioRequest.getIdUsuario())
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+
+        usuarioActual.setUsername(usuarioRequest.getUsername());
+        usuarioActual.setFirstname(usuarioRequest.getFirstname());
+        usuarioActual.setLastname(usuarioRequest.getLastname());
+        usuarioActual.setEmail(usuarioRequest.getEmail());
+        usuarioActual.setDireccion(usuarioRequest.getDireccion());
+        usuarioActual.setSexo(usuarioRequest.getSexo());
+        usuarioActual.setTelefono(usuarioRequest.getTelefono());
+
+        // 🔹 Si la contraseña cambió, la ciframos antes de guardarla
+        if (!usuarioRequest.getPassword().equals(usuarioActual.getPassword())) {
+            usuarioActual.setPassword(passwordEncoder.encode(usuarioRequest.getPassword())); // ✅ Ya no es null
+        }
+
+        userRepository.save(usuarioActual);
+
+        String nuevoToken = jwtService.getToken(usuarioActual);
+
+        return AuthResponse.builder()
+                .token(nuevoToken)
+                .build();
+    }
 }

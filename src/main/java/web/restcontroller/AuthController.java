@@ -3,6 +3,7 @@ package web.restcontroller;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,7 @@ import web.auth.AuthResponse;
 import web.auth.AuthService;
 import web.auth.LoginRequest;
 import web.auth.RegisterRequest;
+import web.entidades.Usuario;
 
 @RestController
 @RequestMapping("/auth")
@@ -33,4 +35,10 @@ private final AuthService authService;
     {
         return ResponseEntity.ok(authService.register(request));
     }
+    
+    @PutMapping("/edit")
+	public ResponseEntity<AuthResponse> updateUsuario(@RequestBody Usuario usuarioRequest) {
+	    System.out.println(usuarioRequest);
+	    return ResponseEntity.ok(authService.modificarUsuario(usuarioRequest));
+	}
 }

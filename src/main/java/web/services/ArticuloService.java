@@ -11,7 +11,6 @@ public interface ArticuloService {
 	List<Articulo> buscarPorCategoria(int idCategoria);
 	List<Articulo> buscarPorSubcategoria(int idSubcategoria);
 	List<Articulo> buscarPorProducto(String idProducto);
-	List<Articulo> buscarPorRangoPrecio(int min, int max);
 	List<Articulo> buscarPorSexo(String sexo);
 	List<Articulo> buscarPorSexoYCategoria(String sexo, int idCategoria);
 	List<Articulo> buscarPorNombreProducto(String nombre);

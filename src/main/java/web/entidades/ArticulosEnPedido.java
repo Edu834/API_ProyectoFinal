@@ -34,7 +34,10 @@ public class ArticulosEnPedido implements Serializable{
     private int cantidadDevuelta;
 
     private String estado;
-
+    
+    @Column(name = "dias_alquiler")
+    private int diasAlquiler;
+    
     @Temporal(TemporalType.DATE)
     @Column(name = "fecha_devuelta")
     private Date fechaDevuelta;

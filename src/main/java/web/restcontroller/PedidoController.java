@@ -115,7 +115,7 @@ public class PedidoController {
 		pedidoService.buscarUno(pedido.getIdPedido());
 		ArticulosEnPedidoId idArticuloEnPedido = new ArticulosEnPedidoId(pedido.getIdPedido(),articuloEnPedidoDto.getIdArticulo());
 		ArticulosEnPedido artExistente = articulosEnPedidoService.buscarUno(idArticuloEnPedido);
-		ArticulosEnPedido newarticuloEnPedido = new ArticulosEnPedido(idArticuloEnPedido, articuloEnPedidoDto.getCantidad(), 0, "Disponible", null);
+		ArticulosEnPedido newarticuloEnPedido = new ArticulosEnPedido(idArticuloEnPedido, articuloEnPedidoDto.getCantidad(), 0, "Disponible", 6, null);
 		
 		if (artExistente != null) {
 			artExistente.setCantidad(artExistente.getCantidad() + articuloEnPedidoDto.getCantidad());

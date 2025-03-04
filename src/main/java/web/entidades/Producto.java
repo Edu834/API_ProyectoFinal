@@ -30,6 +30,7 @@ public class Producto implements Serializable{
 	private String marca;
 	private String descripcion;
 	private String sexo;
+	private float precio;
 	
 	@ManyToOne
 	@JoinColumn(name="id_subcategoria")

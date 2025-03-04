@@ -45,6 +45,7 @@ CREATE TABLE productos (
     descripcion TEXT,
     marca VARCHAR(255),
     sexo ENUM('M', 'H', 'UNISEX'),
+	precio DECIMAL(10, 2) NOT NULL,
     FOREIGN KEY (id_subcategoria) REFERENCES Subcategorias(id_subcategoria),
     FOREIGN KEY (id_galeria) REFERENCES galerias(id_galeria),
     CONSTRAINT chk_sexo_prod CHECK (sexo IN ('M', 'H', 'UNISEX'))
@@ -90,7 +91,7 @@ CREATE TABLE articulos (
     talla VARCHAR(50),
     color VARCHAR(50),
     stock INT NOT NULL,
-    precio DECIMAL(10, 2) NOT NULL,
+    codigo_color VARCHAR(50),
     descripcion TEXT,
     FOREIGN KEY (id_producto) REFERENCES Productos(id_producto)
 );
@@ -118,6 +119,7 @@ CREATE TABLE articulos_en_pedidos (
     cantidad INT NOT NULL,
     cantidad_devuelta INT DEFAULT 0,
     estado VARCHAR(255),
+    dias_alquiler INT,
     fecha_devuelta DATE,
     PRIMARY KEY (id_articulo, id_pedido),  -- Esto corresponde a la clave compuesta de ArticulosEnPedidoId
     CONSTRAINT fk_articulo FOREIGN KEY (id_articulo) REFERENCES articulos(id_articulo),  -- Asumiendo que la tabla 'articulos' existe

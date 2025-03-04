@@ -40,11 +40,6 @@ public class ArticuloServiceImpl implements ArticuloService{
 	}
 
 	@Override
-	public List<Articulo> buscarPorRangoPrecio(int min, int max) {
-		return arepo.findByPrecioBetween(min, max);
-	}
-
-	@Override
 	public List<Articulo> buscarPorSexo(String sexo) {
 		return arepo.findByProducto_Sexo(sexo);
 	}

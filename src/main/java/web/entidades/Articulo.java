@@ -33,7 +33,7 @@ public class Articulo implements Serializable{
 	private String talla;
 	private String color;
 	private int stock;
-	private float precio;
+	private String codigoColor;
 	private String descripcion;
 	
 	@ManyToOne

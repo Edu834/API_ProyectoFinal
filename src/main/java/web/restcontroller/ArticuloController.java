@@ -102,16 +102,6 @@ public class ArticuloController {
 		return ResponseEntity.ok(articulo);
 	}
 	
-	@GetMapping("/buscarPorPrecio/{min}/{max}")
-	public ResponseEntity<List<Articulo>> buscarPorPrecio(@PathVariable int min, @PathVariable int max) {
-		
-		List<Articulo> articulos= articuloService.buscarPorRangoPrecio(min,max);
-		
-		if (articulos.isEmpty()) {
-			return ResponseEntity.noContent().build();
-		}
-		return ResponseEntity.ok(articulos);
-	}
 	@GetMapping("/categorias")
 	public ResponseEntity<List<Categoria>> cargarCategorias() {
 		

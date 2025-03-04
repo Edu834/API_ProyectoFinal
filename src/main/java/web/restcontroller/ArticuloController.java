@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import web.entidades.Articulo;
 import web.entidades.Categoria;
 import web.entidades.Subcategoria;
@@ -136,6 +137,18 @@ public class ArticuloController {
 		return ResponseEntity.ok(articulos);
 	}
 	
+	@GetMapping("/filtrar")
+	public ResponseEntity<List<Articulo>> filtrar(@RequestBody Object filtros) {
+		
+		List<Articulo> articulos= articuloService.buscarPorSexo("M");
+		System.out.println(filtros);
+		if (articulos.isEmpty()) {
+			return ResponseEntity.noContent().build();
+		}
+		return ResponseEntity.ok(articulos);
+	}
+	
+	
 	public boolean esNumerico(String cadena) {
 	    try {
 	        Integer.parseInt(cadena); 
@@ -144,4 +157,5 @@ public class ArticuloController {
 	        return false; 
 	    }
 	}
+	
 }

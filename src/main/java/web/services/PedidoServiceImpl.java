@@ -24,11 +24,11 @@ public class PedidoServiceImpl implements PedidoService{
 		return perepo.findAll();
 	}
 	@Override
-	public List<Pedido> buscarPorUsuario(String idUsuario) {
+	public List<Pedido> buscarPorUsuario(int idUsuario) {
 		return perepo.findByUsuario_idUsuario(idUsuario);
 	}
 	@Override
-	public List<Pedido> buscarPorUsuarioyEstado(String idUsuario, String estadoPedido) {
+	public List<Pedido> buscarPorUsuarioyEstado(int idUsuario, String estadoPedido) {
 		return perepo.findByEstadoAndUsuario_idUsuario(estadoPedido, idUsuario);
 	}
 	@Override

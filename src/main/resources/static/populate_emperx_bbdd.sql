@@ -1,5 +1,30 @@
 use emperx_bbdd;
 
+INSERT INTO galerias (
+    foto_frontal,
+    foto_trasera,
+    foto_modelo_frontal,
+    foto_modelo_trasera,
+    foto_modelo_costado,
+    foto_modelo_cerca
+)
+VALUES (
+    '/images/foto_frontal_classic_suit.jpg',
+    '/images/foto_trasera_classic_suit.jpg',
+    '/images/foto_modelo_frontal_classic_suit.jpg',
+    '/images/foto_modelo_trasera_classic_suit.jpg',
+    '/images/foto_modelo_costado_classic_suit.jpg',
+    '/images/foto_modelo_cerca_classic_suit.jpg'
+),(
+    '/images/foto_frontal_slim_suit.jpg',
+    '/images/foto_trasera_slim_suit.jpg',
+    '/images/foto_modelo_frontal_slim_suit.jpg',
+    '/images/foto_modelo_trasera_slim_suit.jpg',
+    '/images/foto_modelo_costado_slim_suit.jpg',
+    '/images/foto_modelo_cerca_slim_suit.jpg'
+);
+
+
 -- Insertamos los estados de los artículos
 INSERT INTO estados (nombre) VALUES
 ('Alquilado'),
@@ -36,43 +61,45 @@ INSERT INTO subcategorias (id_categoria, nombre, descripcion) VALUES
 (4, 'Watches', 'Relojes de diferentes estilos'),
 (4, 'Hats', 'Sombreros de todo tipo');
 
-INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
-('P001', 1, null, 'Classic Suit', 'Traje clásico de corte recto, adecuado para ocasiones formales', 'BrandX', 'H', 150.00),
-('P002', 1, null, 'Slim Fit Suit', 'Traje ajustado para un look moderno', 'BrandY', 'H', 180.00),
-('P003', 1, null, 'Formal Blazer', 'Blazer formal de corte recto, ideal para eventos', 'BrandZ', 'H', 120.00),
-('P004', 1, null, 'Double-breasted Suit', 'Traje de doble botonadura elegante y sofisticado', 'BrandA', 'M', 200.00),
-('P005', 2, null, 'Winter Coat', 'Abrigo de lana para invierno', 'BrandB', 'H', 160.00),
-('P006', 2, null, 'Trench Coat', 'Abrigo estilo trench, ligero para la primavera', 'BrandC', 'M', 130.00),
-('P007', 2, null, 'Leather Jacket', 'Chaqueta de cuero, ideal para la temporada de otoño', 'BrandD', 'H', 180.00),
-('P008', 2, null, 'Blazer', 'Blazer formal con corte ajustado', 'BrandE', 'H', 140.00),
-('P009', 3, null, 'Evening Dress', 'Vestido largo y elegante para eventos formales', 'BrandF', 'M', 220.00),
-('P010', 3, null, 'Cocktail Dress', 'Vestido corto y elegante para cócteles', 'BrandG', 'M', 160.00),
-('P011', 3, null, 'Day Dress', 'Vestido casual para el día a día', 'BrandH', 'M', 90.00),
-('P012', 3, null, 'Maxi Dress', 'Vestido largo, ideal para la playa o eventos formales', 'BrandI', 'M', 180.00),
-('P013', 4, null, 'A-Line Skirt', 'Falda de corte A, ideal para todos los días', 'BrandJ', 'M', 50.00),
-('P014', 4, null, 'Pencil Skirt', 'Falda de tubo ajustada para ocasiones formales', 'BrandK', 'M', 60.00),
-('P015', 4, null, 'Pleated Skirt', 'Falda plisada de largo medio', 'BrandL', 'M', 55.00),
-('P016', 4, null, 'Mini Skirt', 'Falda corta para un look más casual', 'BrandM', 'M', 45.00),
-('P017', 5, null, 'Basic T-Shirt', 'Camiseta básica de algodón, cómoda para el día a día', 'BrandN', 'H', 20.00),
-('P018', 5, null, 'Graphic T-Shirt', 'Camiseta con diseño gráfico moderno', 'BrandO', 'H', 25.00),
-('P019', 5, null, 'V-neck T-Shirt', 'Camiseta de cuello en V, ideal para días calurosos', 'BrandP', 'H', 22.00),
-('P020', 5, null, 'Long Sleeve T-Shirt', 'Camiseta de manga larga, perfecta para el otoño', 'BrandQ', 'H', 28.00),
-('P021', 6, null, 'Body Top', 'Top de cuerpo ajustado, ideal para combinar con faldas', 'BrandR', 'M', 35.00),
-('P022', 6, null, 'Crop Top', 'Top corto, muy de moda', 'BrandS', 'M', 30.00),
-('P023', 6, null, 'Blouse', 'Blusa elegante para ocasiones formales', 'BrandT', 'M', 50.00),
-('P024', 6, null, 'Tank Top', 'Top sin mangas, ideal para el verano', 'BrandU', 'M', 18.00),
-('P025', 7, null, 'Slim Fit Jeans', 'Jeans de corte ajustado, ideal para el día a día', 'BrandV', 'H', 55.00),
-('P026', 7, null, 'Bootcut Jeans', 'Jeans de corte acampanado', 'BrandW', 'M', 60.00),
-('P027', 7, null, 'Chinos', 'Pantalones chinos, versátiles y cómodos', 'BrandX', 'H', 50.00),
-('P028', 7, null, 'Dress Trousers', 'Pantalones de vestir, adecuados para eventos formales', 'BrandY', 'M', 70.00),
-('P029', 8, null, 'Knit Sweater', 'Suéter de punto suave, ideal para el invierno', 'BrandZ', 'M', 80.00),
-('P030', 8, null, 'Cashmere Sweater', 'Suéter de cachemira de alta calidad', 'BrandA', 'M', 120.00),
-('P031', 8, null, 'Cardigan', 'Cárdigan largo, cómodo para el otoño', 'BrandB', 'H', 60.00),
-('P032', 8, null, 'Turtleneck Sweater', 'Suéter de cuello alto, ideal para el invierno', 'BrandC', 'H', 75.00),
-('P033', 9, null, 'Hoodie Sweatshirt', 'Sudadera con capucha, cómoda y deportiva', 'BrandD', 'H', 45.00),
-('P034', 9, null, 'Crewneck Sweatshirt', 'Sudadera de cuello redondo', 'BrandE', 'H', 40.00),
-('P035', 9, null, 'Zip-up Sweatshirt', 'Sudadera con cremallera, fácil de poner y quitar', 'BrandF', 'M', 50.00),
-('P036', 9, null, 'Fleece Sweatshirt', 'Sudadera de forro polar, muy abrigada', 'BrandG', 'H', 60.00);
+
+INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo) VALUES
+('P001', 1, 1, 'Classic Suit', 'Traje clásico de corte recto, adecuado para ocasiones formales', 'BrandX', 'H'),
+('P002', 1, 2, 'Slim Fit Suit', 'Traje ajustado para un look moderno', 'BrandY', 'H'),
+('P003', 1, null, 'Formal Blazer', 'Blazer formal de corte recto, ideal para eventos', 'BrandZ', 'H'),
+('P004', 1, null, 'Double-breasted Suit', 'Traje de doble botonadura elegante y sofisticado', 'BrandA', 'M'),
+('P005', 2, null, 'Winter Coat', 'Abrigo de lana para invierno', 'BrandB', 'H'),
+('P006', 2, null, 'Trench Coat', 'Abrigo estilo trench, ligero para la primavera', 'BrandC', 'M'),
+('P007', 2, null, 'Leather Jacket', 'Chaqueta de cuero, ideal para la temporada de otoño', 'BrandD', 'H'),
+('P008', 2, null, 'Blazer', 'Blazer formal con corte ajustado', 'BrandE', 'H'),
+('P009', 3, null, 'Evening Dress', 'Vestido largo y elegante para eventos formales', 'BrandF', 'M'),
+('P010', 3, null, 'Cocktail Dress', 'Vestido corto y elegante para cócteles', 'BrandG', 'M'),
+('P011', 3, null, 'Day Dress', 'Vestido casual para el día a día', 'BrandH', 'M'),
+('P012', 3, null, 'Maxi Dress', 'Vestido largo, ideal para la playa o eventos formales', 'BrandI', 'M'),
+('P013', 4, null, 'A-Line Skirt', 'Falda de corte A, ideal para todos los días', 'BrandJ', 'M'),
+('P014', 4, null, 'Pencil Skirt', 'Falda de tubo ajustada para ocasiones formales', 'BrandK', 'M'),
+('P015', 4, null, 'Pleated Skirt', 'Falda plisada de largo medio', 'BrandL', 'M'),
+('P016', 4, null, 'Mini Skirt', 'Falda corta para un look más casual', 'BrandM', 'M'),
+('P017', 5, null, 'Basic T-Shirt', 'Camiseta básica de algodón, cómoda para el día a día', 'BrandN', 'H'),
+('P018', 5, null, 'Graphic T-Shirt', 'Camiseta con diseño gráfico moderno', 'BrandO', 'H'),
+('P019', 5, null, 'V-neck T-Shirt', 'Camiseta de cuello en V, ideal para días calurosos', 'BrandP', 'H'),
+('P020', 5, null, 'Long Sleeve T-Shirt', 'Camiseta de manga larga, perfecta para el otoño', 'BrandQ', 'H'),
+('P021', 6, null, 'Body Top', 'Top de cuerpo ajustado, ideal para combinar con faldas', 'BrandR', 'M'),
+('P022', 6, null, 'Crop Top', 'Top corto, muy de moda', 'BrandS', 'M'),
+('P023', 6, null, 'Blouse', 'Blusa elegante para ocasiones formales', 'BrandT', 'M'),
+('P024', 6, null, 'Tank Top', 'Top sin mangas, ideal para el verano', 'BrandU', 'M'),
+('P025', 7, null, 'Slim Fit Jeans', 'Jeans de corte ajustado, ideal para el día a día', 'BrandV', 'H'),
+('P026', 7, null, 'Bootcut Jeans', 'Jeans de corte acampanado', 'BrandW', 'M'),
+('P027', 7, null, 'Chinos', 'Pantalones chinos, versátiles y cómodos', 'BrandX', 'H'),
+('P028', 7, null, 'Dress Trousers', 'Pantalones de vestir, adecuados para eventos formales', 'BrandY', 'M'),
+('P029', 8, null, 'Knit Sweater', 'Suéter de punto suave, ideal para el invierno', 'BrandZ', 'M'),
+('P030', 8, null, 'Cashmere Sweater', 'Suéter de cachemira de alta calidad', 'BrandA', 'M'),
+('P031', 8, null, 'Cardigan', 'Cárdigan largo, cómodo para el otoño', 'BrandB', 'H'),
+('P032', 8, null, 'Turtleneck Sweater', 'Suéter de cuello alto, ideal para el invierno', 'BrandC', 'H'),
+('P033', 9, null, 'Hoodie Sweatshirt', 'Sudadera con capucha, cómoda y deportiva', 'BrandD', 'H'),
+('P034', 9, null, 'Crewneck Sweatshirt', 'Sudadera de cuello redondo', 'BrandE', 'H'),
+('P035', 9, null, 'Zip-up Sweatshirt', 'Sudadera con cremallera, fácil de poner y quitar', 'BrandF', 'M'),
+('P036', 9, null, 'Fleece Sweatshirt', 'Sudadera de forro polar, muy abrigada', 'BrandG', 'H');
+
 
 -- Insertar productos para Totes
 INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
@@ -107,12 +134,15 @@ INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descrip
 -- Artículos para los productos de la subcategoría 'Suits'
 
 -- Artículos para el producto 'Classic Suit'
+
 INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
 ('A001', 'P001', 'Classic Suit - Talla S', 'S', 'Negro', 10, '#000000', 'Traje clásico de corte recto, adecuado para ocasiones formales'),
 ('A002', 'P001', 'Classic Suit - Talla M', 'M', 'Gris', 15, '#808080', 'Traje clásico de corte recto, adecuado para ocasiones formales'),
 ('A003', 'P001', 'Classic Suit - Talla L', 'L', 'Azul', 8, '#0000FF', 'Traje clásico de corte recto, adecuado para ocasiones formales'),
 ('A004', 'P001', 'Classic Suit - Talla XL', 'XL', 'Negro', 6, '#000000', 'Traje clásico de corte recto, adecuado para ocasiones formales'),
 ('A005', 'P001', 'Classic Suit - Talla XXL', 'XXL', 'Gris', 4, '#808080', 'Traje clásico de corte recto, adecuado para ocasiones formales');
+
+
 
 -- Artículos para el producto 'Slim Fit Suit'
 INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
@@ -439,30 +469,11 @@ INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, co
 
 
 
--- Insertar datos en la tabla usuarios (usuarios de la web)
-INSERT INTO usuarios (id_usuario, username, firstname, lastname, password, email, direccion, sexo, telefono) VALUES
-('U001', 'johndoe', 'John', 'Doe', 'password123', 'johndoe@example.com', 'Calle Ficticia 101, Ciudad', 'M', '694567145'),
-('U002', 'janedoe', 'Jane', 'Doe','password456', 'janedoe@example.com', 'Avenida Real 202, Ciudad', 'H', '694567145'),
-('U003', 'carolsmith', 'Carol', 'Smith','password789', 'carolsmith@example.com', 'Calle Luna 303, Ciudad', 'H', '694567145');
 
--- Insertar datos en la tabla perfiles (tipos de usuarios)
-INSERT INTO perfiles (nombre) VALUES
-('Cliente'),
-('Administrador'),
-('Vendedor');
 
--- Insertar datos en la tabla usuario_con_perfiles (asociaciones de usuarios con perfiles)
-INSERT INTO usuario_con_perfiles (id_usuario, id_perfil) VALUES
-('U001', 1),
-('U002', 1),
-('U003', 1),
-('U002', 2); -- Administrador
 
--- Insertar datos en la tabla pedidos (pedidos realizados por los usuarios)
-INSERT INTO pedidos (id_pedido, id_usuario, descripcion, fecha, estado, fecha_entrega) VALUES
-('P001', 'U001', 'Alquiler de traje para boda', '2025-02-14', 'Completado', '2025-02-20'),
-('P002', 'U003', 'Alquiler de vestido de noche', '2025-02-14', 'Entregado', '2025-02-18'),
-('P003', 'U002', 'Alquiler de conjunto deportivo', '2025-02-14', 'Carrito', NULL);
+
+
 
 
 INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES

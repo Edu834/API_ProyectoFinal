@@ -8,6 +8,6 @@ import web.entidades.Pedido;
 
 public interface PedidoRepository extends JpaRepository<Pedido, String>{
 
-	public List<Pedido> findByUsuario_idUsuario(String idUsuario);
-	public List<Pedido> findByEstadoAndUsuario_idUsuario(String estado, String idUsuario);
+	public List<Pedido> findByUsuario_idUsuario(int idUsuario);
+	public List<Pedido> findByEstadoAndUsuario_idUsuario(String estado, int idUsuario);
 }

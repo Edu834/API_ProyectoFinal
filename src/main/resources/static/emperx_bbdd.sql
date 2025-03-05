@@ -53,28 +53,26 @@ CREATE TABLE productos (
 
 -- Tabla de Usuarios
 CREATE TABLE usuarios (
-    id_usuario VARCHAR(255) PRIMARY KEY,
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(255) UNIQUE NOT NULL,
     firstname VARCHAR(255),
     lastname VARCHAR(255),
     password VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     direccion TEXT,
-    sexo ENUM('M', 'H'),
+    sexo ENUM('M', 'H', 'Undefined'),
     telefono VARCHAR(20),
-    CONSTRAINT chk_sexo CHECK (sexo IN ('M', 'H'))
+    role ENUM('ADMIN', 'USER') NOT NULL DEFAULT 'USER',
+    fecha_alta DATETIME DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT chk_sexo CHECK (sexo IN ('M', 'H', 'Undefined'))
 );
 
--- Tabla de Perfiles
-CREATE TABLE perfiles (
-    id_perfil INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(255) NOT NULL
-);
+
 
 -- Tabla de Pedidos
 CREATE TABLE pedidos (
     id_pedido VARCHAR(255) PRIMARY KEY,
-    id_usuario VARCHAR(255),
+    id_usuario int,
     descripcion TEXT,
     fecha DATE,
     estado ENUM('Carrito', 'Pagado', 'Entregado', 'Completado') NOT NULL,
@@ -96,14 +94,7 @@ CREATE TABLE articulos (
     FOREIGN KEY (id_producto) REFERENCES Productos(id_producto)
 );
 
--- Tabla de Usuario_con_Perfiles
-CREATE TABLE usuario_con_perfiles (
-    id_usuario VARCHAR(255),
-    id_perfil INT,
-    PRIMARY KEY (id_usuario, id_perfil),
-    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE,
-    FOREIGN KEY (id_perfil) REFERENCES Perfiles(id_perfil) ON DELETE CASCADE
-);
+
 
 CREATE TABLE articulos_con_estados (
     id_articulo VARCHAR(255) NOT NULL,

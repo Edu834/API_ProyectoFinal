@@ -53,7 +53,7 @@ public class PedidoController {
 	}
 	
 	@GetMapping("/buscarPor/{idUsuario}")
-	public ResponseEntity<List<Pedido>> buscarPorUsuario(@PathVariable String idUsuario) {
+	public ResponseEntity<List<Pedido>> buscarPorUsuario(@PathVariable int idUsuario) {
 		List<Pedido> pedidos = pedidoService.buscarPorUsuario(idUsuario);
 		
 		if (pedidos.isEmpty()) {
@@ -64,7 +64,7 @@ public class PedidoController {
 	}
 	
 	@GetMapping("/buscarPor/{idUsuario}/{estado}")
-	public ResponseEntity<List<Pedido>> buscarPorUsuarioyEstado(@PathVariable String idUsuario, @PathVariable String estado) {
+	public ResponseEntity<List<Pedido>> buscarPorUsuarioyEstado(@PathVariable int idUsuario, @PathVariable String estado) {
 		List<Pedido> pedidos = new ArrayList<>();
 	
 			if (estado != null) {

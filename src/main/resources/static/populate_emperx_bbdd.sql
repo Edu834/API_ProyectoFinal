@@ -8,6 +8,9 @@ INSERT INTO galerias (
     foto_modelo_costado,
     foto_modelo_cerca
 )
+
+
+
 VALUES (
     '/images/foto_frontal_classic_suit.jpg',
     '/images/foto_trasera_classic_suit.jpg',
@@ -22,6 +25,62 @@ VALUES (
     '/images/foto_modelo_trasera_slim_suit.jpg',
     '/images/foto_modelo_costado_slim_suit.jpg',
     '/images/foto_modelo_cerca_slim_suit.jpg'
+),(
+    '/images/foto_frontal_formal_blazer.jpg',
+    '/images/foto_trasera_formal_blazer.jpg',
+    '/images/foto_modelo_frontal_formal_blazer.jpg',
+    '/images/foto_modelo_trasera_formal_blazer.jpg',
+    '/images/foto_modelo_costado_formal_blazer.jpg',
+    '/images/foto_modelo_cerca_formal_blazer.jpg'
+),(
+    '/images/foto_frontal_doble-breasted_suit.jpg',
+    '/images/foto_trasera_doble-breasted_suit.jpg',
+    '/images/foto_modelo_frontal_doble-breasted_suit.jpg',
+    '/images/foto_modelo_trasera_doble-breasted_suit.jpg',
+    '/images/foto_modelo_costado_doble-breasted_suit.jpg',
+    '/images/foto_modelo_cerca_doble-breasted_suit.jpg'
+),(
+    '/images/foto_frontal_winter_coat.jpg',
+    '/images/foto_trasera_winter_coat.jpg',
+    '/images/foto_modelo_frontal_winter_coat.jpg',
+    '/images/foto_modelo_trasera_winter_coat.jpg',
+    '/images/foto_modelo_costado_winter_coat.jpg',
+    '/images/foto_modelo_cerca_winter_coat.jpg'
+),(
+    '/images/foto_frontal_trench_coat.jpg',
+    '/images/foto_trasera_trench_coat.jpg',
+    '/images/foto_modelo_frontal_trench_coat.jpg',
+    '/images/foto_modelo_trasera_trench_coat.jpg',
+    '/images/foto_modelo_costado_trench_coat.jpg',
+    '/images/foto_modelo_cerca_trench_coat.jpg'
+),(
+    '/images/foto_frontal_leather_jacket.jpg',
+    '/images/foto_trasera_leather_jacket.jpg',
+    '/images/foto_modelo_frontal_leather_jacket.jpg',
+    '/images/foto_modelo_trasera_leather_jacket.jpg',
+    '/images/foto_modelo_costado_leather_jacket.jpg',
+    '/images/foto_modelo_cerca_leather_jacket.jpg'
+),(
+    '/images/foto_frontal_blazer.jpg',
+    '/images/foto_trasera_blazer.jpg',
+    '/images/foto_modelo_frontal_blazer.jpg',
+    '/images/foto_modelo_trasera_blazer.jpg',
+    '/images/foto_modelo_costado_blazer.jpg',
+    '/images/foto_modelo_cerca_blazer.jpg'
+),(
+    '/images/foto_frontal_evening_dress.jpg',
+    '/images/foto_trasera_evening_dress.jpg',
+    '/images/foto_modelo_frontal_evening_dress.jpg',
+    '/images/foto_modelo_trasera_evening_dress.jpg',
+    '/images/foto_modelo_costado_evening_dress.jpg',
+    '/images/foto_modelo_cerca_evening_dress.jpg'
+),(
+    '/images/foto_frontal_cocktail_dress.jpg',
+    '/images/foto_trasera_cocktail_dress.jpg',
+    '/images/foto_modelo_frontal_cocktail_dress.jpg',
+    '/images/foto_modelo_trasera_cocktail_dress.jpg',
+    '/images/foto_modelo_costado_cocktail_dress.jpg',
+    '/images/foto_modelo_cerca_cocktail_dress.jpg'
 );
 
 
@@ -63,17 +122,19 @@ INSERT INTO subcategorias (id_categoria, nombre, descripcion) VALUES
 
 
 
+
+
 INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
 ('P001', 1, 1, 'Classic Suit', 'Traje clásico de corte recto, adecuado para ocasiones formales', 'BrandX', 'H', 150.00),
 ('P002', 1, 2, 'Slim Fit Suit', 'Traje ajustado para un look moderno', 'BrandY', 'H', 180.00),
-('P003', 1, null, 'Formal Blazer', 'Blazer formal de corte recto, ideal para eventos', 'BrandZ', 'H', 120.00),
-('P004', 1, null, 'Double-breasted Suit', 'Traje de doble botonadura elegante y sofisticado', 'BrandA', 'M', 200.00),
-('P005', 2, null, 'Winter Coat', 'Abrigo de lana para invierno', 'BrandB', 'H', 160.00),
-('P006', 2, null, 'Trench Coat', 'Abrigo estilo trench, ligero para la primavera', 'BrandC', 'M', 130.00),
-('P007', 2, null, 'Leather Jacket', 'Chaqueta de cuero, ideal para la temporada de otoño', 'BrandD', 'H', 180.00),
-('P008', 2, null, 'Blazer', 'Blazer formal con corte ajustado', 'BrandE', 'H', 140.00),
-('P009', 3, null, 'Evening Dress', 'Vestido largo y elegante para eventos formales', 'BrandF', 'M', 220.00),
-('P010', 3, null, 'Cocktail Dress', 'Vestido corto y elegante para cócteles', 'BrandG', 'M', 160.00),
+('P003', 1, 3, 'Formal Blazer', 'Blazer formal de corte recto, ideal para eventos', 'BrandZ', 'H', 120.00),
+('P004', 1, 4, 'Double-breasted Suit', 'Traje de doble botonadura elegante y sofisticado', 'BrandA', 'M', 200.00),
+('P005', 2, 5, 'Winter Coat', 'Abrigo de lana para invierno', 'BrandB', 'H', 160.00),
+('P006', 2, 6, 'Trench Coat', 'Abrigo estilo trench, ligero para la primavera', 'BrandC', 'M', 130.00),
+('P007', 2, 7, 'Leather Jacket', 'Chaqueta de cuero, ideal para la temporada de otoño', 'BrandD', 'H', 180.00),
+('P008', 2, 8, 'Blazer', 'Blazer formal con corte ajustado', 'BrandE', 'H', 140.00),
+('P009', 3, 9, 'Evening Dress', 'Vestido largo y elegante para eventos formales', 'BrandF', 'M', 220.00),
+('P010', 3, 10, 'Cocktail Dress', 'Vestido corto y elegante para cócteles', 'BrandG', 'M', 160.00),
 ('P011', 3, null, 'Day Dress', 'Vestido casual para el día a día', 'BrandH', 'M', 90.00),
 ('P012', 3, null, 'Maxi Dress', 'Vestido largo, ideal para la playa o eventos formales', 'BrandI', 'M', 180.00),
 ('P013', 4, null, 'A-Line Skirt', 'Falda de corte A, ideal para todos los días', 'BrandJ', 'M', 50.00),

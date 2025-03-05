@@ -33,7 +33,7 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioServiceImpl usuarioService;
 	
-	private AuthService authService;
+	
 	
 	@GetMapping({"","/","/home"})
 	public ResponseEntity<List<Usuario>> getAllUsers(@PathVariable Integer id){
@@ -64,11 +64,7 @@ public class UsuarioController {
 		return ResponseEntity.notFound().build();
 	}
 	
-	@PutMapping
-	public ResponseEntity<AuthResponse> updateUsuario(@RequestBody Usuario usuarioRequest) {
-	    System.out.println(usuarioRequest);
-	    return ResponseEntity.ok(authService.modificarUsuario(usuarioRequest));
-	}
+	
 
 	@GetMapping("/me")
 	public ResponseEntity<UsuarioDTO> getAuthenticatedUser() {

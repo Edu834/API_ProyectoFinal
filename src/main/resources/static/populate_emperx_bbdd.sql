@@ -1,5 +1,30 @@
 use emperx_bbdd;
 
+INSERT INTO galerias (
+    foto_frontal,
+    foto_trasera,
+    foto_modelo_frontal,
+    foto_modelo_trasera,
+    foto_modelo_costado,
+    foto_modelo_cerca
+)
+VALUES (
+    '/images/foto_frontal_classic_suit.jpg',
+    '/images/foto_trasera_classic_suit.jpg',
+    '/images/foto_modelo_frontal_classic_suit.jpg',
+    '/images/foto_modelo_trasera_classic_suit.jpg',
+    '/images/foto_modelo_costado_classic_suit.jpg',
+    '/images/foto_modelo_cerca_classic_suit.jpg'
+),(
+    '/images/foto_frontal_slim_suit.jpg',
+    '/images/foto_trasera_slim_suit.jpg',
+    '/images/foto_modelo_frontal_slim_suit.jpg',
+    '/images/foto_modelo_trasera_slim_suit.jpg',
+    '/images/foto_modelo_costado_slim_suit.jpg',
+    '/images/foto_modelo_cerca_slim_suit.jpg'
+);
+
+
 -- Insertamos los estados de los artículos
 INSERT INTO estados (nombre) VALUES
 ('Alquilado'),
@@ -37,8 +62,8 @@ INSERT INTO subcategorias (id_categoria, nombre, descripcion) VALUES
 (4, 'Hats', 'Sombreros de todo tipo');
 
 INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo) VALUES
-('P001', 1, null, 'Classic Suit', 'Traje clásico de corte recto, adecuado para ocasiones formales', 'BrandX', 'H'),
-('P002', 1, null, 'Slim Fit Suit', 'Traje ajustado para un look moderno', 'BrandY', 'H'),
+('P001', 1, 1, 'Classic Suit', 'Traje clásico de corte recto, adecuado para ocasiones formales', 'BrandX', 'H'),
+('P002', 1, 2, 'Slim Fit Suit', 'Traje ajustado para un look moderno', 'BrandY', 'H'),
 ('P003', 1, null, 'Formal Blazer', 'Blazer formal de corte recto, ideal para eventos', 'BrandZ', 'H'),
 ('P004', 1, null, 'Double-breasted Suit', 'Traje de doble botonadura elegante y sofisticado', 'BrandA', 'M'),
 ('P005', 2, null, 'Winter Coat', 'Abrigo de lana para invierno', 'BrandB', 'H'),

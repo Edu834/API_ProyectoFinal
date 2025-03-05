@@ -64,8 +64,8 @@ INSERT INTO subcategorias (id_categoria, nombre, descripcion) VALUES
 
 
 INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
-('P001', 1, null, 'Classic Suit', 'Traje clásico de corte recto, adecuado para ocasiones formales', 'BrandX', 'H', 150.00),
-('P002', 1, null, 'Slim Fit Suit', 'Traje ajustado para un look moderno', 'BrandY', 'H', 180.00),
+('P001', 1, 1, 'Classic Suit', 'Traje clásico de corte recto, adecuado para ocasiones formales', 'BrandX', 'H', 150.00),
+('P002', 1, 2, 'Slim Fit Suit', 'Traje ajustado para un look moderno', 'BrandY', 'H', 180.00),
 ('P003', 1, null, 'Formal Blazer', 'Blazer formal de corte recto, ideal para eventos', 'BrandZ', 'H', 120.00),
 ('P004', 1, null, 'Double-breasted Suit', 'Traje de doble botonadura elegante y sofisticado', 'BrandA', 'M', 200.00),
 ('P005', 2, null, 'Winter Coat', 'Abrigo de lana para invierno', 'BrandB', 'H', 160.00),

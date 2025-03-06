@@ -92,7 +92,7 @@ public class PedidoController {
 		
 	}
 	
-	@PostMapping("/añadirArticuloPedido")
+	@PostMapping("/addArticuloPedido")
 	public ResponseEntity<Pedido> añadirArticuloPedido(@RequestBody ArticuloEnPedidoDTO articuloEnPedidoDto) {
 		Usuario usuario = usuarioService.buscarUno(articuloEnPedidoDto.getIdUsuario());
 		List<Pedido> pedidosCarrito = pedidoService.buscarPorUsuarioyEstado(usuario.getIdUsuario(), "Carrito");
@@ -115,7 +115,7 @@ public class PedidoController {
 		pedidoService.buscarUno(pedido.getIdPedido());
 		ArticulosEnPedidoId idArticuloEnPedido = new ArticulosEnPedidoId(pedido.getIdPedido(),articuloEnPedidoDto.getIdArticulo());
 		ArticulosEnPedido artExistente = articulosEnPedidoService.buscarUno(idArticuloEnPedido);
-		ArticulosEnPedido newarticuloEnPedido = new ArticulosEnPedido(idArticuloEnPedido, articuloEnPedidoDto.getCantidad(), 0, "Disponible", 6, null);
+		ArticulosEnPedido newarticuloEnPedido = new ArticulosEnPedido(idArticuloEnPedido, articuloEnPedidoDto.getCantidad(), 0, "Disponible", articuloEnPedidoDto.getDiasAlquiler(), null);
 		
 		if (artExistente != null) {
 			artExistente.setCantidad(artExistente.getCantidad() + articuloEnPedidoDto.getCantidad());

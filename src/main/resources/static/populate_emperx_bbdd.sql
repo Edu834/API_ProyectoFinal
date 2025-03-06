@@ -945,8 +945,13 @@ INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES
 ('A203', 6),  -- Usado
 ('A204', 2);  -- Retirado
 
+INSERT INTO usuarios (id_usuario, username, firstname, lastname, password, email, direccion, sexo, telefono, role) VALUES
+(1, 'pacoPalo', 'Paco', 'Palotes', '$10$HyvftGdCO8VVa83uYq6hB.V6h1d9USrHDe2ty7iNM69euCsgSIm4i', 'pacoP@gmail.com', 'madrid', 'H', '694467818', 'USER');
 
-
+INSERT INTO pedidos (id_pedido, id_usuario, descripcion, fecha, estado, fecha_entrega) VALUES
+('P001', 1, 'blabla', '2025-02-10','COMPLETADO', '2025-02-16'),
+('P002', 1, 'blabla', '2025-01-22','ENTREGADO', '2025-02-02'),
+('P003', 1, 'blabla', '2025-02-28','CARRITO', NULL);
 
 -- Insertar datos en la tabla articulos_en_pedidos (relación de artículos con pedidos)
 INSERT INTO articulos_en_pedidos (id_articulo, id_pedido, cantidad, cantidad_devuelta, estado, dias_alquiler, fecha_devuelta) VALUES

@@ -102,6 +102,11 @@ public class UsuarioController {
 	            .sexo(usuario.getSexo())
 	            .telefono(usuario.getTelefono())
 	            .fechaAlta(usuario.getFechaAlta())
+	            .fechaNacimiento(usuario.getFechaNacimiento())
+	            .country(usuario.getCountry())
+	            .province(usuario.getProvince())
+	            .city(usuario.getCity())
+	            .zipCode(usuario.getZipCode())
 	            .build();
 
 	    return ResponseEntity.ok(usuarioDTO);

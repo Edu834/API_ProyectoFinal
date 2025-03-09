@@ -57,6 +57,12 @@ public class Usuario implements UserDetails{
 	private String sexo;
 	@Column(nullable = false, updatable = false)
 	private LocalDateTime fechaAlta;
+	private Date fechaNacimiento;
+	private String country;
+	private String province;
+	private String city;
+	@Column(nullable = true)
+	private Integer zipCode;
 
 	private String telefono;
 	@Enumerated(EnumType.STRING) 

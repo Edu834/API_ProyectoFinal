@@ -23,4 +23,9 @@ public class UsuarioDTO {
 	String sexo;
 	String telefono;
 	LocalDateTime fechaAlta;
+	Date fechaNacimiento;
+	String country;
+	String province;
+	String city;
+	Integer zipCode;
 }

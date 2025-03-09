@@ -66,6 +66,11 @@ public class AuthService {
         usuarioActual.setDireccion(usuarioRequest.getDireccion());
         usuarioActual.setSexo(usuarioRequest.getSexo());
         usuarioActual.setTelefono(usuarioRequest.getTelefono());
+        usuarioActual.setFechaNacimiento(usuarioRequest.getFechaNacimiento());
+        usuarioActual.setCountry(usuarioRequest.getCountry());
+        usuarioActual.setProvince(usuarioRequest.getProvince());
+        usuarioActual.setCity(usuarioRequest.getCity());
+        usuarioActual.setZipCode(usuarioRequest.getZipCode());
 
         // 🔹 Si la contraseña cambió, la ciframos antes de guardarla
         if (!usuarioRequest.getPassword().equals(usuarioActual.getPassword())) {

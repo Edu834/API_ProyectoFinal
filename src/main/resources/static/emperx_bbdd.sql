@@ -64,6 +64,11 @@ CREATE TABLE usuarios (
     telefono VARCHAR(20),
     role ENUM('ADMIN', 'USER') NOT NULL DEFAULT 'USER',
     fecha_alta DATETIME DEFAULT CURRENT_TIMESTAMP,
+    fecha_nacimiento date,
+    country varchar(255),
+    province varchar(255),
+    city varchar(255),
+    zip_code int,
     CONSTRAINT chk_sexo CHECK (sexo IN ('M', 'H', 'Undefined'))
 );
 

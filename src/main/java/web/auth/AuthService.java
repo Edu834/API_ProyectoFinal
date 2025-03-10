@@ -59,6 +59,7 @@ public class AuthService {
         Usuario usuarioActual = userRepository.findById(usuarioRequest.getIdUsuario())
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
 
+        // Actualizamos los datos del usuario sin cambiar la contraseña
         usuarioActual.setUsername(usuarioRequest.getUsername());
         usuarioActual.setFirstname(usuarioRequest.getFirstname());
         usuarioActual.setLastname(usuarioRequest.getLastname());
@@ -72,17 +73,48 @@ public class AuthService {
         usuarioActual.setCity(usuarioRequest.getCity());
         usuarioActual.setZipCode(usuarioRequest.getZipCode());
 
-        // 🔹 Si la contraseña cambió, la ciframos antes de guardarla
-        if (!usuarioRequest.getPassword().equals(usuarioActual.getPassword())) {
-            usuarioActual.setPassword(passwordEncoder.encode(usuarioRequest.getPassword())); // ✅ Ya no es null
-        }
-
+        // Guardamos el usuario actualizado
         userRepository.save(usuarioActual);
 
+        // Generamos un nuevo token JWT
         String nuevoToken = jwtService.getToken(usuarioActual);
 
         return AuthResponse.builder()
                 .token(nuevoToken)
                 .build();
     }
+    
+    public AuthResponse cambiarContrasena(int idUsuario, String passwordActual, String nuevaPassword) {
+        // Verificar si las contraseñas son nulas
+        if (nuevaPassword == null || passwordActual == null) {
+            throw new IllegalArgumentException("La contraseña no puede ser nula.");
+        }
+
+        Usuario usuarioActual = userRepository.findById(idUsuario)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+
+        // Verificar que la contraseña actual sea correcta
+        if (!passwordEncoder.matches(passwordActual, usuarioActual.getPassword())) {
+            throw new RuntimeException("La contraseña actual no es correcta.");
+        }
+
+        // Verificar que la nueva contraseña no sea igual a la actual
+        if (passwordActual.equals(nuevaPassword)) {
+            throw new RuntimeException("La nueva contraseña no puede ser la misma que la actual.");
+        }
+
+        // Actualizar la contraseña
+        usuarioActual.setPassword(passwordEncoder.encode(nuevaPassword));
+
+        // Guardar el usuario actualizado
+        userRepository.save(usuarioActual);
+
+        // Generar un nuevo token para el usuario
+        String nuevoToken = jwtService.getToken(usuarioActual);
+
+        return AuthResponse.builder()
+                .token(nuevoToken) // Devolver el nuevo token
+                .build();
+    }
+
 }

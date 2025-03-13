@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +24,7 @@ import web.services.PedidoServiceImpl;
 import web.services.UsuarioServiceImpl;
 
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
@@ -42,7 +44,7 @@ public class PedidoController {
 	
 	
 	@GetMapping({"","/","/home"})
-	public ResponseEntity<List<Pedido>> cargarProductosTodo() {
+	public ResponseEntity<List<Pedido>> cargarPedidosTodo() {
 		List<Pedido> pedidos = pedidoService.todo(); 
 		
 		if (pedidos.isEmpty()) {
@@ -55,6 +57,7 @@ public class PedidoController {
 	@GetMapping("/buscarPor/{idUsuario}")
 	public ResponseEntity<List<Pedido>> buscarPorUsuario(@PathVariable int idUsuario) {
 		List<Pedido> pedidos = pedidoService.buscarPorUsuario(idUsuario);
+		pedidos.remove(pedidoService.buscarPorUsuarioyEstado(idUsuario, "Carrito").getFirst());
 		
 		if (pedidos.isEmpty()) {
 			return ResponseEntity.noContent().build();
@@ -89,7 +92,17 @@ public class PedidoController {
 			return ResponseEntity.noContent().build();
 		}
 		return ResponseEntity.ok(pedido);
+	}
+	
+	@GetMapping("/buscarArticulosEnPedido/{id}")
+	public ResponseEntity<List<ArticulosEnPedido>> buscarArticulosEnPedido(@PathVariable String id) {
 		
+		List<ArticulosEnPedido> articulos = articulosEnPedidoService.buscarPorPedido(id);
+		
+		if (articulos.isEmpty()) {
+			return ResponseEntity.noContent().build();
+		}
+		return ResponseEntity.ok(articulos);
 	}
 	
 	@PostMapping("/addArticuloPedido")
@@ -147,7 +160,7 @@ public class PedidoController {
 		return ResponseEntity.ok(pedido);
 	}
 	
-	@PostMapping("/cambiarCantidadArticuloPedido/{accion}")
+	@PutMapping("/cambiarCantidadArticuloPedido/{accion}")
 	public ResponseEntity<Pedido> cambiarCantidadArticuloPedido(@RequestBody ArticulosEnPedidoId articulosEnPedidoId, @PathVariable String accion) {
 		Pedido pedido = pedidoService.buscarUno(articulosEnPedidoId.getIdPedido());
 		ArticulosEnPedido artEnPedido = articulosEnPedidoService.buscarUno(articulosEnPedidoId);

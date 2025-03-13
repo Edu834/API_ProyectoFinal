@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import web.entidades.ArticulosEnPedido;
 import web.entidades.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{

@@ -34,7 +34,7 @@ public class SecurityConfig {
               authRequest
                 .requestMatchers("/auth/**").permitAll()
                 .requestMatchers("/auth/edit/").authenticated()
-                .requestMatchers("/api/pedidos/**").authenticated()
+                .requestMatchers("/api/pedidos/**").permitAll()
                 .requestMatchers("/api/articulos/**").permitAll()
                 .requestMatchers("/api/usuarios/**").permitAll()
                 .requestMatchers("/api/productos/**").permitAll()
@@ -49,4 +49,5 @@ public class SecurityConfig {
             
             
     }
+	
 }

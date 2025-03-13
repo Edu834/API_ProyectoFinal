@@ -963,7 +963,7 @@ INSERT INTO articulos_en_pedidos (id_articulo, id_pedido, cantidad, cantidad_dev
 ('A004', 'P002', 3, 0, 'Alquilado', 2, NULL);  -- Alquilado
 
 -- Insertar datos en la tabla articulos_en_pedidos con artículos devueltos
-INSERT INTO articulos_en_pedidos (id_articulo, id_pedido, cantidad, cantidad_devuelta, estado, fecha_devuelta) VALUES
-('A001', 'P001', 1, 1, 'Devuelto', '2025-02-22'),  -- Alquilado y devuelto
-('A002', 'P001', 1, 1, 'Devuelto', '2025-03-02'),  -- Alquilado y devuelto
-('A005', 'P001', 1, 1, 'Devuelto', '2025-03-02');  -- Alquilado y devuelto
+INSERT INTO articulos_en_pedidos (id_articulo, id_pedido, cantidad, cantidad_devuelta, estado, dias_alquiler, fecha_devuelta) VALUES
+('A001', 'P001', 1, 1, 'Devuelto', 3, '2025-02-22'),  -- Alquilado y devuelto
+('A002', 'P001', 1, 1, 'Devuelto', 5, '2025-03-02'),  -- Alquilado y devuelto
+('A005', 'P001', 1, 1, 'Devuelto', 6, '2025-03-02');  -- Alquilado y devuelto

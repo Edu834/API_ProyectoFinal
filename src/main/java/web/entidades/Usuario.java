@@ -20,12 +20,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 import jakarta.persistence.UniqueConstraint;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -38,7 +33,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Entity
 @Table(name="usuarios", uniqueConstraints = {@UniqueConstraint(columnNames = {"username"})})
-public class Usuario implements UserDetails{
+public class Usuario implements UserDetails, Serializable{
 
 	private static final long serialVersionUID = 1L;
 	@Id

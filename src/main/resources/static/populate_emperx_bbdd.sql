@@ -105,20 +105,30 @@ INSERT INTO categorias (nombre, descripcion) VALUES
 -- Insertamos las subcategorías, asignadas a las categorías correspondientes
 INSERT INTO subcategorias (id_categoria, nombre, descripcion) VALUES
 (1, 'Suits', 'Trajes formales para diferentes ocasiones'),
-(1, 'Coats & Jackets', 'Abrigos y chaquetas para diversas estaciones del año'),
+(1, 'Coats-&-Jackets', 'Abrigos y chaquetas para diversas estaciones del año'),
 (1, 'Dresses', 'Vestidos para cualquier ocasión'),
 (1, 'Skirts', 'Faldas de todos los estilos'),
 (1, 'T-Shirts', 'Camisetas de diferentes colores y estilos'),
-(1, 'Tops & Bodysuits', 'Tops y bodies de diferentes diseños'),
-(1, 'Jeans & Trousers', 'Jeans y pantalones de todo tipo'),
+(1, 'Tops-&-Bodysuits', 'Tops y bodies de diferentes diseños'),
+(1, 'Jeans-&-Trousers', 'Jeans y pantalones de todo tipo'),
 (1, 'Knitwear', 'Prendas de punto para cualquier temporada'),
 (1, 'Sweatshirts', 'Sudaderas y prendas deportivas'),
-(2, 'Totes', 'Bolsos grandes y espaciosos'),
+(2, 'Totes-&-Backpacks', 'Bolsos grandes y espaciosos'),
 (2, 'Clutches', 'Bolsos pequeños y elegantes'),
+(2, 'Shoulder bags', 'Bolsos de hombro'),
+(2, 'Top handle', 'Bolsos de asa'),
 (3, 'Boots', 'Botas para todo tipo de clima y ocasión'),
 (3, 'Sneakers', 'Zapatillas deportivas para el día a día'),
+(3, 'Flats', 'Sandalias'),
+(3, 'Heels', 'Tacones'),
+(3, 'Tabis', 'Zapatos estilo japones tabi'),
 (4, 'Watches', 'Relojes de diferentes estilos'),
-(4, 'Hats', 'Sombreros de todo tipo');
+(4, 'Hats', 'Sombreros de todo tipo'),
+(4, 'Eyewear', 'Gafas'),
+(4, 'Small leather goods', 'Carteras y monederos'),
+(4, 'Jewlery', 'Joyeria'),
+(4, 'Other accessories', 'Otros');
+
 
 
 

@@ -8,9 +8,6 @@ INSERT INTO galerias (
     foto_modelo_costado,
     foto_modelo_cerca
 )
-
-
-
 VALUES (
     '/images/foto_frontal_classic_suit.jpg',
     '/images/foto_trasera_classic_suit.jpg',
@@ -81,7 +78,95 @@ VALUES (
     '/images/foto_modelo_trasera_cocktail_dress.jpg',
     '/images/foto_modelo_costado_cocktail_dress.jpg',
     '/images/foto_modelo_cerca_cocktail_dress.jpg'
+),(
+    '/images/foto_frontal_michael_kors_shoulder_bag.jpg',
+    '/images/foto_trasera_michael_kors_shoulder_bag.jpg',
+    '/images/foto_modelo_frontal_michael_kors_shoulder_bag.jpg',
+    '',
+    '',
+    ''
+
+),(
+    '/images/foto_frontal_alva_quilted_top_handle_bag.jpg',
+    '/images/foto_trasera_alva_quilted_top_handle_bag.jpg',
+    '/images/foto_modelo_frontal_alva_quilted_top_handle_bag.jpg',
+    '/images/foto_modelo_trasera_alva_quilted_top_handle_bag.jpg',
+    '/images/foto_modelo_costado_alva_quilted_top_handle_bag.jpg',
+    ''
+
+),(
+    '/images/foto_frontal_aubrielle_canvas_two-tone_handle_bag.jpg',
+    '/images/foto_trasera_aubrielle_canvas_two-tone_handle_bag.jpg',
+    '/images/foto_modelo_frontal_aubrielle_canvas_two-tone_handle_bag.jpg',
+    '/images/foto_modelo_trasera_aubrielle_canvas_two-tone_handle_bag.jpg',
+    '/images/foto_modelo_costado_aubrielle_canvas_two-tone_handle_bag.jpg',
+    ''
+
+),(
+    '/images/foto_frontal_hermine_flats.jpg',
+    '/images/foto_trasera_hermine_flats.jpg',
+    '/images/foto_modelo_frontal_hermine_flats.jpg',
+    '/images/foto_modelo_trasera_hermine_flats.jpg',
+    '/images/foto_modelo_costado_hermine_flats.jpg',
+    '/images/foto_modelo_cerca_hermine_flats.jpg'
+),(
+    '/images/foto_frontal_jolin_flats.jpg',
+    '/images/foto_trasera_jolin_flats.jpg',
+    '/images/foto_modelo_frontal_jolin_flats.jpg',
+    '/images/foto_modelo_trasera_jolin_flats.jpg',
+    '/images/foto_modelo_costado_jolin_flats.jpg',
+    '/images/foto_modelo_cerca_jolin_flats.jpg'
+),(
+    '/images/foto_frontal_emily_heels.jpg',
+    '',
+    '',
+    '',
+    '',
+    ''
+),(
+    '/images/foto_frontal_laena_heels.jpg',
+    '',
+    '',
+    '',
+    '',
+    ''
+),(
+    '/images/foto_frontal_tabi_leather_sandals.jpg',
+    '/images/foto_trasera_tabi_leather_sandals.jpg',
+    '/images/foto_modelo_frontal_tabi_leather_sandals.jpg',
+    '',
+    '',
+    ''
+),(
+    '/images/foto_frontal_pumps_mary-jane_tabi.jpg',
+    '/images/foto_trasera_pumps_mary-jane_tabi.jpg',
+    '/images/foto_modelo_frontal_pumps_mary-jane_tabi.jpg',
+    '/images/foto_modelo_trasera_pumps_mary-jane_tabi.jpg',
+    '/images/foto_modelo_costado_pumps_mary-jane_tabi.jpg',
+    '/images/foto_modelo_cerca_pumps_mary-jane_tabi.jpg'
+),(
+    '/images/foto_frontal_OO9374_frogskins_oakley.jpg',
+    '/images/foto_trasera_OO9374_frogskins_oakley.jpg',
+    '/images/foto_modelo_frontal_OO9374_frogskins_oakley.jpg',
+    '/images/foto_modelo_trasera_OO9374_frogskins_oakley.jpg',
+    '/images/foto_modelo_costado_OO9374_frogskins_oakley.jpg',
+    '/images/foto_modelo_cerca_OO9374_frogskins_oakley.jpg'
+),(
+    '/images/foto_frontal_tarjetero_lv_X_tm.jpg',
+    '/images/foto_trasera_tarjetero_lv_X_tm.jpg',
+    '/images/foto_modelo_frontal_tarjetero_lv_X_tm.jpg',
+    '/images/foto_modelo_trasera_tarjetero_lv_X_tm.jpg',
+    '',
+    ''
+),(
+    '/images/foto_frontal_collar_blue_melted_starts.jpg',
+    '/images/foto_trasera_collar_blue_melted_starts.jpg',
+    '/images/foto_modelo_frontal_collar_blue_melted_starts.jpg',
+    '/images/foto_modelo_trasera_collar_blue_melted_starts.jpg',
+    '/images/foto_modelo_costado_collar_blue_melted_starts.jpg',
+    ''
 );
+
 
 
 -- Insertamos los estados de los artículos
@@ -116,7 +201,7 @@ INSERT INTO subcategorias (id_categoria, nombre, descripcion) VALUES
 (2, 'Totes-&-Backpacks', 'Bolsos grandes y espaciosos'),
 (2, 'Clutches', 'Bolsos pequeños y elegantes'),
 (2, 'Shoulder bags', 'Bolsos de hombro'),
-(2, 'Top handle', 'Bolsos de asa'),
+(2, 'Top-handle', 'Bolsos de asa'),
 (3, 'Boots', 'Botas para todo tipo de clima y ocasión'),
 (3, 'Sneakers', 'Zapatillas deportivas para el día a día'),
 (3, 'Flats', 'Sandalias'),
@@ -125,9 +210,9 @@ INSERT INTO subcategorias (id_categoria, nombre, descripcion) VALUES
 (4, 'Watches', 'Relojes de diferentes estilos'),
 (4, 'Hats', 'Sombreros de todo tipo'),
 (4, 'Eyewear', 'Gafas'),
-(4, 'Small leather goods', 'Carteras y monederos'),
+(4, 'Small-leather-goods', 'Carteras y monederos'),
 (4, 'Jewlery', 'Joyeria'),
-(4, 'Other accessories', 'Otros');
+(4, 'Other-accessories', 'Otros');
 
 
 
@@ -173,10 +258,14 @@ INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descrip
 ('P036', 9, null, 'Fleece Sweatshirt', 'Sudadera de forro polar, muy abrigada', 'BrandG', 'H', 60.00);
 
 
--- Insertar productos para Totes
+-- Insertar productos para Totes mujer
 INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
 ('P037', 10, null, 'Tote Bag Classic', 'Bolso grande y espacioso para todo el día', 'BrandT', 'M', 50.00),
 ('P038', 10, null, 'Tote Bag Modern', 'Bolso moderno y de gran capacidad', 'BrandU', 'M', 55.00);
+-- Insertar productos para Totes hombre
+INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
+('P049', 10, null, 'Tote Bag Classic', 'Bolso grande y espacioso para todo el día', 'BrandT', 'H', 50.00),
+('P050', 10, null, 'Tote Bag Modern', 'Bolso moderno y de gran capacidad', 'BrandU', 'H', 55.00);
 
 -- Insertar productos para Clutches
 INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
@@ -185,13 +274,13 @@ INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descrip
 
 -- Insertar productos para Boots
 INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
-('P041', 12, null, 'Leather Boots', 'Botas de cuero elegantes', 'BrandX', 'M', 120.00),
-('P042', 12, null, 'Suede Boots', 'Botas de ante suaves y cómodas', 'BrandY', 'H', 110.00);
+('P041', 14, null, 'Leather Boots', 'Botas de cuero elegantes', 'BrandX', 'M', 120.00),
+('P042', 14, null, 'Suede Boots', 'Botas de ante suaves y cómodas', 'BrandY', 'H', 110.00);
 
 -- Insertar productos para Sneakers
 INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
-('P043', 13, null, 'Sporty Sneakers', 'Zapatillas deportivas para el día a día', 'BrandZ', 'H', 60.00),
-('P044', 13, null, 'Casual Sneakers', 'Zapatillas casuales para el fin de semana', 'BrandA', 'M', 55.00);
+('P043', 15, null, 'Sporty Sneakers', 'Zapatillas deportivas para el día a día', 'BrandZ', 'H', 60.00),
+('P044', 15, null, 'Casual Sneakers', 'Zapatillas casuales para el fin de semana', 'BrandA', 'M', 55.00);
 
 -- Insertar productos para Watches
 INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
@@ -200,8 +289,174 @@ INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descrip
 
 -- Insertar productos para Hats
 INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
-('P047', 15, null, 'Fedora Hat', 'Sombrero de ala ancha estilo fedora', 'BrandD', 'M', 50.00),
-('P048', 15, null, 'Beanie Hat', 'Sombrero de lana ajustado, ideal para invierno', 'BrandE', 'H', 25.00);
+('P047', 20, null, 'Fedora Hat', 'Sombrero de ala ancha estilo fedora', 'BrandD', 'M', 50.00),
+('P048', 20, null, 'Beanie Hat', 'Sombrero de lana ajustado, ideal para invierno', 'BrandE', 'H', 25.00);
+
+-- BAGS
+
+-- Insertar productos para shoulder bags mujer
+INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
+('P059', 12, 11, 'Micheal Kors Shoulder bag', 'Este minipochette con nuestro logotipo imperio metalizado resulta ideal para viajar sin mucho peso. ', 'Michael Kors', 'M', 90.00);
+-- Artículos para el producto 'P059'
+INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
+('A231', 'P059', 'Micheal Kors Shoulder bag - Logo', 'Única', 'Multicolor', 10, '#000000', 'Este minipochette con nuestro logotipo imperio metalizado resulta ideal para viajar sin mucho peso.');
+INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES
+('A231', 4),
+('A231', 3);
+
+-- Insertar productos para top handle mujer
+INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
+('P051', 13, 12, 'Alva Quilted Top Handle Bag', 'The Alva range returns in a brand new iteration that makes it the perfect day-to-night bag', 'Alva Quilted', 'M', 60.00),
+('P052', 13, 13, 'Aubrielle Canvas Two-Tone Top Handle Bag', 'The season for canvas bags is here, and the Aubrielle is an elegant way to get on the trend.', 'Aubrille Canvas', 'M', 75.00);
+-- Artículos para el producto 'P051'
+INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
+('A208', 'P051', 'Alva Quilted Top Handle Bag - Cream', 'Única', 'Crema', 10, '#000000', 'The Alva range returns in a brand new iteration that makes it the perfect day-to-night bag');
+-- Artículos para el producto 'P052'
+INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
+('A209', 'P052', 'Aubrielle Canvas Two-Tone Top Handle Bag', 'Única', 'Negro', 5, '#000000', 'The season for canvas bags is here, and the Aubrielle is an elegant way to get on the trend.');
+INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES
+('A208', 4),
+('A209', 4),
+('A208', 3),
+('A209', 3);
+
+
+-- SHOES
+
+-- Insertar productos para flats mujer
+INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
+('P053', 16, 14, 'Hermine flats', 'Hermine son zapatos flats atrevidos con detalles metálicos.', 'Hermine', 'M', 120.00),
+('P054', 16, 15, 'Jolin flats', 'Jolin son unas elegantes bailarinas planas de cuero plateado.', 'Jolin', 'M', 100.00);
+-- Artículos para el producto 'P053'
+INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
+('A210', 'P053', 'Hermine flats - Charol', '37', 'Negro', 3, '#000000', 'Hermine son zapatos flats atrevidos con detalles metálicos.'),
+('A211', 'P053', 'Hermine flats - Charol', '38', 'Negro', 2, '#000000', 'Hermine son zapatos flats atrevidos con detalles metálicos.'),
+('A212', 'P053', 'Hermine flats - Charol', '40', 'Negro', 1, '#000000', 'Hermine son zapatos flats atrevidos con detalles metálicos.');
+-- Artículos para el producto 'P054'
+INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
+('A213', 'P054', 'Jolin flats - Metalic', '37', 'Metálico', 3, '#000000', 'Jolin son unas elegantes bailarinas planas de cuero plateado.'),
+('A214', 'P054', 'Jolin flats - Metalic', '38', 'Metálico', 2, '#000000', 'Jolin son unas elegantes bailarinas planas de cuero plateado.'),
+('A215', 'P054', 'Jolin flats - Metalic', '40', 'Metálico', 1, '#000000', 'Jolin son unas elegantes bailarinas planas de cuero plateado.');
+INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES
+('A210', 4),
+('A211', 5),
+('A212', 6),
+('A213', 4),
+('A214', 6),
+('A215', 4),
+('A210', 3),
+('A211', 3),
+('A212', 3),
+('A213', 3),
+('A214', 3),
+('A215', 3);
+
+-- Insertar productos para heels mujer
+INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
+('P055', 17, 16, 'Emily heels', ' Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.', 'Emily', 'M', 99.00),
+('P056', 17, 17, 'Leana heels', 'This ankle boot with laces fits all styles of heels dance, from the sexiest to the most urban thanks to its incomparable style.', 'Leana', 'M', 99.00);
+-- Artículos para el producto 'P055'
+INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
+('A216', 'P055', 'Emily heels - Black', '37', 'Negro', 3, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.'),
+('A217', 'P055', 'Emily heels - Black', '38', 'Negro', 2, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.'),
+('A218', 'P055', 'Emily heels - White', '38', 'Blanco', 6, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.'),
+('A219', 'P055', 'Emily heels - White', '40', 'Blanco', 3, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.');
+-- Artículos para el producto 'P056'
+INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
+('A220', 'P056', 'Leona heels - Black', '39', 'Negro', 8, '#000000', 'This ankle boot with laces fits all styles of heels dance, from the sexiest to the most urban thanks to its incomparable style.'),
+('A221', 'P056', 'Leona heels - Black', '40', 'Negro', 8, '#000000', 'This ankle boot with laces fits all styles of heels dance, from the sexiest to the most urban thanks to its incomparable style.'),
+('A222', 'P056', 'Leona heels - Black', '36', 'Negro', 8, '#000000', 'This ankle boot with laces fits all styles of heels dance, from the sexiest to the most urban thanks to its incomparable style.');
+INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES
+('A216', 4),
+('A217', 5),
+('A218', 6),
+('A219', 4),
+('A220', 6),
+('A221', 4),
+('A222', 5),
+('A216', 3),
+('A217', 3),
+('A218', 3),
+('A219', 3),
+('A220', 3),
+('A221', 3),
+('A222', 3);
+
+-- Insertar productos para tabis mujer
+INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
+('P057', 18, 18, 'Tabi leather sandals', 'Tabi flat leather sandals.', 'Maison Margiela', 'M', 130.00),
+('P058', 18, 19, 'Pumps Mary-Jane Tabi', 'Confeccionados en piel de napa suave con una correa ajustable en la parte frontal.', 'Maison Margiela', 'M', 200.00);
+-- Artículos para el producto 'P057'
+INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
+('A223', 'P057', 'Tabi leather sandals - Black', '37', 'Negro', 3, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.'),
+('A224', 'P057', 'Tabi leather sandals - Black', '38', 'Negro', 2, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.'),
+('A225', 'P057', 'Tabi leather sandals - Black', '39', 'Negro', 6, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.'),
+('A226', 'P057', 'Tabi leather sandals - Black', '40', 'Negro', 3, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.');
+-- Artículos para el producto 'P058'
+INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
+('A227', 'P058', 'Pumps Mary-Jane Tabi - Blue', '37', 'Negro', 3, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.'),
+('A228', 'P058', 'Pumps Mary-Jane Tabi - Blue', '38', 'Negro', 2, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.'),
+('A229', 'P058', 'Pumps Mary-Jane Tabi - Blue', '39', 'Negro', 6, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.'),
+('A230', 'P058', 'Pumps Mary-Jane Tabi - Blue', '40', 'Negro', 3, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.');
+INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES
+('A223', 4),
+('A224', 5),
+('A225', 6),
+('A226', 4),
+('A227', 6),
+('A228', 4),
+('A229', 5),
+('A230', 7),
+('A223', 3),
+('A224', 3),
+('A225', 3),
+('A226', 3),
+('A227', 3),
+('A228', 3),
+('A229', 3),
+('A230', 3);
+
+-- ACCESSORIES
+
+-- Insertar productos para eyewear mujer
+INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
+('P060', 21, 20, 'OO9374 Frogskins Oakley', 'Inspiradas en el deporte y en la cultura pop, las Frogskins™ Lite son la nueva generación de las Frogskins™, las gafas de sol más emblemáticas de la marca.', 'Oakley', 'M', 70.00);
+-- Insertar articulos P60
+INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
+('A232', 'P060', 'OO9374 Frogskins Oakley - Black', 'Única', 'Negro', 3, '#000000', 'Inspiradas en el deporte y en la cultura pop, las Frogskins™ Lite son la nueva generación de las Frogskins™, las gafas de sol más emblemáticas de la marca.'),
+('A233', 'P060', 'OO9374 Frogskins Oakley - Brown', 'Única', 'Marrón', 2, '#000000', 'Inspiradas en el deporte y en la cultura pop, las Frogskins™ Lite son la nueva generación de las Frogskins™, las gafas de sol más emblemáticas de la marca.');
+INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES
+('A232', 4),
+('A233', 4),
+('A232', 3),
+('A233', 3);
+
+-- Insertar productos para small leather goods mujer
+INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
+('P061', 22, 21, 'Tarjetero LV x TM', 'La exclusiva colección Louis Vuitton x Takashi Murakami está limitada a una unidad por producto, y por cliente, lo que garantiza su exclusividad.', 'Lous Vuitton', 'M', 100.00);
+-- Insertar articulos P61
+INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
+('A234', 'P061', 'Tarjetero LV x TM', 'Única', 'Multicolor', 1, '#000000', 'La exclusiva colección Louis Vuitton x Takashi Murakami está limitada a una unidad por producto, y por cliente, lo que garantiza su exclusividad.');
+INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES
+('A234', 4),
+('A234', 3);
+
+-- Insertar productos para jewlery mujer
+INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
+('P062', 23, 22, 'Collar Blue Melted Stars', 'El collar Melted Blue Stars está elaborado con cuentas de vidrio de colores, nuestro dije con el logotipo de Melted Icon y un broche de langosta bañado en plata de alta calidad.', 'TwoJeys', 'M', 100.00);
+-- Insertar articulos P62
+INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
+('A235', 'P062', 'Collar Blue Melted Stars', 'Única', 'Multicolor', 5, '#000000', 'El collar Melted Blue Stars está elaborado con cuentas de vidrio de colores, nuestro dije con el logotipo de Melted Icon y un broche de langosta bañado en plata de alta calidad.');
+INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES
+('A235', 4),
+('A235', 3);
+-- Insertar pro
+
+-- Artículos para el producto 'P058'
+
+
+
+-- Artículos para el producto 'P056'
 
 -- Artículos para los productos de la subcategoría 'Suits'
 
@@ -504,6 +759,7 @@ INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, co
 ('A183', 'P038', 'Tote Bag Modern - Red', 'Única', 'Rojo', 12, '#FF0000', 'Bolso moderno con gran capacidad'),
 ('A184', 'P038', 'Tote Bag Modern - Grey', 'Única', 'Gris', 8, '#808080', 'Bolso moderno con gran capacidad');
 
+
 -- Insertar artículos para Boots
 INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
 ('A185', 'P041', 'Leather Boots - Black', '42', 'Negro', 5, '#000000', 'Botas de cuero elegantes y duraderas'),
@@ -538,6 +794,11 @@ INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, co
 ('A202', 'P047', 'Fedora Hat - Grey', 'Única', 'Gris', 7, '#808080', 'Sombrero fedora elegante de ala ancha'),
 ('A203', 'P048', 'Beanie Hat - Red', 'Única', 'Rojo', 8, '#FF0000', 'Sombrero de lana tipo beanie para invierno'),
 ('A204', 'P048', 'Beanie Hat - Blue', 'Única', 'Azul', 12, '#0000FF', 'Sombrero de lana tipo beanie para invierno');
+-- articulos totes
+INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
+('A205', 'P049', 'Tote Bag Modern - Grey', 'Única', 'Gris', 8, '#808080', 'Bolso moderno con gran capacidad'),
+('A206', 'P050', 'Tote Bag Modern - Grey', 'Única', 'Gris', 8, '#808080', 'Bolso moderno con gran capacidad'),
+('A207', 'P050', 'Tote Bag Modern - Blue', 'Única', 'Azul', 8, '#808080', 'Bolso moderno con gran capacidad');
 
 
 

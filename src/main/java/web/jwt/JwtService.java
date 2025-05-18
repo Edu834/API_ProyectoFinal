@@ -20,9 +20,19 @@ public class JwtService {
 	
 	private static final String SECRET_KEY="586E3272357538782F413F4428472B4B6250655368566B597033733676397924";
 
-    public String getToken(UserDetails user) {
-        return getToken(new HashMap<>(), user);
-    }
+	public String getToken(UserDetails user) {
+	    Map<String, Object> claims = new HashMap<>();
+
+	    // Extraer el primer rol (asumiendo uno por usuario)
+	    String role = user.getAuthorities().stream()
+	        .findFirst()
+	        .map(auth -> auth.getAuthority()) // ej: "ROLE_ADMIN"
+	        .orElse("ROLE_USER");
+
+	    claims.put("role", role); // ← Incluimos el rol en el payload del JWT
+
+	    return getToken(claims, user);
+	}
 
     private String getToken(Map<String,Object> extraClaims, UserDetails user) {
         return Jwts

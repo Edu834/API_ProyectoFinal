@@ -28,12 +28,12 @@ CREATE TABLE subcategorias (
 
 CREATE TABLE galerias (
 	id_galeria INT AUTO_INCREMENT PRIMARY KEY,
-    foto_frontal VARCHAR(255),
-    foto_trasera VARCHAR(255),
-    foto_modelo_frontal VARCHAR(255),
-    foto_modelo_trasera VARCHAR(255),
-    foto_modelo_costado VARCHAR(255),
-    foto_modelo_cerca VARCHAR(255)
+    foto_frontal VARCHAR(500),
+    foto_trasera VARCHAR(500),
+    foto_modelo_frontal VARCHAR(500),
+    foto_modelo_trasera VARCHAR(500),
+    foto_modelo_costado VARCHAR(500),
+    foto_modelo_cerca VARCHAR(500)
 );
 
 -- Tabla de Productos

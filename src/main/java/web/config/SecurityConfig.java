@@ -32,12 +32,14 @@ public class SecurityConfig {
                 .disable())
             .authorizeHttpRequests(authRequest ->
               authRequest
+              
                 .requestMatchers("/auth/**").permitAll()
                 .requestMatchers("/auth/edit/").authenticated()
                 .requestMatchers("/api/pedidos/**").permitAll()
                 .requestMatchers("/api/articulos/**").permitAll()
                 .requestMatchers("/api/usuarios/**").permitAll()
                 .requestMatchers("/api/productos/**").permitAll()
+                .requestMatchers("/api/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 )
             .sessionManagement(sessionManager->

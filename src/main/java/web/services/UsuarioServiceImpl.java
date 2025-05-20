@@ -1,5 +1,6 @@
 package web.services;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -59,6 +60,21 @@ public class UsuarioServiceImpl implements UsuarioService{
 			}
 	}
 
+	@Override
+	public boolean eliminarUsuario(int idUsuario) {
+		Optional<Usuario> usuario = urepo.findById(idUsuario);
+	    if (usuario.isPresent()) {
+	        urepo.delete(usuario.get());
+	        return true;
+	    }
+	    return false;
+	}
+	public Usuario guardar(Usuario usuario) {
+	    // Aquí podrías agregar validaciones adicionales si son necesarias
+	    
+	    // Guardamos y devolvemos el usuario actualizado
+	    return urepo.save(usuario);
+	}
 //	public AuthResponse modificar(Usuario usuarioRequest) {
 //	    // Buscar el usuario en la base de datos
 //	    Usuario usuarioActual = urepo.findById(usuarioRequest.getIdUsuario())

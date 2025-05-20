@@ -1,10 +1,12 @@
 package web.auth;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -24,21 +26,29 @@ public class AuthService {
     private final AuthenticationManager authenticationManager;
 
     public AuthResponse login(LoginRequest request) {
-        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
-        UserDetails user=userRepository.findByUsername(request.getUsername()).orElseThrow();
-        String token=jwtService.getToken(user);
-        return AuthResponse.builder()
-            .token(token)
-            .build();
+        authenticationManager.authenticate(
+            new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
+        );
 
+        UserDetails user = userRepository.findByUsername(request.getUsername())
+                                .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
+
+        long expirationTimeMillis = request.isRememberMe() ? 7 * 24 * 60 * 60 * 1000L : 30 * 60 * 1000L;
+
+        String token = jwtService.getToken(user, expirationTimeMillis);
+
+        return AuthResponse.builder()
+                .token(token)
+                .build();
     }
+
 
     public AuthResponse register(RegisterRequest request) {
         Usuario user = Usuario.builder()
             .username(request.getUsername())
-            .password(passwordEncoder.encode( request.getPassword()))
+            .password(passwordEncoder.encode(request.getPassword()))
             .firstname(request.getFirstname())
-            .lastname(request.lastname)
+            .lastname(request.getLastname())   // CORREGIDO aquí
             .direccion(request.getDireccion())
             .sexo(request.getSexo())
             .email(request.getEmail())
@@ -49,11 +59,17 @@ public class AuthService {
 
         userRepository.save(user);
 
+        // Opcional: convertir Usuario a UserDetails (si Usuario implementa UserDetails puedes pasar user directo)
+        UserDetails userDetails = user; // O si no implementa, crea una clase adaptadora o busca por username
+
+        // Generar token (puedes definir duración estándar o recordar)
+        String token = jwtService.getToken(user, 30 * 60 * 1000L);
+
         return AuthResponse.builder()
-            .token(jwtService.getToken(user))
+            .token(token)
             .build();
-        
     }
+
     
     public AuthResponse modificarUsuario(Usuario usuarioRequest) {
         Usuario usuarioActual = userRepository.findById(usuarioRequest.getIdUsuario())
@@ -77,7 +93,7 @@ public class AuthService {
         userRepository.save(usuarioActual);
 
         // Generamos un nuevo token JWT
-        String nuevoToken = jwtService.getToken(usuarioActual);
+        String nuevoToken = jwtService.getToken(usuarioActual, 30 * 60 * 1000L);
 
         return AuthResponse.builder()
                 .token(nuevoToken)
@@ -110,7 +126,7 @@ public class AuthService {
         userRepository.save(usuarioActual);
 
         // Generar un nuevo token para el usuario
-        String nuevoToken = jwtService.getToken(usuarioActual);
+        String nuevoToken = jwtService.getToken(usuarioActual, 30 * 60 * 1000L);
 
         return AuthResponse.builder()
                 .token(nuevoToken) // Devolver el nuevo token

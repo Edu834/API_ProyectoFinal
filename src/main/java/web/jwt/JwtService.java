@@ -20,30 +20,29 @@ public class JwtService {
 	
 	private static final String SECRET_KEY="586E3272357538782F413F4428472B4B6250655368566B597033733676397924";
 
-	public String getToken(UserDetails user) {
+	public String getToken(UserDetails user, long expirationMillis) {
 	    Map<String, Object> claims = new HashMap<>();
 
-	    // Extraer el primer rol (asumiendo uno por usuario)
 	    String role = user.getAuthorities().stream()
 	        .findFirst()
-	        .map(auth -> auth.getAuthority()) // ej: "ROLE_ADMIN"
+	        .map(auth -> auth.getAuthority())
 	        .orElse("ROLE_USER");
 
-	    claims.put("role", role); // ← Incluimos el rol en el payload del JWT
+	    claims.put("role", role);
 
-	    return getToken(claims, user);
+	    return createToken(claims, user.getUsername(), expirationMillis);
 	}
 
-    private String getToken(Map<String,Object> extraClaims, UserDetails user) {
-        return Jwts
-            .builder()
-            .setClaims(extraClaims)
-            .setSubject(user.getUsername())
-            .setIssuedAt(new Date(System.currentTimeMillis()))
-            .setExpiration(new Date(System.currentTimeMillis()+1000*60*24))
-            .signWith(getKey(), SignatureAlgorithm.HS256)
-            .compact();
-    }
+	private String createToken(Map<String, Object> claims, String subject, long expirationMillis) {
+	    return Jwts.builder()
+	        .setClaims(claims)
+	        .setSubject(subject)
+	        .setIssuedAt(new Date(System.currentTimeMillis()))
+	        .setExpiration(new Date(System.currentTimeMillis() + expirationMillis))
+	        .signWith(getKey(), SignatureAlgorithm.HS256)
+	        .compact();
+	}
+
 
     private Key getKey() {
        byte[] keyBytes=Decoders.BASE64.decode(SECRET_KEY);

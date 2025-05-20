@@ -16,6 +16,8 @@ public interface UsuarioService {
 	Usuario buscarUno(int idUsuario);
 	Usuario buscarPorUsername(String username);
 	Usuario alta(Usuario usuario);
+	boolean eliminarUsuario(int idUsuario);
+	Usuario guardar(Usuario usuario);
 //	AuthResponse modificar(Usuario usuario);
 	
 }

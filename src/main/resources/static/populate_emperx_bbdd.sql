@@ -1217,7 +1217,8 @@ INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES
 ('A204', 2);  -- Retirado
 
 INSERT INTO usuarios (id_usuario, username, firstname, lastname, password, email, direccion, sexo, telefono, role) VALUES
-(1, 'pacoPalo', 'Paco', 'Palotes', '$10$HyvftGdCO8VVa83uYq6hB.V6h1d9USrHDe2ty7iNM69euCsgSIm4i', 'pacoP@gmail.com', 'madrid', 'H', '694467818', 'USER');
+(1, 'Edu34', 'Eduardo', 'Blázquez', '$2a$10$95qh8YzYb8He8hUZhdqpjO741rL.2YlJxByD/DxUotCFE9TPuqOUu', 'eduardoblazquez34@gmail.com', 'C/pez', 'Undefined', '694467818', 'USER'),
+(2, 'pacoPalo', 'Paco', 'Palotes', '$10$HyvftGdCO8VVa83uYq6hB.V6h1d9USrHDe2ty7iNM69euCsgSIm4i', 'pacoP@gmail.com', 'madrid', 'H', '694467818', 'USER');
 
 INSERT INTO pedidos (id_pedido, id_usuario, descripcion, fecha, estado, fecha_entrega) VALUES
 ('P001', 1, 'blabla', '2025-02-10','COMPLETADO', '2025-02-16'),

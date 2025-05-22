@@ -54,4 +54,9 @@ public class ArticuloServiceImpl implements ArticuloService{
 		return arepo.findByProducto_Nombre(nombre);
 	}
 
+	@Override
+	public List<Articulo> findArticulosByPedido(String idPedido) {
+		return arepo.findArticulosByPedido(idPedido);
+	}
+
 }

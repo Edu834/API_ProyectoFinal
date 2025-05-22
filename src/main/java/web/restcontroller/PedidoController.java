@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import web.entidades.Articulo;
 import web.entidades.ArticuloEnPedidoDTO;
 import web.entidades.ArticulosEnPedido;
 import web.entidades.ArticulosEnPedidoId;
@@ -209,6 +210,16 @@ public class PedidoController {
 		pedidoService.modificar(pedido);
 		
 		return ResponseEntity.ok(pedido);
+	}
+	
+	@GetMapping("/buscarArticulosCompletoEnPedido/{id}")
+	public ResponseEntity<List<Articulo>> buscarArticulosCompletoEnPedido(@PathVariable String id) {
+		
+		List<Articulo> articulos = articuloService.findArticulosByPedido(id);
+		if (articulos.isEmpty()) {
+			return ResponseEntity.noContent().build();
+		}
+		return ResponseEntity.ok(articulos);
 	}
 	
 	

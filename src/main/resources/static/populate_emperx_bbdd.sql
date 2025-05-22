@@ -40,7 +40,7 @@ INSERT INTO usuarios (username, firstname, lastname, password, email, direccion,
 ('pablomorales1', 'Pablo', 'Morales', 'pass27', 'pablo.morales1@example.com', 'Calle Rios 27', 'H', '555000027', 'USER', '2025-05-17 11:55:00', '1988-03-27', 'España', 'Ciudad Real', 'Ciudad Real', 13001),
 ('aliciagonzalez1', 'Alicia', 'Gonzalez', 'pass28', 'alicia.gonzalez1@example.com', 'Av. Montaña 28', 'M', '555000028', 'USER', '2025-05-18 16:40:00', '1994-04-28', 'España', 'Cuenca', 'Cuenca', 16001),
 ('raulgarcia1', 'Raul', 'Garcia', 'pass29', 'raul.garcia1@example.com', 'Plaza Alta 29', 'H', '555000029', 'USER', '2025-05-19 09:30:00', '1989-05-29', 'España', 'Albacete', 'Albacete', 02001),
-('martaramos1', 'Marta', 'Ramos', 'pass30', 'marta.ramos1@example.com', 'Calle Norte 30', 'M', '555000030', 'USER', '2025-05-20 13:50:00', '1993-06-30', 'España', 'Guadalajara', 'Guadalajara', 19001);pedidospedidospedidos
+('martaramos1', 'Marta', 'Ramos', 'pass30', 'marta.ramos1@example.com', 'Calle Norte 30', 'M', '555000030', 'USER', '2025-05-20 13:50:00', '1993-06-30', 'España', 'Guadalajara', 'Guadalajara', 19001);
 
 
 INSERT INTO galerias (

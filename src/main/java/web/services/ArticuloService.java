@@ -3,6 +3,7 @@ package web.services;
 import java.util.List;
 
 import web.entidades.Articulo;
+import web.entidades.Producto;
 
 public interface ArticuloService {
 	
@@ -15,4 +16,6 @@ public interface ArticuloService {
 	List<Articulo> buscarPorNombreProducto(String nombre);
 	Articulo buscarUno(String idArticulo);
 	List<Articulo> findArticulosByPedido(String idPedido);
+	String obtenerRutaFotoFrontal(String idArticulo);
+	Producto obtenerProductoDesdeArticulo(String idArticulo);
 }

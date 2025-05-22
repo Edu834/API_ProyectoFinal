@@ -5,11 +5,18 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.NoResultException;
+import jakarta.persistence.PersistenceContext;
 import web.entidades.Articulo;
+import web.entidades.Producto;
 import web.repository.ArticuloRepository;
 
 @Service
 public class ArticuloServiceImpl implements ArticuloService{
+	
+	@PersistenceContext
+    private EntityManager em;
 	
 	@Autowired
 	private ArticuloRepository arepo;
@@ -57,6 +64,35 @@ public class ArticuloServiceImpl implements ArticuloService{
 	@Override
 	public List<Articulo> findArticulosByPedido(String idPedido) {
 		return arepo.findArticulosByPedido(idPedido);
+	}
+
+	@Override
+    public String obtenerRutaFotoFrontal(String idArticulo) {
+        String sql = """
+            SELECT g.foto_frontal
+            FROM articulos a
+            JOIN productos p ON a.id_producto = p.id_producto
+            JOIN galerias g ON p.id_galeria = g.id_galeria
+            WHERE a.id_articulo = :idArticulo
+        """;
+
+        try {
+            return (String) em.createNativeQuery(sql)
+                    .setParameter("idArticulo", idArticulo)
+                    .getSingleResult();
+        } catch (NoResultException e) {
+            return null;
+        }
+    }
+	@Override
+	public Producto obtenerProductoDesdeArticulo(String idArticulo) {
+	    Articulo articulo = arepo.findById(idArticulo).orElse(null);
+	    
+	    if (articulo != null) {
+	        return articulo.getProducto(); // ← incluye galería, subcategoría, etc.
+	    }
+
+	    return null;
 	}
 
 }

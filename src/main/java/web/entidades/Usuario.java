@@ -50,6 +50,7 @@ public class Usuario implements UserDetails, Serializable{
 	private String direccion;
 	private String email;
 	private String sexo;
+	
 	@Column(nullable = false, updatable = false)
 	private LocalDateTime fechaAlta;
 	private Date fechaNacimiento;

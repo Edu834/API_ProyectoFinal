@@ -22,6 +22,7 @@ public class UsuarioDTO {
 	String direccion;
 	String sexo;
 	String telefono;
+	Role role;
 	LocalDateTime fechaAlta;
 	Date fechaNacimiento;
 	String country;

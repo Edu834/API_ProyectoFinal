@@ -107,45 +107,63 @@ public class PedidoController {
 	
 	@PostMapping("/addArticuloPedido")
 	public ResponseEntity<Pedido> añadirArticuloPedido(@RequestBody ArticuloEnPedidoDTO articuloEnPedidoDto) {
-		Usuario usuario = usuarioService.buscarUno(articuloEnPedidoDto.getIdUsuario());
-		List<Pedido> pedidosCarrito = pedidoService.buscarPorUsuarioyEstado(usuario.getIdUsuario(), "Carrito");
-		Pedido pedido = new Pedido();
-		
-		if (pedidosCarrito.isEmpty()) {
-			pedido = Pedido.builder()
-					.idPedido("X")
-					.descripcion("Carrito de " + usuarioService.buscarUno(usuario.getIdUsuario()).getUsername())
-					.fecha(new Date())
-					.estado("Carrito")
-					.fechaEntrega(null)
-					.usuario(usuario)
-					.articulosEnPedido(new ArrayList<>())
-					.build();
-		}else {
-			pedido = pedidosCarrito.get(0);
-		}
-		
-		pedidoService.buscarUno(pedido.getIdPedido());
-		ArticulosEnPedidoId idArticuloEnPedido = new ArticulosEnPedidoId(pedido.getIdPedido(),articuloEnPedidoDto.getIdArticulo());
-		ArticulosEnPedido artExistente = articulosEnPedidoService.buscarUno(idArticuloEnPedido);
-		ArticulosEnPedido newarticuloEnPedido = new ArticulosEnPedido(idArticuloEnPedido, articuloEnPedidoDto.getCantidad(), 0, "Disponible", articuloEnPedidoDto.getDiasAlquiler(), null);
-		
-		if (artExistente != null) {
-			artExistente.setCantidad(artExistente.getCantidad() + articuloEnPedidoDto.getCantidad());
-			pedido.getArticulosEnPedido().add(artExistente);
-		}else {
-			pedido.getArticulosEnPedido().add(newarticuloEnPedido);
-		}
-		
-		if (pedidosCarrito.isEmpty()) {
-			pedidoService.alta(pedido);
-		}else {
-			pedidoService.modificar(pedido);
-		}
-		
-		return ResponseEntity.ok(pedido);
+	    Usuario usuario = usuarioService.buscarUno(articuloEnPedidoDto.getIdUsuario());
+
+	    // Buscar si ya existe un carrito
+	    List<Pedido> pedidosCarrito = pedidoService.buscarPorUsuarioyEstado(usuario.getIdUsuario(), "Carrito");
+
+	    Pedido pedido;
+
+	    if (pedidosCarrito.isEmpty()) {
+	        String nuevoIdPedido = pedidoService.generarSiguienteIdPedido();
+
+	        pedido = Pedido.builder()
+	                .idPedido(nuevoIdPedido)
+	                .descripcion("Carrito de " + usuario.getUsername())
+	                .fecha(new Date())
+	                .estado("Carrito")
+	                .fechaEntrega(null)
+	                .usuario(usuario)
+	                .articulosEnPedido(new ArrayList<>())
+	                .build();
+	    } else {
+	        pedido = pedidosCarrito.get(0);
+	    }
+
+	    ArticulosEnPedidoId idArticuloEnPedido = new ArticulosEnPedidoId(pedido.getIdPedido(), articuloEnPedidoDto.getIdArticulo());
+	    ArticulosEnPedido artExistente = articulosEnPedidoService.buscarUno(idArticuloEnPedido);
+
+	    if (artExistente != null) {
+	        artExistente.setCantidad(artExistente.getCantidad() + articuloEnPedidoDto.getCantidad());
+	        artExistente.setPrecioFinal(artExistente.getPrecioFinal());
+	        // También podrías actualizar los días si es necesario:
+	        artExistente.setDiasAlquiler(articuloEnPedidoDto.getDiasAlquiler());
+	        
+	        pedido.getArticulosEnPedido().removeIf(a -> a.getId().equals(idArticuloEnPedido));
+	        pedido.getArticulosEnPedido().add(artExistente);
+	    } else {
+	        ArticulosEnPedido nuevoArticulo = new ArticulosEnPedido(
+	                idArticuloEnPedido,
+	                articuloEnPedidoDto.getCantidad(),
+	                0,
+	                "Disponible",
+	                articuloEnPedidoDto.getDiasAlquiler(),
+	                null,
+	                articuloEnPedidoDto.getPrecioFinal()
+	        );
+	        nuevoArticulo.setPrecioFinal(articuloEnPedidoDto.getPrecioFinal());  // Aquí asignas precioFinal
+	        pedido.getArticulosEnPedido().add(nuevoArticulo);
+	    }
+
+	    if (pedidosCarrito.isEmpty()) {
+	        pedidoService.alta(pedido);
+	    } else {
+	        pedidoService.modificar(pedido);
+	    }
+
+	    return ResponseEntity.ok(pedido);
 	}
-	
+
 	@PostMapping("/eliminarArticuloPedido")
 	public ResponseEntity<Pedido> eliminarArticuloPedido(@RequestBody ArticulosEnPedidoId articulosEnPedidoId) {
 		Pedido pedido = pedidoService.buscarUno(articulosEnPedidoId.getIdPedido());

@@ -42,6 +42,8 @@ public class ArticulosEnPedido implements Serializable{
     @Column(name = "fecha_devuelta")
     private Date fechaDevuelta;
     
+    @Column(name = "precio_final")
+    private double precioFinal;
 //    @ManyToOne
 //    @JoinColumn(name="id_articulo")
 //    private Articulo articulo;

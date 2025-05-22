@@ -1,6 +1,7 @@
 package web.services;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.http.ResponseEntity;
 
@@ -18,6 +19,7 @@ public interface UsuarioService {
 	Usuario alta(Usuario usuario);
 	boolean eliminarUsuario(int idUsuario);
 	Usuario guardar(Usuario usuario);
+	List<Map<String, Object>> obtenerNuevosUsuariosPorDia();
 //	AuthResponse modificar(Usuario usuario);
 	
 }

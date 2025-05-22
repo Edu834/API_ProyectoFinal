@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
 import web.entidades.Pedido;
 import web.repository.PedidoRepository;
 
@@ -61,5 +62,20 @@ public class PedidoServiceImpl implements PedidoService{
 			return null;
 			}
 	}
+	
+	@Override
+    @Transactional
+    public String generarSiguienteIdPedido() {
+        List<Pedido> pedidos = perepo.findAll();
+
+        int max = pedidos.stream()
+                .filter(p -> p.getIdPedido() != null && p.getIdPedido().matches("P\\d+"))
+                .mapToInt(p -> Integer.parseInt(p.getIdPedido().substring(1)))
+                .max()
+                .orElse(0);
+
+        int siguienteNumero = max + 1;
+        return String.format("P%03d", siguienteNumero); // P001, P002...
+    }
 	
 }

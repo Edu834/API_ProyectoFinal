@@ -12,4 +12,5 @@ public interface PedidoService {
 	Pedido buscarUno(String idPedido);
 	Pedido alta(Pedido pedido);
 	Pedido modificar(Pedido pedido);
+	String generarSiguienteIdPedido();
 }

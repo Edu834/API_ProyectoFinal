@@ -1,8 +1,12 @@
 package web.services;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -75,6 +79,22 @@ public class UsuarioServiceImpl implements UsuarioService{
 	    // Guardamos y devolvemos el usuario actualizado
 	    return urepo.save(usuario);
 	}
+	
+	 @Override
+	    public List<Map<String, Object>> obtenerNuevosUsuariosPorDia() {
+	        List<Object[]> resultados = urepo.contarNuevosUsuariosPorDia();
+
+	        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+	        return resultados.stream().map(obj -> {
+	            Map<String, Object> map = new HashMap<>();
+	            // obj[0] debe ser LocalDate o Date, ajusta si es necesario
+	            String fechaFormateada = obj[0].toString(); // Puedes formatear si es LocalDate
+	            map.put("fecha", fechaFormateada);
+	            map.put("cantidad", obj[1]);
+	            return map;
+	        }).collect(Collectors.toList());
+	    }
 //	public AuthResponse modificar(Usuario usuarioRequest) {
 //	    // Buscar el usuario en la base de datos
 //	    Usuario usuarioActual = urepo.findById(usuarioRequest.getIdUsuario())

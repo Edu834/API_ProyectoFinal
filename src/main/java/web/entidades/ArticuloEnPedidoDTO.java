@@ -9,4 +9,5 @@ public class ArticuloEnPedidoDTO {
 	private int idUsuario;
 	private int cantidad;
 	private int diasAlquiler;
+	private double precioFinal;
 }

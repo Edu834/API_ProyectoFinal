@@ -1,6 +1,7 @@
 package web.restcontroller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -194,6 +195,11 @@ public class UsuarioController {
 	                .build();
 
 	        return ResponseEntity.ok(resultDTO);
+	    }
+	  
+	  @GetMapping("/nuevos-por-dia")
+	    public List<Map<String, Object>> obtenerNuevosUsuariosPorDia() {
+	        return usuarioService.obtenerNuevosUsuariosPorDia();
 	    }
 
 }	

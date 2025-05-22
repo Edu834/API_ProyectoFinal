@@ -1,5 +1,48 @@
 use emperx_bbdd;
 
+INSERT INTO usuarios (username, firstname, lastname, password, email, direccion, sexo, telefono, role, fecha_alta, fecha_nacimiento, country, province, city, zip_code)
+VALUES
+('juanperez', 'Juan', 'Perez', 'password123', 'juan.perez@example.com', 'Calle Falsa 123', 'H', '555123456', 'USER', '2025-05-01 10:15:00', '1990-01-01', 'España', 'Madrid', 'Madrid', 28001),
+('mariagarcia', 'Maria', 'Garcia', 'password123', 'maria.garcia@example.com', 'Av. Siempre Viva 742', 'M', '555654321', 'USER', '2025-05-01 14:30:00', '1992-02-10', 'España', 'Barcelona', 'Barcelona', 08002),
+('pedrolopez', 'Pedro', 'Lopez', 'password123', 'pedro.lopez@example.com', 'Plaza Mayor 5', 'H', '555789012', 'USER', '2025-05-02 09:00:00', '1988-11-20', 'España', 'Sevilla', 'Sevilla', 41001),
+('anafernandez', 'Ana', 'Fernandez', 'password123', 'ana.fernandez@example.com', 'Calle Luna 8', 'M', '555456789', 'USER', '2025-05-03 16:45:00', '1995-07-15', 'España', 'Valencia', 'Valencia', 46001),
+('luisgomez', 'Luis', 'Gomez', 'password123', 'luis.gomez@example.com', 'Av. del Sol 22', 'H', '555321654', 'USER', '2025-05-05 11:20:00', '1991-05-30', 'España', 'Bilbao', 'Bilbao', 48001),
+('mariaperez', 'Maria', 'Perez', 'password123', 'maria.perez@example.com', 'Calle Verde 12', 'M', '555987654', 'USER', '2025-05-05 18:00:00', '1993-03-12', 'España', 'Granada', 'Granada', 18001),
+('juanlopez', 'Juan', 'Lopez', 'password123', 'juan.lopez@example.com', 'Plaza Nueva 7', 'H', '555654987', 'USER', '2025-05-06 13:10:00', '1987-08-22', 'España', 'Salamanca', 'Salamanca', 37001);
+
+INSERT INTO usuarios (username, firstname, lastname, password, email, direccion, sexo, telefono, role, fecha_alta, fecha_nacimiento, country, province, city, zip_code) VALUES
+('juanperez1', 'Juan', 'Perez', 'pass1', 'juan.perez1@example.com', 'Calle Falsa 1', 'H', '555000001', 'USER', '2025-05-01 10:00:00', '1990-01-01', 'España', 'Madrid', 'Madrid', 28001),
+('mariagarcia1', 'Maria', 'Garcia', 'pass2', 'maria.garcia1@example.com', 'Av. Siempre Viva 2', 'M', '555000002', 'USER', '2025-05-01 12:30:00', '1992-02-02', 'España', 'Barcelona', 'Barcelona', 08002),
+('pedrolopez1', 'Pedro', 'Lopez', 'pass3', 'pedro.lopez1@example.com', 'Plaza Mayor 3', 'H', '555000003', 'USER', '2025-05-02 09:15:00', '1988-03-03', 'España', 'Sevilla', 'Sevilla', 41001),
+('anafernandez1', 'Ana', 'Fernandez', 'pass4', 'ana.fernandez1@example.com', 'Calle Luna 4', 'M', '555000004', 'USER', '2025-05-02 15:45:00', '1995-04-04', 'España', 'Valencia', 'Valencia', 46001),
+('luisgomez1', 'Luis', 'Gomez', 'pass5', 'luis.gomez1@example.com', 'Av. del Sol 5', 'H', '555000005', 'USER', '2025-05-03 11:30:00', '1991-05-05', 'España', 'Bilbao', 'Bilbao', 48001),
+('mariaperez1', 'Maria', 'Perez', 'pass6', 'maria.perez1@example.com', 'Calle Verde 6', 'M', '555000006', 'USER', '2025-05-04 10:10:00', '1993-06-06', 'España', 'Granada', 'Granada', 18001),
+('juanlopez1', 'Juan', 'Lopez', 'pass7', 'juan.lopez1@example.com', 'Plaza Nueva 7', 'H', '555000007', 'USER', '2025-05-04 14:20:00', '1987-07-07', 'España', 'Salamanca', 'Salamanca', 37001),
+('lauragonzalez1', 'Laura', 'Gonzalez', 'pass8', 'laura.gonzalez1@example.com', 'Calle Mayor 8', 'M', '555000008', 'USER', '2025-05-05 09:50:00', '1994-08-08', 'España', 'Zaragoza', 'Zaragoza', 50001),
+('carlossanchez1', 'Carlos', 'Sanchez', 'pass9', 'carlos.sanchez1@example.com', 'Av. Central 9', 'H', '555000009', 'USER', '2025-05-06 13:40:00', '1989-09-09', 'España', 'Valladolid', 'Valladolid', 47001),
+('patriciaramirez1', 'Patricia', 'Ramirez', 'pass10', 'patricia.ramirez1@example.com', 'Calle Rosa 10', 'M', '555000010', 'USER', '2025-05-06 16:30:00', '1990-10-10', 'España', 'Murcia', 'Murcia', 30001),
+('diegomartinez1', 'Diego', 'Martinez', 'pass11', 'diego.martinez1@example.com', 'Plaza Blanca 11', 'H', '555000011', 'USER', '2025-05-07 10:00:00', '1992-11-11', 'España', 'Cordoba', 'Cordoba', 14001),
+('inesrodriguez1', 'Ines', 'Rodriguez', 'pass12', 'ines.rodriguez1@example.com', 'Calle Azul 12', 'M', '555000012', 'USER', '2025-05-08 09:20:00', '1993-12-12', 'España', 'Oviedo', 'Oviedo', 33001),
+('javierdiaz1', 'Javier', 'Diaz', 'pass13', 'javier.diaz1@example.com', 'Av. Norte 13', 'H', '555000013', 'USER', '2025-05-08 15:30:00', '1987-01-13', 'España', 'Santander', 'Santander', 39001),
+('silviaramos1', 'Silvia', 'Ramos', 'pass14', 'silvia.ramos1@example.com', 'Plaza Roja 14', 'M', '555000014', 'USER', '2025-05-09 11:10:00', '1988-02-14', 'España', 'Toledo', 'Toledo', 45001),
+('fernandomorales1', 'Fernando', 'Morales', 'pass15', 'fernando.morales1@example.com', 'Calle Amarilla 15', 'H', '555000015', 'USER', '2025-05-10 14:50:00', '1994-03-15', 'España', 'Almeria', 'Almeria', 04001),
+('lauraperez2', 'Laura', 'Perez', 'pass16', 'laura.perez2@example.com', 'Av. Este 16', 'M', '555000016', 'USER', '2025-05-10 09:00:00', '1991-04-16', 'España', 'Burgos', 'Burgos', 09001),
+('miguelcastro1', 'Miguel', 'Castro', 'pass17', 'miguel.castro1@example.com', 'Plaza Oeste 17', 'H', '555000017', 'USER', '2025-05-11 13:30:00', '1985-05-17', 'España', 'Palma', 'Palma', 07001),
+('monicadiaz1', 'Monica', 'Diaz', 'pass18', 'monica.diaz1@example.com', 'Calle Central 18', 'M', '555000018', 'USER', '2025-05-11 16:45:00', '1990-06-18', 'España', 'Las Palmas', 'Las Palmas', 35001),
+('jorgegonzalez1', 'Jorge', 'Gonzalez', 'pass19', 'jorge.gonzalez1@example.com', 'Av. Sur 19', 'H', '555000019', 'USER', '2025-05-12 10:15:00', '1986-07-19', 'España', 'Tarragona', 'Tarragona', 43001),
+('veronicaruiz1', 'Veronica', 'Ruiz', 'pass20', 'veronica.ruiz1@example.com', 'Plaza Nueva 20', 'M', '555000020', 'USER', '2025-05-12 12:40:00', '1989-08-20', 'España', 'Huelva', 'Huelva', 21001),
+('rauljimenez1', 'Raul', 'Jimenez', 'pass21', 'raul.jimenez1@example.com', 'Calle Mar 21', 'H', '555000021', 'USER', '2025-05-13 15:20:00', '1992-09-21', 'España', 'Girona', 'Girona', 17001),
+('cristinasanchez1', 'Cristina', 'Sanchez', 'pass22', 'cristina.sanchez1@example.com', 'Av. Playa 22', 'M', '555000022', 'USER', '2025-05-14 11:05:00', '1993-10-22', 'España', 'Lleida', 'Lleida', 25001),
+('fernandotorres1', 'Fernando', 'Torres', 'pass23', 'fernando.torres1@example.com', 'Plaza Central 23', 'H', '555000023', 'USER', '2025-05-14 16:30:00', '1987-11-23', 'España', 'Salamanca', 'Salamanca', 37001),
+('angelafernandez1', 'Angela', 'Fernandez', 'pass24', 'angela.fernandez1@example.com', 'Calle Flores 24', 'M', '555000024', 'USER', '2025-05-15 09:45:00', '1995-12-24', 'España', 'Segovia', 'Segovia', 40001),
+('josemartinez1', 'Jose', 'Martinez', 'pass25', 'jose.martinez1@example.com', 'Av. Pinos 25', 'H', '555000025', 'USER', '2025-05-15 14:10:00', '1990-01-25', 'España', 'León', 'León', 24001),
+('mariarodriguez1', 'Maria', 'Rodriguez', 'pass26', 'maria.rodriguez1@example.com', 'Plaza Sol 26', 'M', '555000026', 'USER', '2025-05-16 10:25:00', '1991-02-26', 'España', 'Vitoria', 'Vitoria', 01001),
+('pablomorales1', 'Pablo', 'Morales', 'pass27', 'pablo.morales1@example.com', 'Calle Rios 27', 'H', '555000027', 'USER', '2025-05-17 11:55:00', '1988-03-27', 'España', 'Ciudad Real', 'Ciudad Real', 13001),
+('aliciagonzalez1', 'Alicia', 'Gonzalez', 'pass28', 'alicia.gonzalez1@example.com', 'Av. Montaña 28', 'M', '555000028', 'USER', '2025-05-18 16:40:00', '1994-04-28', 'España', 'Cuenca', 'Cuenca', 16001),
+('raulgarcia1', 'Raul', 'Garcia', 'pass29', 'raul.garcia1@example.com', 'Plaza Alta 29', 'H', '555000029', 'USER', '2025-05-19 09:30:00', '1989-05-29', 'España', 'Albacete', 'Albacete', 02001),
+('martaramos1', 'Marta', 'Ramos', 'pass30', 'marta.ramos1@example.com', 'Calle Norte 30', 'M', '555000030', 'USER', '2025-05-20 13:50:00', '1993-06-30', 'España', 'Guadalajara', 'Guadalajara', 19001);pedidospedidospedidos
+
+
 INSERT INTO galerias (
     foto_frontal,
     foto_trasera,

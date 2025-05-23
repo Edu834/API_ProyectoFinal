@@ -117,6 +117,7 @@ CREATE TABLE articulos_en_pedidos (
     estado VARCHAR(255),
     dias_alquiler INT,
     fecha_devuelta DATE,
+    precio_final DECIMAL(10, 2),
     PRIMARY KEY (id_articulo, id_pedido),  -- Esto corresponde a la clave compuesta de ArticulosEnPedidoId
     CONSTRAINT fk_articulo FOREIGN KEY (id_articulo) REFERENCES articulos(id_articulo),  -- Asumiendo que la tabla 'articulos' existe
     CONSTRAINT fk_pedido FOREIGN KEY (id_pedido) REFERENCES pedidos(id_pedido)  -- Asumiendo que la tabla 'pedidos' existe

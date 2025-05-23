@@ -2,7 +2,8 @@ use emperx_bbdd;
 
 INSERT INTO usuarios (id_usuario, username, firstname, lastname, password, email, direccion, sexo, telefono, role) VALUES
 (1, 'Edu34', 'Eduardo', 'Blázquez', '$2a$10$95qh8YzYb8He8hUZhdqpjO741rL.2YlJxByD/DxUotCFE9TPuqOUu', 'eduardoblazquez34@gmail.com', 'C/pez', 'Undefined', '694467818', 'USER'),
-(2, 'pacoPalo', 'Paco', 'Palotes', '$10$HyvftGdCO8VVa83uYq6hB.V6h1d9USrHDe2ty7iNM69euCsgSIm4i', 'pacoP@gmail.com', 'madrid', 'H', '694467818', 'USER');
+(2, 'pacoPalo', 'Paco', 'Palotes', '$10$HyvftGdCO8VVa83uYq6hB.V6h1d9USrHDe2ty7iNM69euCsgSIm4i', 'pacoP@gmail.com', 'madrid', 'H', '694467818', 'USER'),
+('40', 'admin', 'admin', 'admin', '$2a$10$tx.Nf1.sDc938P.Lqp.q8egdlqndeUXE1sz0PojMnFt2tVh8Rzbou', 'admin@gmail.com', 'c/admin', 'Undefined', '111111111111', 'ADMIN');
 
 INSERT INTO usuarios (username, firstname, lastname, password, email, direccion, sexo, telefono, role, fecha_alta, fecha_nacimiento, country, province, city, zip_code)
 VALUES
@@ -1269,16 +1270,16 @@ INSERT INTO pedidos (id_pedido, id_usuario, descripcion, fecha, estado, fecha_en
 ('P003', 1, 'blabla', '2025-02-28','CARRITO', NULL);
 
 -- Insertar datos en la tabla articulos_en_pedidos (relación de artículos con pedidos)
-INSERT INTO articulos_en_pedidos (id_articulo, id_pedido, cantidad, cantidad_devuelta, estado, dias_alquiler, fecha_devuelta) VALUES
-('A002', 'P002', 1, 0, 'Alquilado', 6, NULL),  -- Alquilado
-('A003', 'P003', 2, 0, 'Disponible', 4, NULL),  -- En el carrito
-('A001', 'P002', 1, 0, 'Alquilado', 7, NULL),  -- Alquilado
-('A005', 'P003', 2, 0, 'Disponible', 5, NULL),  -- En el carrito
-('A002', 'P003', 1, 0, 'Disponible', 4, NULL),  -- En el carrito
-('A004', 'P002', 3, 0, 'Alquilado', 2, NULL);  -- Alquilado
+INSERT INTO articulos_en_pedidos (id_articulo, id_pedido, cantidad, cantidad_devuelta, estado, dias_alquiler, fecha_devuelta, precio_final) VALUES
+('A002', 'P002', 1, 0, 'Alquilado', 6, NULL, 100),  -- Alquilado
+('A003', 'P003', 2, 0, 'Disponible', 4, NULL, 200),  -- En el carrito
+('A001', 'P002', 1, 0, 'Alquilado', 7, NULL, 50),  -- Alquilado
+('A005', 'P003', 2, 0, 'Disponible', 5, NULL, 100),  -- En el carrito
+('A002', 'P003', 1, 0, 'Disponible', 4, NULL, 25),  -- En el carrito
+('A004', 'P002', 3, 0, 'Alquilado', 2, NULL, 55);  -- Alquilado
 
 -- Insertar datos en la tabla articulos_en_pedidos con artículos devueltos
-INSERT INTO articulos_en_pedidos (id_articulo, id_pedido, cantidad, cantidad_devuelta, estado, dias_alquiler, fecha_devuelta) VALUES
-('A001', 'P001', 1, 1, 'Devuelto', 3, '2025-02-22'),  -- Alquilado y devuelto
-('A002', 'P001', 1, 1, 'Devuelto', 5, '2025-03-02'),  -- Alquilado y devuelto
-('A005', 'P001', 1, 1, 'Devuelto', 6, '2025-03-02');  -- Alquilado y devuelto
+INSERT INTO articulos_en_pedidos (id_articulo, id_pedido, cantidad, cantidad_devuelta, estado, dias_alquiler, fecha_devuelta, precio_final) VALUES
+('A001', 'P001', 1, 1, 'Devuelto', 3, '2025-02-22', 125),  -- Alquilado y devuelto
+('A002', 'P001', 1, 1, 'Devuelto', 5, '2025-03-02', 50),  -- Alquilado y devuelto
+('A005', 'P001', 1, 1, 'Devuelto', 6, '2025-03-02', 75);  -- Alquilado y devuelto

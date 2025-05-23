@@ -1,9 +1,14 @@
 package web.restcontroller;
 
+import java.io.File;
+import java.net.MalformedURLException;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.UrlResource;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,9 +16,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.github.classgraph.Resource;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import web.entidades.Articulo;
+import web.entidades.ArticuloConFotoDTO;
 import web.entidades.Categoria;
+import web.entidades.Producto;
 import web.entidades.Subcategoria;
 import web.services.ArticuloServiceImpl;
 import web.services.CategoriaServiceImpl;
@@ -148,7 +156,27 @@ public class ArticuloController {
 		return ResponseEntity.ok(articulos);
 	}
 	
-	
+	 @GetMapping("/productoDesdeArticulo/{idArticulo}")
+	    public ResponseEntity<Producto> obtenerRutaFoto(@PathVariable String idArticulo) {
+		 Producto producto = articuloService.obtenerProductoDesdeArticulo(idArticulo);
+		    
+		    if (producto == null) {
+		        return ResponseEntity.notFound().build();
+		    }
+
+		    return ResponseEntity.ok(producto);
+	    }
+	 
+	 @GetMapping("/{idArticulo}")
+	    public ResponseEntity<Articulo> obtenerArticuloPorId(@PathVariable String idArticulo) {
+	        Articulo articulo = articuloService.buscarUno(idArticulo);
+
+	        if (articulo == null) {
+	            return ResponseEntity.notFound().build();
+	        }
+
+	        return ResponseEntity.ok(articulo);
+	    }
 	public boolean esNumerico(String cadena) {
 	    try {
 	        Integer.parseInt(cadena); 

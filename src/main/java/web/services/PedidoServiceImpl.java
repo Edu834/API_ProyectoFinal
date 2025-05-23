@@ -93,6 +93,8 @@ public class PedidoServiceImpl implements PedidoService{
             String fechaFormateada = obj[0].toString();
             map.put("fecha", fechaFormateada);
             map.put("cantidad", obj[1]);
+            map.put("cantArticulos", obj[2]);
+            map.put("precioTotal", obj[3]);
             return map;
         }).collect(Collectors.toList());
 	}

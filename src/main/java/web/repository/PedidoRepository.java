@@ -12,6 +12,12 @@ public interface PedidoRepository extends JpaRepository<Pedido, String>{
 	public List<Pedido> findByUsuario_idUsuario(int idUsuario);
 	public List<Pedido> findByEstadoAndUsuario_idUsuario(String estado, int idUsuario);
 	public List<Pedido> findByUsuario_IdUsuarioAndEstado(int idUsuario, String estado);
-	@Query("SELECT p.fecha as fecha, COUNT(p) as cantidad FROM Pedido p WHERE estado != 'Carrito' GROUP BY p.fecha")
+	@Query("SELECT p.fecha AS fecha, " +
+	           "COUNT(*) AS pedidoCount, " +
+	           "SUM(a.cantidad) AS totalCantidad, " +
+	           "SUM(a.precioFinal) AS totalPrecioFinal " +
+	           "FROM Pedido p LEFT JOIN p.articulosEnPedido a " +
+	           "WHERE p.estado != 'carrito' " +
+	           "GROUP BY p.fecha")
 	public List<Object[]> countByFecha();
 }

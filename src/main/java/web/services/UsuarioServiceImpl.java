@@ -88,8 +88,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 
 	        return resultados.stream().map(obj -> {
 	            Map<String, Object> map = new HashMap<>();
-	            // obj[0] debe ser LocalDate o Date, ajusta si es necesario
-	            String fechaFormateada = obj[0].toString(); // Puedes formatear si es LocalDate
+	            String fechaFormateada = obj[0].toString();
 	            map.put("fecha", fechaFormateada);
 	            map.put("cantidad", obj[1]);
 	            return map;

@@ -123,3 +123,27 @@ CREATE TABLE articulos_en_pedidos (
     CONSTRAINT fk_pedido FOREIGN KEY (id_pedido) REFERENCES pedidos(id_pedido)  -- Asumiendo que la tabla 'pedidos' existe
 );
 
+-- Trigger para updates
+
+DELIMITER //
+CREATE TRIGGER tg_pedido_update
+AFTER UPDATE ON pedidos
+FOR EACH ROW
+BEGIN
+    IF OLD.estado = 'Carrito' AND NEW.estado = 'Pagado' THEN
+        UPDATE articulos_con_estados 
+        SET id_estado = 1 
+        WHERE id_estado = 3 AND id_articulo IN (
+            SELECT id_articulo 
+            FROM articulos_en_pedidos 
+            WHERE id_pedido = NEW.id_pedido
+        );
+        
+        UPDATE articulos_en_pedidos 
+        SET estado = 'Alquilado' 
+        WHERE id_pedido = NEW.id_pedido;
+    END IF;
+END;//
+
+-- Trigger para inserts
+

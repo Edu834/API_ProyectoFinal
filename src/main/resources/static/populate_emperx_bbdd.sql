@@ -1,5 +1,9 @@
 use emperx_bbdd;
 
+INSERT INTO usuarios (id_usuario, username, firstname, lastname, password, email, direccion, sexo, telefono, role) VALUES
+(1, 'Edu34', 'Eduardo', 'Blázquez', '$2a$10$95qh8YzYb8He8hUZhdqpjO741rL.2YlJxByD/DxUotCFE9TPuqOUu', 'eduardoblazquez34@gmail.com', 'C/pez', 'Undefined', '694467818', 'USER'),
+(2, 'pacoPalo', 'Paco', 'Palotes', '$10$HyvftGdCO8VVa83uYq6hB.V6h1d9USrHDe2ty7iNM69euCsgSIm4i', 'pacoP@gmail.com', 'madrid', 'H', '694467818', 'USER');
+
 INSERT INTO usuarios (username, firstname, lastname, password, email, direccion, sexo, telefono, role, fecha_alta, fecha_nacimiento, country, province, city, zip_code)
 VALUES
 ('juanperez', 'Juan', 'Perez', 'password123', 'juan.perez@example.com', 'Calle Falsa 123', 'H', '555123456', 'USER', '2025-05-01 10:15:00', '1990-01-01', 'España', 'Madrid', 'Madrid', 28001),
@@ -40,7 +44,7 @@ INSERT INTO usuarios (username, firstname, lastname, password, email, direccion,
 ('pablomorales1', 'Pablo', 'Morales', 'pass27', 'pablo.morales1@example.com', 'Calle Rios 27', 'H', '555000027', 'USER', '2025-05-17 11:55:00', '1988-03-27', 'España', 'Ciudad Real', 'Ciudad Real', 13001),
 ('aliciagonzalez1', 'Alicia', 'Gonzalez', 'pass28', 'alicia.gonzalez1@example.com', 'Av. Montaña 28', 'M', '555000028', 'USER', '2025-05-18 16:40:00', '1994-04-28', 'España', 'Cuenca', 'Cuenca', 16001),
 ('raulgarcia1', 'Raul', 'Garcia', 'pass29', 'raul.garcia1@example.com', 'Plaza Alta 29', 'H', '555000029', 'USER', '2025-05-19 09:30:00', '1989-05-29', 'España', 'Albacete', 'Albacete', 02001),
-('martaramos1', 'Marta', 'Ramos', 'pass30', 'marta.ramos1@example.com', 'Calle Norte 30', 'M', '555000030', 'USER', '2025-05-20 13:50:00', '1993-06-30', 'España', 'Guadalajara', 'Guadalajara', 19001);pedidospedidospedidos
+('martaramos1', 'Marta', 'Ramos', 'pass30', 'marta.ramos1@example.com', 'Calle Norte 30', 'M', '555000030', 'USER', '2025-05-20 13:50:00', '1993-06-30', 'España', 'Guadalajara', 'Guadalajara', 19001);
 
 
 INSERT INTO galerias (
@@ -1258,10 +1262,6 @@ INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES
 ('A202', 5),  -- Algo Usado
 ('A203', 6),  -- Usado
 ('A204', 2);  -- Retirado
-
-INSERT INTO usuarios (id_usuario, username, firstname, lastname, password, email, direccion, sexo, telefono, role) VALUES
-(1, 'Edu34', 'Eduardo', 'Blázquez', '$2a$10$95qh8YzYb8He8hUZhdqpjO741rL.2YlJxByD/DxUotCFE9TPuqOUu', 'eduardoblazquez34@gmail.com', 'C/pez', 'Undefined', '694467818', 'USER'),
-(2, 'pacoPalo', 'Paco', 'Palotes', '$10$HyvftGdCO8VVa83uYq6hB.V6h1d9USrHDe2ty7iNM69euCsgSIm4i', 'pacoP@gmail.com', 'madrid', 'H', '694467818', 'USER');
 
 INSERT INTO pedidos (id_pedido, id_usuario, descripcion, fecha, estado, fecha_entrega) VALUES
 ('P001', 1, 'blabla', '2025-02-10','COMPLETADO', '2025-02-16'),

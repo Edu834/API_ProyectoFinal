@@ -6,6 +6,10 @@ import web.entidades.Producto;
 
 public interface ProductoService {
 	
+	Producto alta(Producto producto);
+	boolean eliminar(int idProducto);
+	Producto modificar(Producto producto);
+	
 	List<Producto> todo();
 	List<Producto> buscarPorSubcategoria(int idSubcategoria);
 	List<Producto> buscarPorCategoria(int idCategoria);

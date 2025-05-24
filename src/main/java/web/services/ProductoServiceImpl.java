@@ -49,5 +49,42 @@ public class ProductoServiceImpl implements ProductoService{
 		return prepo.findBySexo(sexo);
 	}
 
+	@Override
+    public Producto alta(Producto producto) {
+        try {
+            if (prepo.existsById(producto.getIdProducto())) {
+                return null; 
+            }
+            return prepo.save(producto);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    @Override
+    public boolean eliminar(int idProducto) {
+        try {
+            if (prepo.existsById(String.valueOf(idProducto))) {
+                prepo.deleteById(String.valueOf(idProducto));
+                return true; 
+            }
+            return false; 
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    @Override
+    public Producto modificar(Producto producto) {
+        try {
+            if (!prepo.existsById(producto.getIdProducto())) {
+                return null; 
+            }
+            return prepo.save(producto);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
 	
 }

@@ -77,6 +77,7 @@ public class ProductoController {
 		return ResponseEntity.ok(producto);
 	}
 	
+	
 	//Verifica si los id son numéricos
 	public boolean esNumerico(String cadena) {
 	    try {

@@ -1,6 +1,10 @@
 package web.services;
 
+import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -77,5 +81,22 @@ public class PedidoServiceImpl implements PedidoService{
         int siguienteNumero = max + 1;
         return String.format("P%03d", siguienteNumero); // P001, P002...
     }
+	@Override
+	public List<Map<String, Object>> pedidosPorFecha() {
+		
+		List<Object[]> resultados = perepo.countByFecha();
+		
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        return resultados.stream().map(obj -> {
+            Map<String, Object> map = new HashMap<>();
+            String fechaFormateada = obj[0].toString();
+            map.put("fecha", fechaFormateada);
+            map.put("cantidad", obj[1]);
+            map.put("cantArticulos", obj[2]);
+            map.put("precioTotal", obj[3]);
+            return map;
+        }).collect(Collectors.toList());
+	}
 	
 }

@@ -117,8 +117,33 @@ CREATE TABLE articulos_en_pedidos (
     estado VARCHAR(255),
     dias_alquiler INT,
     fecha_devuelta DATE,
+    precio_final DECIMAL(10, 2),
     PRIMARY KEY (id_articulo, id_pedido),  -- Esto corresponde a la clave compuesta de ArticulosEnPedidoId
     CONSTRAINT fk_articulo FOREIGN KEY (id_articulo) REFERENCES articulos(id_articulo),  -- Asumiendo que la tabla 'articulos' existe
     CONSTRAINT fk_pedido FOREIGN KEY (id_pedido) REFERENCES pedidos(id_pedido)  -- Asumiendo que la tabla 'pedidos' existe
 );
+
+-- Trigger para updates
+
+DELIMITER //
+CREATE TRIGGER tg_pedido_update
+AFTER UPDATE ON pedidos
+FOR EACH ROW
+BEGIN
+    IF OLD.estado = 'Carrito' AND NEW.estado = 'Pagado' THEN
+        UPDATE articulos_con_estados 
+        SET id_estado = 1 
+        WHERE id_estado = 3 AND id_articulo IN (
+            SELECT id_articulo 
+            FROM articulos_en_pedidos 
+            WHERE id_pedido = NEW.id_pedido
+        );
+        
+        UPDATE articulos_en_pedidos 
+        SET estado = 'Alquilado' 
+        WHERE id_pedido = NEW.id_pedido;
+    END IF;
+END;//
+
+-- Trigger para inserts
 

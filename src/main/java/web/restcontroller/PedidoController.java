@@ -3,6 +3,7 @@ package web.restcontroller;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -54,6 +55,17 @@ public class PedidoController {
 		
 		return ResponseEntity.ok(pedidos);
 	}
+	@GetMapping({"/byFecha"})
+	public ResponseEntity<List<Map<String, Object>>> byfecha() {
+		List<Map<String, Object>> pedidosByFecha = pedidoService.pedidosPorFecha(); 
+		
+		if (pedidosByFecha.isEmpty()) {
+			return ResponseEntity.noContent().build();
+		}
+		
+		return ResponseEntity.ok(pedidosByFecha);
+	}
+	
 	
 	@GetMapping("/buscarPor/{idUsuario}")
 	public ResponseEntity<List<Pedido>> buscarPorUsuario(@PathVariable int idUsuario) {

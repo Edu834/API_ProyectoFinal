@@ -82,6 +82,7 @@ public class PedidoServiceImpl implements PedidoService{
         return String.format("P%03d", siguienteNumero); // P001, P002...
     }
 	
+
 	@Override
 	@Transactional
 	public Pedido actualizarEstado(String idPedido, String nuevoEstado) {
@@ -99,6 +100,7 @@ public class PedidoServiceImpl implements PedidoService{
 	    return null;
 	}
 	
+
 	@Override
 	public List<Map<String, Object>> pedidosPorFecha() {
 		
@@ -115,6 +117,18 @@ public class PedidoServiceImpl implements PedidoService{
             map.put("precioTotal", obj[3]);
             return map;
         }).collect(Collectors.toList());
+	}
+	@Override
+	public boolean eliminarPedido(int idPedido) {
+	        try {
+	            if (perepo.existsById(String.valueOf(idPedido))) {
+	            	perepo.deleteById(String.valueOf(idPedido));
+	                return true; 
+	            }
+	            return false; 
+	        } catch (Exception e) {
+	            return false;
+	        }
 	}
 	
 }

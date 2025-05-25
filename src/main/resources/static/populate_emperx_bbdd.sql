@@ -5,15 +5,15 @@ INSERT INTO usuarios (id_usuario, username, firstname, lastname, password, email
 (2, 'pacoPalo', 'Paco', 'Palotes', '$10$HyvftGdCO8VVa83uYq6hB.V6h1d9USrHDe2ty7iNM69euCsgSIm4i', 'pacoP@gmail.com', 'madrid', 'H', '694467818', 'USER'),
 ('40', 'admin', 'admin', 'admin', '$2a$10$tx.Nf1.sDc938P.Lqp.q8egdlqndeUXE1sz0PojMnFt2tVh8Rzbou', 'admin@gmail.com', 'c/admin', 'Undefined', '111111111111', 'ADMIN');
 
-INSERT INTO usuarios (username, firstname, lastname, password, email, direccion, sexo, telefono, role, fecha_alta, fecha_nacimiento, country, province, city, zip_code)
+INSERT INTO usuarios (id_usuario, username, firstname, lastname, password, email, direccion, sexo, telefono, role, fecha_alta, fecha_nacimiento, country, province, city, zip_code)
 VALUES
-('juanperez', 'Juan', 'Perez', 'password123', 'juan.perez@example.com', 'Calle Falsa 123', 'H', '555123456', 'USER', '2025-05-01 10:15:00', '1990-01-01', 'España', 'Madrid', 'Madrid', 28001),
-('mariagarcia', 'Maria', 'Garcia', 'password123', 'maria.garcia@example.com', 'Av. Siempre Viva 742', 'M', '555654321', 'USER', '2025-05-01 14:30:00', '1992-02-10', 'España', 'Barcelona', 'Barcelona', 08002),
-('pedrolopez', 'Pedro', 'Lopez', 'password123', 'pedro.lopez@example.com', 'Plaza Mayor 5', 'H', '555789012', 'USER', '2025-05-02 09:00:00', '1988-11-20', 'España', 'Sevilla', 'Sevilla', 41001),
-('anafernandez', 'Ana', 'Fernandez', 'password123', 'ana.fernandez@example.com', 'Calle Luna 8', 'M', '555456789', 'USER', '2025-05-03 16:45:00', '1995-07-15', 'España', 'Valencia', 'Valencia', 46001),
-('luisgomez', 'Luis', 'Gomez', 'password123', 'luis.gomez@example.com', 'Av. del Sol 22', 'H', '555321654', 'USER', '2025-05-05 11:20:00', '1991-05-30', 'España', 'Bilbao', 'Bilbao', 48001),
-('mariaperez', 'Maria', 'Perez', 'password123', 'maria.perez@example.com', 'Calle Verde 12', 'M', '555987654', 'USER', '2025-05-05 18:00:00', '1993-03-12', 'España', 'Granada', 'Granada', 18001),
-('juanlopez', 'Juan', 'Lopez', 'password123', 'juan.lopez@example.com', 'Plaza Nueva 7', 'H', '555654987', 'USER', '2025-05-06 13:10:00', '1987-08-22', 'España', 'Salamanca', 'Salamanca', 37001);
+(9,'juanperez', 'Juan', 'Perez', 'password123', 'juan.perez@example.com', 'Calle Falsa 123', 'H', '555123456', 'USER', '2025-05-01 10:15:00', '1990-01-01', 'España', 'Madrid', 'Madrid', 28001),
+(3,'mariagarcia', 'Maria', 'Garcia', 'password123', 'maria.garcia@example.com', 'Av. Siempre Viva 742', 'M', '555654321', 'USER', '2025-05-01 14:30:00', '1992-02-10', 'España', 'Barcelona', 'Barcelona', 08002),
+(4,'pedrolopez', 'Pedro', 'Lopez', 'password123', 'pedro.lopez@example.com', 'Plaza Mayor 5', 'H', '555789012', 'USER', '2025-05-02 09:00:00', '1988-11-20', 'España', 'Sevilla', 'Sevilla', 41001),
+(5,'anafernandez', 'Ana', 'Fernandez', 'password123', 'ana.fernandez@example.com', 'Calle Luna 8', 'M', '555456789', 'USER', '2025-05-03 16:45:00', '1995-07-15', 'España', 'Valencia', 'Valencia', 46001),
+(6,'luisgomez', 'Luis', 'Gomez', 'password123', 'luis.gomez@example.com', 'Av. del Sol 22', 'H', '555321654', 'USER', '2025-05-05 11:20:00', '1991-05-30', 'España', 'Bilbao', 'Bilbao', 48001),
+(7,'mariaperez', 'Maria', 'Perez', 'password123', 'maria.perez@example.com', 'Calle Verde 12', 'M', '555987654', 'USER', '2025-05-05 18:00:00', '1993-03-12', 'España', 'Granada', 'Granada', 18001),
+(8,'juanlopez', 'Juan', 'Lopez', 'password123', 'juan.lopez@example.com', 'Plaza Nueva 7', 'H', '555654987', 'USER', '2025-05-06 13:10:00', '1987-08-22', 'España', 'Salamanca', 'Salamanca', 37001);
 
 INSERT INTO usuarios (username, firstname, lastname, password, email, direccion, sexo, telefono, role, fecha_alta, fecha_nacimiento, country, province, city, zip_code) VALUES
 ('juanperez1', 'Juan', 'Perez', 'pass1', 'juan.perez1@example.com', 'Calle Falsa 1', 'H', '555000001', 'USER', '2025-05-01 10:00:00', '1990-01-01', 'España', 'Madrid', 'Madrid', 28001),
@@ -1265,9 +1265,20 @@ INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES
 ('A204', 2);  -- Retirado
 
 INSERT INTO pedidos (id_pedido, id_usuario, descripcion, fecha, estado, fecha_entrega) VALUES
-('P001', 1, 'blabla', '2025-02-10','COMPLETADO', '2025-02-16'),
-('P002', 1, 'blabla', '2025-01-22','ENTREGADO', '2025-02-02'),
-('P003', 1, 'blabla', '2025-02-28','CARRITO', NULL);
+('P001', 1, 'blabla', '2025-05-02','COMPLETADO', '2025-02-16'),
+('P002', 3, 'blabla', '2025-05-10','ENTREGADO', '2025-02-02'),
+('P003', 3, 'blabla', '2025-05-05','CARRITO', NULL),
+('P004', 4, 'Alquiler de traje para boda', '2025-05-23', 'Pagado', NULL),
+('P005', 4, 'Alquiler de traje para comida', '2025-05-23', 'Pagado', NULL),
+('P006', 6, 'Alquiler ropa casual', '2025-05-23', 'Pagado', NULL);
+
+INSERT INTO pedidos (id_pedido, id_usuario, descripcion, fecha, estado, fecha_entrega) VALUES
+('P007', 7, 'Alquiler de traje para evento', '2025-05-15', 'Pagado', NULL),
+('P008', 3, 'Vestido para gala benéfica', '2025-05-24', 'Carrito', NULL),
+('P009', 8, 'Chaqueta para evento corporativo', '2025-05-25', 'Entregado', '2025-05-30'),
+('P010', 4, 'Alquiler de traje para evento', '2025-05-23', 'Pagado', NULL),
+('P011', 1, 'Vestido para gala benéfica', '2025-05-05', 'Pagado', NULL),
+('P012', 1, 'Chaqueta para evento corporativo', '2025-05-25', 'Entregado', '2025-05-30');
 
 -- Insertar datos en la tabla articulos_en_pedidos (relación de artículos con pedidos)
 INSERT INTO articulos_en_pedidos (id_articulo, id_pedido, cantidad, cantidad_devuelta, estado, dias_alquiler, fecha_devuelta, precio_final) VALUES
@@ -1283,3 +1294,41 @@ INSERT INTO articulos_en_pedidos (id_articulo, id_pedido, cantidad, cantidad_dev
 ('A001', 'P001', 1, 1, 'Devuelto', 3, '2025-02-22', 125),  -- Alquilado y devuelto
 ('A002', 'P001', 1, 1, 'Devuelto', 5, '2025-03-02', 50),  -- Alquilado y devuelto
 ('A005', 'P001', 1, 1, 'Devuelto', 6, '2025-03-02', 75);  -- Alquilado y devuelto
+
+INSERT INTO articulos_en_pedidos (id_articulo, id_pedido, cantidad, cantidad_devuelta, estado, dias_alquiler, fecha_devuelta, precio_final) VALUES
+-- P004 (Pagado, traje para boda)
+('A001', 'P004', 1, 0, 'Alquilado', 5, NULL, 150.00), -- Classic Suit - Talla S, Negro
+('A008', 'P004', 1, 0, 'Alquilado', 5, NULL, 140.00), -- Slim Fit Suit - Talla L, Azul
+('A016', 'P004', 1, 0, 'Alquilado', 5, NULL, 160.00), -- Double-breasted Suit - Talla S, Negro
+-- P005 (Pagado, traje para comida)
+('A011', 'P005', 1, 0, 'Alquilado', 3, NULL, 100.00), -- Formal Blazer - Talla S, Negro
+('A036', 'P005', 1, 0, 'Alquilado', 3, NULL, 90.00), -- Blazer - Talla S, Azul
+('A012', 'P005', 1, 0, 'Alquilado', 3, NULL, 95.00), -- Formal Blazer - Talla M, Gris
+-- P006 (Pagado, ropa casual)
+('A051', 'P006', 2, 0, 'Alquilado', 4, NULL, 60.00), -- Day Dress - Talla S, Beige
+('A061', 'P006', 1, 0, 'Alquilado', 4, NULL, 50.00), -- A-Line Skirt - Talla S, Negro
+('A031', 'P006', 1, 0, 'Alquilado', 4, NULL, 80.00), -- Leather Jacket - Talla S, Negro
+-- P007 (Pagado, traje para evento)
+('A002', 'P007', 1, 0, 'Alquilado', 5, NULL, 145.00), -- Classic Suit - Talla M, Gris
+('A009', 'P007', 1, 0, 'Alquilado', 5, NULL, 135.00), -- Slim Fit Suit - Talla XL, Negro
+('A017', 'P007', 1, 0, 'Alquilado', 5, NULL, 155.00), -- Double-breasted Suit - Talla M, Gris
+-- P008 (Carrito, vestido para gala benéfica)
+('A041', 'P008', 1, 0, 'Disponible', 3, NULL, 180.00), -- Evening Dress - Talla S, Rojo
+('A046', 'P008', 1, 0, 'Disponible', 3, NULL, 160.00), -- Cocktail Dress - Talla S, Negro
+('A056', 'P008', 1, 0, 'Disponible', 3, NULL, 170.00), -- Maxi Dress - Talla S, Negro
+-- P009 (Entregado, chaqueta para evento corporativo)
+('A033', 'P009', 1, 0, 'Alquilado', 4, NULL, 90.00), -- Leather Jacket - Talla L, Negro
+('A037', 'P009', 1, 0, 'Alquilado', 4, NULL, 100.00), -- Blazer - Talla M, Negro
+('A013', 'P009', 1, 0, 'Alquilado', 4, NULL, 95.00), -- Formal Blazer - Talla L, Azul
+-- P010 (Pagado, traje para evento)
+('A003', 'P010', 1, 0, 'Alquilado', 5, NULL, 150.00), -- Classic Suit - Talla L, Azul
+('A006', 'P010', 1, 0, 'Alquilado', 5, NULL, 140.00), -- Slim Fit Suit - Talla S, Negro
+('A018', 'P010', 1, 0, 'Alquilado', 5, NULL, 160.00), -- Double-breasted Suit - Talla L, Azul
+-- P011 (Pagado, vestido para gala benéfica)
+('A042', 'P011', 1, 0, 'Alquilado', 3, NULL, 180.00), -- Evening Dress - Talla M, Negro
+('A047', 'P011', 1, 0, 'Alquilado', 3, NULL, 165.00), -- Cocktail Dress - Talla M, Rojo
+('A058', 'P011', 1, 0, 'Alquilado', 3, NULL, 170.00), -- Maxi Dress - Talla L, Azul
+-- P012 (Entregado, chaqueta para evento corporativo)
+('A032', 'P012', 1, 0, 'Alquilado', 4, NULL, 85.00), -- Leather Jacket - Talla M, Café
+('A038', 'P012', 1, 0, 'Alquilado', 4, NULL, 95.00), -- Blazer - Talla L, Gris
+('A014', 'P012', 1, 0, 'Alquilado', 4, NULL, 100.00); -- Formal Blazer - Talla XL, Negro

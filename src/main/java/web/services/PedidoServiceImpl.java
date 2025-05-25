@@ -81,6 +81,24 @@ public class PedidoServiceImpl implements PedidoService{
         int siguienteNumero = max + 1;
         return String.format("P%03d", siguienteNumero); // P001, P002...
     }
+	
+	@Override
+	@Transactional
+	public Pedido actualizarEstado(String idPedido, String nuevoEstado) {
+	    Pedido pedido = perepo.findById(idPedido).orElse(null);
+	    if (pedido != null) {
+	        pedido.setEstado(nuevoEstado);
+
+	        // Opcional: si el estado es "ENTREGADO", puedes guardar también la fechaEntrega
+	        if ("ENTREGADO".equalsIgnoreCase(nuevoEstado)) {
+	            pedido.setFechaEntrega(new java.util.Date().toString());
+	        }
+
+	        return perepo.save(pedido);
+	    }
+	    return null;
+	}
+	
 	@Override
 	public List<Map<String, Object>> pedidosPorFecha() {
 		

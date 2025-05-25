@@ -10,6 +10,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinColumns;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -49,8 +50,10 @@ public class Pedido implements Serializable{
 	@JoinColumn(name="id_usuario")
 	private Usuario usuario;
 	
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name="id_pedido")
+	@OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
+	@JoinColumns({
+	    @JoinColumn(name = "id_pedido", referencedColumnName = "id_pedido")
+	})
 	private List<ArticulosEnPedido> articulosEnPedido;
 	
 	public void addArticulo(ArticulosEnPedido articulo) {

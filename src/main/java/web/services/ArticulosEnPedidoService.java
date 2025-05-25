@@ -10,4 +10,6 @@ public interface ArticulosEnPedidoService {
 	List<ArticulosEnPedido> todo();
 	List<ArticulosEnPedido> buscarPorPedido(String idPedido);
 	ArticulosEnPedido buscarUno(ArticulosEnPedidoId articuloEnPedidoId);
+	void eliminar(ArticulosEnPedido articuloEnPedido);  // Añadimos el método eliminar
+	ArticulosEnPedido guardar(ArticulosEnPedido articuloEnPedido);
 }

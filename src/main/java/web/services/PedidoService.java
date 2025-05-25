@@ -15,4 +15,6 @@ public interface PedidoService {
 	Pedido modificar(Pedido pedido);
 	String generarSiguienteIdPedido();
 	List<Map<String, Object>> pedidosPorFecha();
+	Pedido actualizarEstado(String idPedido, String nuevoEstado);
+
 }

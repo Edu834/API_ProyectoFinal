@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -78,7 +80,29 @@ public class PedidoController {
 		
 		return ResponseEntity.ok(pedidos);
 	}
-	
+	@PutMapping("/{id}/estado")
+	public ResponseEntity<?> actualizarEstado(
+	    @PathVariable("id") String idPedido,
+	    @RequestBody Map<String, String> body
+	) {
+	    String nuevoEstado = body.get("estado");
+
+	    Pedido pedido = pedidoService.buscarUno(idPedido);
+	    if (pedido == null) {
+	        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Pedido no encontrado");
+	    }
+
+	    // Validar que el pedido tenga al menos un artículo
+	    if (pedido.getArticulosEnPedido() == null || pedido.getArticulosEnPedido().isEmpty()) {
+	        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+	                             .body("No se puede cambiar el estado de un pedido vacío");
+	    }
+
+	    Pedido actualizado = pedidoService.actualizarEstado(idPedido, nuevoEstado);
+	    return ResponseEntity.ok(actualizado);
+	}
+
+
 	@GetMapping("/buscarPor/{idUsuario}/{estado}")
 	public ResponseEntity<List<Pedido>> buscarPorUsuarioyEstado(@PathVariable int idUsuario, @PathVariable String estado) {
 		List<Pedido> pedidos = new ArrayList<>();
@@ -122,12 +146,14 @@ public class PedidoController {
 	public ResponseEntity<Pedido> añadirArticuloPedido(@RequestBody ArticuloEnPedidoDTO articuloEnPedidoDto) {
 	    Usuario usuario = usuarioService.buscarUno(articuloEnPedidoDto.getIdUsuario());
 
-	    // Buscar si ya existe un carrito
 	    List<Pedido> pedidosCarrito = pedidoService.buscarPorUsuarioyEstado(usuario.getIdUsuario(), "Carrito");
 
 	    Pedido pedido;
 
+	    boolean esNuevoPedido = false;
+
 	    if (pedidosCarrito.isEmpty()) {
+	        esNuevoPedido = true;
 	        String nuevoIdPedido = pedidoService.generarSiguienteIdPedido();
 
 	        pedido = Pedido.builder()
@@ -139,8 +165,27 @@ public class PedidoController {
 	                .usuario(usuario)
 	                .articulosEnPedido(new ArrayList<>())
 	                .build();
+
+	        pedidoService.alta(pedido);  // GUARDA EL PEDIDO ANTES DE LOS ARTÍCULOS
 	    } else {
 	        pedido = pedidosCarrito.get(0);
+
+	        if (!"Carrito".equalsIgnoreCase(pedido.getEstado())) {
+	            esNuevoPedido = true;
+	            String nuevoIdPedido = pedidoService.generarSiguienteIdPedido();
+
+	            pedido = Pedido.builder()
+	                    .idPedido(nuevoIdPedido)
+	                    .descripcion("Carrito de " + usuario.getUsername())
+	                    .fecha(new Date())
+	                    .estado("Carrito")
+	                    .fechaEntrega(null)
+	                    .usuario(usuario)
+	                    .articulosEnPedido(new ArrayList<>())
+	                    .build();
+
+	            pedidoService.alta(pedido);  // GUARDA EL PEDIDO ANTES DE LOS ARTÍCULOS
+	        }
 	    }
 
 	    ArticulosEnPedidoId idArticuloEnPedido = new ArticulosEnPedidoId(pedido.getIdPedido(), articuloEnPedidoDto.getIdArticulo());
@@ -148,12 +193,10 @@ public class PedidoController {
 
 	    if (artExistente != null) {
 	        artExistente.setCantidad(artExistente.getCantidad() + articuloEnPedidoDto.getCantidad());
-	        artExistente.setPrecioFinal(artExistente.getPrecioFinal());
-	        // También podrías actualizar los días si es necesario:
+	        artExistente.setPrecioFinal(articuloEnPedidoDto.getPrecioFinal());
 	        artExistente.setDiasAlquiler(articuloEnPedidoDto.getDiasAlquiler());
-	        
-	        pedido.getArticulosEnPedido().removeIf(a -> a.getId().equals(idArticuloEnPedido));
-	        pedido.getArticulosEnPedido().add(artExistente);
+
+	        articulosEnPedidoService.guardar(artExistente);
 	    } else {
 	        ArticulosEnPedido nuevoArticulo = new ArticulosEnPedido(
 	                idArticuloEnPedido,
@@ -164,32 +207,36 @@ public class PedidoController {
 	                null,
 	                articuloEnPedidoDto.getPrecioFinal()
 	        );
-	        nuevoArticulo.setPrecioFinal(articuloEnPedidoDto.getPrecioFinal());  // Aquí asignas precioFinal
+
+	        articulosEnPedidoService.guardar(nuevoArticulo);
 	        pedido.getArticulosEnPedido().add(nuevoArticulo);
 	    }
 
-	    if (pedidosCarrito.isEmpty()) {
-	        pedidoService.alta(pedido);
-	    } else {
+	    if (!esNuevoPedido) {
 	        pedidoService.modificar(pedido);
 	    }
 
 	    return ResponseEntity.ok(pedido);
 	}
 
+
+
 	@PostMapping("/eliminarArticuloPedido")
-	public ResponseEntity<Pedido> eliminarArticuloPedido(@RequestBody ArticulosEnPedidoId articulosEnPedidoId) {
-		Pedido pedido = pedidoService.buscarUno(articulosEnPedidoId.getIdPedido());
-		ArticulosEnPedido artEnPedido = articulosEnPedidoService.buscarUno(articulosEnPedidoId);
-		
-		if (pedido.getArticulosEnPedido().indexOf(artEnPedido) == -1) {
-			return ResponseEntity.notFound().build();
-		}
-		
-		pedido.getArticulosEnPedido().remove(artEnPedido);
-		pedidoService.modificar(pedido);
-		return ResponseEntity.ok(pedido);
+	public ResponseEntity<Pedido> eliminarArticuloPedido(@RequestBody ArticulosEnPedidoId id) {
+	    ArticulosEnPedido artEnPedido = articulosEnPedidoService.buscarUno(id);
+	    
+	    if (artEnPedido == null) {
+	        return ResponseEntity.notFound().build();
+	    }
+	    
+	    articulosEnPedidoService.eliminar(artEnPedido);
+	    
+	    Pedido pedidoActualizado = pedidoService.buscarUno(id.getIdPedido());
+	    return ResponseEntity.ok(pedidoActualizado);
 	}
+
+
+	
 	
 	@PutMapping("/cambiarCantidadArticuloPedido/{accion}")
 	public ResponseEntity<Pedido> cambiarCantidadArticuloPedido(@RequestBody ArticulosEnPedidoId articulosEnPedidoId, @PathVariable String accion) {

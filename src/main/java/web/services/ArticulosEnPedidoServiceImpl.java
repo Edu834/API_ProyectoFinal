@@ -29,5 +29,14 @@ public class ArticulosEnPedidoServiceImpl implements ArticulosEnPedidoService{
 	public ArticulosEnPedido buscarUno(ArticulosEnPedidoId articuloEnPedidoId) {
 		return aeprepo.findById(articuloEnPedidoId).orElse(null);
 	}
+	@Override
+    public void eliminar(ArticulosEnPedido articuloEnPedido) {
+        aeprepo.delete(articuloEnPedido);
+    }
+	// En ArticulosEnPedidoServiceImpl:
+	@Override
+	public ArticulosEnPedido guardar(ArticulosEnPedido articuloEnPedido) {
+	    return aeprepo.save(articuloEnPedido);
+	}
 
 }

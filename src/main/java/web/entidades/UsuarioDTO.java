@@ -3,6 +3,8 @@ package web.entidades;
 import java.sql.Date;
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,6 +25,7 @@ public class UsuarioDTO {
 	String sexo;
 	String telefono;
 	Role role;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
 	LocalDateTime fechaAlta;
 	Date fechaNacimiento;
 	String country;

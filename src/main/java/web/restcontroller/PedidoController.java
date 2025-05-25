@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -233,6 +234,22 @@ public class PedidoController {
 		}
 		return ResponseEntity.ok(articulos);
 	}
+	
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> eliminarPedido(@PathVariable String id) {
+        try {
+            boolean eliminado = pedidoService.eliminarPedido(Integer.parseInt(id));
+            if (!eliminado) {
+                return ResponseEntity.badRequest().body("No se pudo eliminar el pedido. Verifique si existe.");
+            }
+            return ResponseEntity.ok().build();
+        } catch (NumberFormatException e) {
+            return ResponseEntity.badRequest().body("El ID debe ser numérico.");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error al eliminar el pedido: " + e.getMessage());
+        }
+    }
 	
 	
 	

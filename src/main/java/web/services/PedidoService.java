@@ -14,5 +14,6 @@ public interface PedidoService {
 	Pedido alta(Pedido pedido);
 	Pedido modificar(Pedido pedido);
 	String generarSiguienteIdPedido();
+	boolean eliminarPedido(int idPedido);
 	List<Map<String, Object>> pedidosPorFecha();
 }

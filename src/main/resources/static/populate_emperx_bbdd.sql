@@ -215,6 +215,331 @@ VALUES (
     ''
 );
 
+INSERT INTO galerias (
+    foto_frontal,
+    foto_trasera,
+    foto_modelo_frontal,
+    foto_modelo_trasera,
+    foto_modelo_costado,
+    foto_modelo_cerca
+)
+VALUES (
+    -- Day Dress (P011)
+    '/images/foto_frontal_day_dress.jpg',
+    '/images/foto_trasera_day_dress.jpg',
+    '/images/foto_modelo_frontal_day_dress.jpg',
+    '/images/foto_modelo_trasera_day_dress.jpg',
+    '/images/foto_modelo_costado_day_dress.jpg',
+    '/images/foto_modelo_cerca_day_dress.jpg'
+),(
+    -- Maxi Dress (P012)
+    '/images/foto_frontal_maxi_dress.jpg',
+    '/images/foto_trasera_maxi_dress.jpg',
+    '/images/foto_modelo_frontal_maxi_dress.jpg',
+    '/images/foto_modelo_trasera_maxi_dress.jpg',
+    '/images/foto_modelo_costado_maxi_dress.jpg',
+    ''
+),(
+    -- A-Line Skirt (P013)
+    '/images/foto_frontal_a-line_skirt.jpg',
+    '/images/foto_trasera_a-line_skirt.jpg',
+    '/images/foto_modelo_frontal_a-line_skirt.jpg',
+    '/images/foto_modelo_trasera_a-line_skirt.jpg',
+    '/images/foto_modelo_costado_a-line_skirt.jpg',
+    '/images/foto_modelo_cerca_a-line_skirt.jpg'
+),(
+    -- Pencil Skirt (P014)
+    '/images/foto_frontal_pencil_skirt.jpg',
+    '/images/foto_trasera_pencil_skirt.jpg',
+    '/images/foto_modelo_frontal_pencil_skirt.jpg',
+    '/images/foto_modelo_trasera_pencil_skirt.jpg',
+    '/images/foto_modelo_costado_pencil_skirt.jpg',
+    '/images/foto_modelo_cerca_pencil_skirt.jpg'
+),(
+    -- Pleated Skirt (P015)
+    '/images/foto_frontal_pleated_skirt.jpg',
+    '/images/foto_trasera_pleated_skirt.jpg',
+    '/images/foto_modelo_frontal_pleated_skirt.jpg',
+    '/images/foto_modelo_trasera_pleated_skirt.jpg',
+    '/images/foto_modelo_costado_pleated_skirt.jpg',
+    '/images/foto_modelo_cerca_pleated_skirt.jpg'
+),(
+    -- Mini Skirt (P016)
+    '/images/foto_frontal_mini_skirt.jpg',
+    '/images/foto_trasera_mini_skirt.jpg',
+    '/images/foto_modelo_frontal_mini_skirt.jpg',
+    '/images/foto_modelo_trasera_mini_skirt.jpg',
+    '/images/foto_modelo_costado_mini_skirt.jpg',
+    '/images/foto_modelo_cerca_mini_skirt.jpg'
+),(
+    -- Basic T-Shirt (P017)
+    '/images/foto_frontal_basic_t-shirt.jpg',
+    '/images/foto_trasera_basic_t-shirt.jpg',
+    '/images/foto_modelo_frontal_basic_t-shirt.jpg',
+    '/images/foto_modelo_trasera_basic_t-shirt.jpg',
+    '/images/foto_modelo_costado_basic_t-shirt.jpg',
+    '/images/foto_modelo_cerca_basic_t-shirt.jpg'
+),(
+    -- Graphic T-Shirt (P018)
+    '/images/foto_frontal_graphic_t-shirt.jpg',
+    '/images/foto_trasera_graphic_t-shirt.jpg',
+    '/images/foto_modelo_frontal_graphic_t-shirt.jpg',
+    '/images/foto_modelo_trasera_graphic_t-shirt.jpg',
+    '/images/foto_modelo_costado_graphic_t-shirt.jpg',
+    '/images/foto_modelo_cerca_graphic_t-shirt.jpg'
+),(
+    -- V-neck T-Shirt (P019)
+    '/images/foto_frontal_v-neck_t-shirt.jpg',
+    '/images/foto_trasera_v-neck_t-shirt.jpg',
+    '/images/foto_modelo_frontal_v-neck_t-shirt.jpg',
+    '/images/foto_modelo_trasera_v-neck_t-shirt.jpg',
+    '/images/foto_modelo_costado_v-neck_t-shirt.jpg',
+    '/images/foto_modelo_cerca_v-neck_t-shirt.jpg'
+),(
+    -- Long Sleeve T-Shirt (P020)
+    '/images/foto_frontal_long_sleeve_t-shirt.jpg',
+    '/images/foto_trasera_long_sleeve_t-shirt.jpg',
+    '/images/foto_modelo_frontal_long_sleeve_t-shirt.jpg',
+    '/images/foto_modelo_trasera_long_sleeve_t-shirt.jpg',
+    '/images/foto_modelo_costado_long_sleeve_t-shirt.jpg',
+    '/images/foto_modelo_cerca_long_sleeve_t-shirt.jpg'
+),(
+    -- Body Top (P021)
+    '/images/foto_frontal_body_top.jpg',
+    '/images/foto_trasera_body_top.jpg',
+    '/images/foto_modelo_frontal_body_top.jpg',
+    '/images/foto_modelo_trasera_body_top.jpg',
+    '/images/foto_modelo_costado_body_top.jpg',
+    '/images/foto_modelo_cerca_body_top.jpg'
+),(
+    -- Crop Top (P022)
+    '/images/foto_frontal_crop_top.jpg',
+    '/images/foto_trasera_crop_top.jpg',
+    '/images/foto_modelo_frontal_crop_top.jpg',
+    '/images/foto_modelo_trasera_crop_top.jpg',
+    '/images/foto_modelo_costado_crop_top.jpg',
+    '/images/foto_modelo_cerca_crop_top.jpg'
+),(
+    -- Blouse (P023)
+    '/images/foto_frontal_blouse.jpg',
+    '/images/foto_trasera_blouse.jpg',
+    '/images/foto_modelo_frontal_blouse.jpg',
+    '/images/foto_modelo_trasera_blouse.jpg',
+    '/images/foto_modelo_costado_blouse.jpg',
+    '/images/foto_modelo_cerca_blouse.jpg'
+),(
+    -- Tank Top (P024)
+    '/images/foto_frontal_tank_top.jpg',
+    '/images/foto_trasera_tank_top.jpg',
+    '/images/foto_modelo_frontal_tank_top.jpg',
+    '/images/foto_modelo_trasera_tank_top.jpg',
+    '/images/foto_modelo_costado_tank_top.jpg',
+    ''
+),(
+    -- Slim Fit Jeans (P025)
+    '/images/foto_frontal_slim_fit_jeans.jpg',
+    '/images/foto_trasera_slim_fit_jeans.jpg',
+    '/images/foto_modelo_frontal_slim_fit_jeans.jpg',
+    '/images/foto_modelo_trasera_slim_fit_jeans.jpg',
+    '/images/foto_modelo_costado_slim_fit_jeans.jpg',
+    '/images/foto_modelo_cerca_slim_fit_jeans.jpg'
+),(
+    -- Bootcut Jeans (P026)
+    '/images/foto_frontal_bootcut_jeans.jpg',
+    '/images/foto_trasera_bootcut_jeans.jpg',
+    '/images/foto_modelo_frontal_bootcut_jeans.jpg',
+    '/images/foto_modelo_trasera_bootcut_jeans.jpg',
+    '/images/foto_modelo_costado_bootcut_jeans.jpg',
+    '/images/foto_modelo_cerca_bootcut_jeans.jpg'
+),(
+    -- Chinos (P027)
+    '/images/foto_frontal_chinos.jpg',
+    '/images/foto_trasera_chinos.jpg',
+    '/images/foto_modelo_frontal_chinos.jpg',
+    '/images/foto_modelo_trasera_chinos.jpg',
+    '/images/foto_modelo_costado_chinos.jpg',
+    '/images/foto_modelo_cerca_chinos.jpg'
+),(
+    -- Dress Trousers (P028)
+    '/images/foto_frontal_dress_trousers.jpg',
+    '/images/foto_trasera_dress_trousers.jpg',
+    '/images/foto_modelo_frontal_dress_trousers.jpg',
+    '/images/foto_modelo_trasera_dress_trousers.jpg',
+    '/images/foto_modelo_costado_dress_trousers.jpg',
+    ''
+),(
+    -- Knit Sweater (P029)
+    '/images/foto_frontal_knit_sweater.jpg',
+    '/images/foto_trasera_knit_sweater.jpg',
+    '/images/foto_modelo_frontal_knit_sweater.jpg',
+    '',
+    '',
+    ''
+),(
+    -- Cashmere Sweater (P030)
+    '/images/foto_frontal_cashmere_sweater.jpg',
+    '/images/foto_trasera_cashmere_sweater.jpg',
+    '/images/foto_modelo_frontal_cashmere_sweater.jpg',
+    '/images/foto_modelo_trasera_cashmere_sweater.jpg',
+    '/images/foto_modelo_costado_cashmere_sweater.jpg',
+    ''
+),(
+    -- Cardigan (P031)
+    '/images/foto_frontal_cardigan.jpg',
+    '/images/foto_trasera_cardigan.jpg',
+    '/images/foto_modelo_frontal_cardigan.jpg',
+    '/images/foto_modelo_trasera_cardigan.jpg',
+    '/images/foto_modelo_costado_cardigan.jpg',
+    '/images/foto_modelo_cerca_cardigan.jpg'
+),(
+    -- Turtleneck Sweater (P032)
+    '/images/foto_frontal_turtleneck_sweater.jpg',
+    '/images/foto_trasera_turtleneck_sweater.jpg',
+    '/images/foto_modelo_frontal_turtleneck_sweater.jpg',
+    '/images/foto_modelo_trasera_turtleneck_sweater.jpg',
+    '/images/foto_modelo_costado_turtleneck_sweater.jpg',
+    '/images/foto_modelo_cerca_turtleneck_sweater.jpg'
+),(
+    -- Hoodie Sweatshirt (P033)
+    '/images/foto_frontal_hoodie_sweatshirt.jpg',
+    '/images/foto_trasera_hoodie_sweatshirt.jpg',
+    '/images/foto_modelo_frontal_hoodie_sweatshirt.jpg',
+    '/images/foto_modelo_trasera_hoodie_sweatshirt.jpg',
+    '/images/foto_modelo_costado_hoodie_sweatshirt.jpg',
+    '/images/foto_modelo_cerca_hoodie_sweatshirt.jpg'
+),(
+    -- Crewneck Sweatshirt (P034)
+    '/images/foto_frontal_crewneck_sweatshirt.jpg',
+    '/images/foto_trasera_crewneck_sweatshirt.jpg',
+    '/images/foto_modelo_frontal_crewneck_sweatshirt.jpg',
+    '/images/foto_modelo_trasera_crewneck_sweatshirt.jpg',
+    '/images/foto_modelo_costado_crewneck_sweatshirt.jpg',
+    '/images/foto_modelo_cerca_crewneck_sweatshirt.jpg'
+),(
+    -- Zip-up Sweatshirt (P035)
+    '/images/foto_frontal_zip-up_sweatshirt.jpg',
+    '/images/foto_trasera_zip-up_sweatshirt.jpg',
+    '/images/foto_modelo_frontal_zip-up_sweatshirt.jpg',
+    '/images/foto_modelo_trasera_zip-up_sweatshirt.jpg',
+    '/images/foto_modelo_costado_zip-up_sweatshirt.jpg',
+    '/images/foto_modelo_cerca_zip-up_sweatshirt.jpg'
+),(
+    -- Fleece Sweatshirt (P036)
+    '/images/foto_frontal_fleece_sweatshirt.jpg',
+    '/images/foto_trasera_fleece_sweatshirt.jpg',
+    '/images/foto_modelo_frontal_fleece_sweatshirt.jpg',
+    '/images/foto_modelo_trasera_fleece_sweatshirt.jpg',
+    '/images/foto_modelo_costado_fleece_sweatshirt.jpg',
+    '/images/foto_modelo_cerca_fleece_sweatshirt.jpg'
+),(
+    -- Tote Bag Classic (P037)
+    '/images/foto_frontal_tote_bag_classic.jpg',
+    '/images/foto_trasera_tote_bag_classic.jpg',
+    '/images/foto_modelo_frontal_tote_bag_classic.jpg',
+    '/images/foto_modelo_trasera_tote_bag_classic.jpg',
+    '/images/foto_modelo_costado_tote_bag_classic.jpg',
+    '/images/foto_modelo_cerca_tote_bag_classic.jpg'
+),(
+    -- Tote Bag Modern (P038)
+    '/images/foto_frontal_tote_bag_modern.jpg',
+    '/images/foto_trasera_tote_bag_modern.jpg',
+    '/images/foto_modelo_frontal_tote_bag_modern.jpg',
+    '/images/foto_modelo_trasera_tote_bag_modern.jpg',
+    '/images/foto_modelo_costado_tote_bag_modern.jpg',
+    ''
+),(
+    -- Leather Clutch (P039)
+    '/images/foto_frontal_leather_clutch.jpg',
+    '/images/foto_trasera_leather_clutch.jpg',
+    '/images/foto_modelo_frontal_leather_clutch.jpg',
+    '/images/foto_modelo_trasera_leather_clutch.jpg',
+    '/images/foto_modelo_costado_leather_clutch.jpg',
+    ''
+),(
+    -- Silk Clutch (P040)
+    '/images/foto_frontal_silk_clutch.jpg',
+    '/images/foto_trasera_silk_clutch.jpg',
+    '/images/foto_modelo_frontal_silk_clutch.jpg',
+    '/images/foto_modelo_trasera_silk_clutch.jpg',
+    '/images/foto_modelo_costado_silk_clutch.jpg',
+    ''
+),(
+    -- Leather Boots (P041)
+    '/images/foto_frontal_leather_boots.jpg',
+    '/images/foto_trasera_leather_boots.jpg',
+    '/images/foto_modelo_frontal_leather_boots.jpg',
+    '/images/foto_modelo_trasera_leather_boots.jpg',
+    '/images/foto_modelo_costado_leather_boots.jpg',
+    ''
+),(
+    -- Suede Boots (P042)
+    '/images/foto_frontal_suede_boots.jpg',
+    '/images/foto_trasera_suede_boots.jpg',
+    '/images/foto_modelo_frontal_suede_boots.jpg',
+    '/images/foto_modelo_trasera_suede_boots.jpg',
+    '/images/foto_modelo_costado_suede_boots.jpg',
+    '/images/foto_modelo_cerca_suede_boots.jpg'
+),(
+    -- Sporty Sneakers (P043)
+    '/images/foto_frontal_sporty_sneakers.jpg',
+    '/images/foto_trasera_sporty_sneakers.jpg',
+    '/images/foto_modelo_frontal_sporty_sneakers.jpg',
+    '/images/foto_modelo_trasera_sporty_sneakers.jpg',
+    '/images/foto_modelo_costado_sporty_sneakers.jpg',
+    '/images/foto_modelo_cerca_sporty_sneakers.jpg'
+),(
+    -- Casual Sneakers (P044)
+    '/images/foto_frontal_casual_sneakers.jpg',
+    '/images/foto_trasera_casual_sneakers.jpg',
+    '/images/foto_modelo_frontal_casual_sneakers.jpg',
+    '/images/foto_modelo_trasera_casual_sneakers.jpg',
+    '/images/foto_modelo_costado_casual_sneakers.jpg',
+    ''
+),(
+    -- Leather Strap Watch (P045)
+    '/images/foto_frontal_leather_strap_watch.jpg',
+    '/images/foto_trasera_leather_strap_watch.jpg',
+    '/images/foto_modelo_frontal_leather_strap_watch.jpg',
+    '/images/foto_modelo_trasera_leather_strap_watch.jpg',
+    '/images/foto_modelo_costado_leather_strap_watch.jpg',
+    '/images/foto_modelo_cerca_leather_strap_watch.jpg'
+),(
+    -- Metal Strap Watch (P046)
+    '/images/foto_frontal_metal_strap_watch.jpg',
+    '/images/foto_trasera_metal_strap_watch.jpg',
+    '/images/foto_modelo_frontal_metal_strap_watch.jpg',
+    '/images/foto_modelo_trasera_metal_strap_watch.jpg',
+    '',
+    ''
+),(
+    -- Fedora Hat (P047)
+    '/images/foto_frontal_fedora_hat.jpg',
+    '/images/foto_trasera_fedora_hat.jpg',
+    '/images/foto_modelo_frontal_fedora_hat.jpg',
+    '',
+    '',
+    ''
+),(
+    -- Beanie Hat (P048)
+    '/images/foto_frontal_beanie_hat.jpg',
+    '/images/foto_trasera_beanie_hat.jpg',
+    '/images/foto_modelo_frontal_beanie_hat.jpg',
+    '',
+    '',
+    ''
+),(
+    -- Tote Bag Classic (P049 - Hombre)
+    '/images/foto_frontal_tote_bag_classic_h.jpg',
+    '/images/foto_trasera_tote_bag_classic_h.jpg',
+    '/images/foto_modelo_frontal_tote_bag_classic_h.jpg',
+    '/images/foto_modelo_trasera_tote_bag_classic_h.jpg',
+    '/images/foto_modelo_costado_tote_bag_classic_h.jpg',
+    '/images/foto_modelo_cerca_tote_bag_classic_h.jpg'
+);
+
+
+
+
 
 
 -- Insertamos los estados de los artículos
@@ -267,204 +592,114 @@ INSERT INTO subcategorias (id_categoria, nombre, descripcion) VALUES
 
 
 
+-- INSERT DE PRODUCTOS CORREGIDO SIN DUPLICADOS Y CUADRANDO CON GALERÍAS
+
 INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
+-- TRAJES (id_galeria 1-4)
 ('P001', 1, 1, 'Classic Suit', 'Traje clásico de corte recto, adecuado para ocasiones formales', 'BrandX', 'H', 150.00),
 ('P002', 1, 2, 'Slim Fit Suit', 'Traje ajustado para un look moderno', 'BrandY', 'H', 180.00),
 ('P003', 1, 3, 'Formal Blazer', 'Blazer formal de corte recto, ideal para eventos', 'BrandZ', 'H', 120.00),
-('P004', 1, 4, 'Double-breasted Suit', 'Traje de doble botonadura elegante y sofisticado', 'BrandA', 'M', 200.00),
+('P004', 1, 4, 'Double-breasted Suit', 'Traje de doble botonadura elegante y sofisticado', 'BrandA', 'M', 200.00);
+INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
+-- ABRIGOS Y CHAQUETAS (id_galeria 5-8)
 ('P005', 2, 5, 'Winter Coat', 'Abrigo de lana para invierno', 'BrandB', 'H', 160.00),
 ('P006', 2, 6, 'Trench Coat', 'Abrigo estilo trench, ligero para la primavera', 'BrandC', 'M', 130.00),
 ('P007', 2, 7, 'Leather Jacket', 'Chaqueta de cuero, ideal para la temporada de otoño', 'BrandD', 'H', 180.00),
-('P008', 2, 8, 'Blazer', 'Blazer formal con corte ajustado', 'BrandE', 'H', 140.00),
+('P008', 2, 8, 'Blazer', 'Blazer formal con corte ajustado', 'BrandE', 'H', 140.00);
+INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
+-- VESTIDOS (id_galeria 9-10, 23-24)
 ('P009', 3, 9, 'Evening Dress', 'Vestido largo y elegante para eventos formales', 'BrandF', 'M', 220.00),
 ('P010', 3, 10, 'Cocktail Dress', 'Vestido corto y elegante para cócteles', 'BrandG', 'M', 160.00),
-('P011', 3, null, 'Day Dress', 'Vestido casual para el día a día', 'BrandH', 'M', 90.00),
-('P012', 3, null, 'Maxi Dress', 'Vestido largo, ideal para la playa o eventos formales', 'BrandI', 'M', 180.00),
-('P013', 4, null, 'A-Line Skirt', 'Falda de corte A, ideal para todos los días', 'BrandJ', 'M', 50.00),
-('P014', 4, null, 'Pencil Skirt', 'Falda de tubo ajustada para ocasiones formales', 'BrandK', 'M', 60.00),
-('P015', 4, null, 'Pleated Skirt', 'Falda plisada de largo medio', 'BrandL', 'M', 55.00),
-('P016', 4, null, 'Mini Skirt', 'Falda corta para un look más casual', 'BrandM', 'M', 45.00),
-('P017', 5, null, 'Basic T-Shirt', 'Camiseta básica de algodón, cómoda para el día a día', 'BrandN', 'H', 20.00),
-('P018', 5, null, 'Graphic T-Shirt', 'Camiseta con diseño gráfico moderno', 'BrandO', 'H', 25.00),
-('P019', 5, null, 'V-neck T-Shirt', 'Camiseta de cuello en V, ideal para días calurosos', 'BrandP', 'H', 22.00),
-('P020', 5, null, 'Long Sleeve T-Shirt', 'Camiseta de manga larga, perfecta para el otoño', 'BrandQ', 'H', 28.00),
-('P021', 6, null, 'Body Top', 'Top de cuerpo ajustado, ideal para combinar con faldas', 'BrandR', 'M', 35.00),
-('P022', 6, null, 'Crop Top', 'Top corto, muy de moda', 'BrandS', 'M', 30.00),
-('P023', 6, null, 'Blouse', 'Blusa elegante para ocasiones formales', 'BrandT', 'M', 50.00),
-('P024', 6, null, 'Tank Top', 'Top sin mangas, ideal para el verano', 'BrandU', 'M', 18.00),
-('P025', 7, null, 'Slim Fit Jeans', 'Jeans de corte ajustado, ideal para el día a día', 'BrandV', 'H', 55.00),
-('P026', 7, null, 'Bootcut Jeans', 'Jeans de corte acampanado', 'BrandW', 'M', 60.00),
-('P027', 7, null, 'Chinos', 'Pantalones chinos, versátiles y cómodos', 'BrandX', 'H', 50.00),
-('P028', 7, null, 'Dress Trousers', 'Pantalones de vestir, adecuados para eventos formales', 'BrandY', 'M', 70.00),
-('P029', 8, null, 'Knit Sweater', 'Suéter de punto suave, ideal para el invierno', 'BrandZ', 'M', 80.00),
-('P030', 8, null, 'Cashmere Sweater', 'Suéter de cachemira de alta calidad', 'BrandA', 'M', 120.00),
-('P031', 8, null, 'Cardigan', 'Cárdigan largo, cómodo para el otoño', 'BrandB', 'H', 60.00),
-('P032', 8, null, 'Turtleneck Sweater', 'Suéter de cuello alto, ideal para el invierno', 'BrandC', 'H', 75.00),
-('P033', 9, null, 'Hoodie Sweatshirt', 'Sudadera con capucha, cómoda y deportiva', 'BrandD', 'H', 45.00),
-('P034', 9, null, 'Crewneck Sweatshirt', 'Sudadera de cuello redondo', 'BrandE', 'H', 40.00),
-('P035', 9, null, 'Zip-up Sweatshirt', 'Sudadera con cremallera, fácil de poner y quitar', 'BrandF', 'M', 50.00),
-('P036', 9, null, 'Fleece Sweatshirt', 'Sudadera de forro polar, muy abrigada', 'BrandG', 'H', 60.00);
-
-
--- Insertar productos para Totes mujer
+('P011', 3, 23, 'Day Dress', 'Vestido casual para el día a día', 'BrandH', 'M', 90.00),
+('P012', 3, 24, 'Maxi Dress', 'Vestido largo, ideal para la playa o eventos formales', 'BrandI', 'M', 180.00);
 INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
-('P037', 10, null, 'Tote Bag Classic', 'Bolso grande y espacioso para todo el día', 'BrandT', 'M', 50.00),
-('P038', 10, null, 'Tote Bag Modern', 'Bolso moderno y de gran capacidad', 'BrandU', 'M', 55.00);
--- Insertar productos para Totes hombre
+-- SHOULDER BAGS (id_galeria 11)
+('P013', 12, 11, 'Michael Kors Shoulder Bag', 'Este minipochette con nuestro logotipo imperio metalizado resulta ideal para viajar sin mucho peso.', 'Michael Kors', 'M', 90.00);
 INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
-('P049', 10, null, 'Tote Bag Classic', 'Bolso grande y espacioso para todo el día', 'BrandT', 'H', 50.00),
-('P050', 10, null, 'Tote Bag Modern', 'Bolso moderno y de gran capacidad', 'BrandU', 'H', 55.00);
-
--- Insertar productos para Clutches
+-- TOP HANDLE BAGS (id_galeria 12-13)
+('P014', 13, 12, 'Alva Quilted Top Handle Bag', 'The Alva range returns in a brand new iteration that makes it the perfect day-to-night bag', 'Alva Quilted', 'M', 60.00),
+('P015', 13, 13, 'Aubrielle Canvas Two-Tone Top Handle Bag', 'The season for canvas bags is here, and the Aubrielle is an elegant way to get on the trend.', 'Aubrielle Canvas', 'M', 75.00);
 INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
-('P039', 11, null, 'Leather Clutch', 'Clutch de cuero elegante', 'BrandV', 'M', 80.00),
-('P040', 11, null, 'Silk Clutch', 'Clutch de seda, sofisticado y refinado', 'BrandW', 'M', 75.00);
-
--- Insertar productos para Boots
+-- FLATS (id_galeria 14-15)
+('P016', 16, 14, 'Hermine Flats', 'Hermine son zapatos flats atrevidos con detalles metálicos.', 'Hermine', 'M', 120.00),
+('P017', 16, 15, 'Jolin Flats', 'Jolin son unas elegantes bailarinas planas de cuero plateado.', 'Jolin', 'M', 100.00);
 INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
-('P041', 14, null, 'Leather Boots', 'Botas de cuero elegantes', 'BrandX', 'M', 120.00),
-('P042', 14, null, 'Suede Boots', 'Botas de ante suaves y cómodas', 'BrandY', 'H', 110.00);
-
--- Insertar productos para Sneakers
+-- HEELS (id_galeria 16-17)
+('P018', 17, 16, 'Emily Heels', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.', 'Emily', 'M', 99.00),
+('P019', 17, 17, 'Laena Heels', 'This ankle boot with laces fits all styles of heels dance, from the sexiest to the most urban thanks to its incomparable style.', 'Laena', 'M', 99.00);
 INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
-('P043', 15, null, 'Sporty Sneakers', 'Zapatillas deportivas para el día a día', 'BrandZ', 'H', 60.00),
-('P044', 15, null, 'Casual Sneakers', 'Zapatillas casuales para el fin de semana', 'BrandA', 'M', 55.00);
-
--- Insertar productos para Watches
+-- TABIS (id_galeria 18-19)
+('P020', 18, 18, 'Tabi Leather Sandals', 'Tabi flat leather sandals.', 'Maison Margiela', 'M', 130.00),
+('P021', 18, 19, 'Pumps Mary-Jane Tabi', 'Confeccionados en piel de napa suave con una correa ajustable en la parte frontal.', 'Maison Margiela', 'M', 200.00);
 INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
-('P045', 14, null, 'Leather Strap Watch', 'Reloj de pulsera con correa de cuero', 'BrandB', 'H', 90.00),
-('P046', 14, null, 'Metal Strap Watch', 'Reloj de pulsera con correa metálica', 'BrandC', 'H', 120.00);
-
--- Insertar productos para Hats
+-- SUNGLASSES (id_galeria 20)
+('P022', 21, 20, 'OO9374 Frogskins Oakley', 'Gafas de sol deportivas Oakley con diseño clásico', 'Oakley', 'H', 120.00);
 INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
-('P047', 20, null, 'Fedora Hat', 'Sombrero de ala ancha estilo fedora', 'BrandD', 'M', 50.00),
-('P048', 20, null, 'Beanie Hat', 'Sombrero de lana ajustado, ideal para invierno', 'BrandE', 'H', 25.00);
-
--- BAGS
-
--- Insertar productos para shoulder bags mujer
+-- CARD HOLDERS (id_galeria 21)
+('P023', 22, 21, 'Tarjetero LV x TM', 'Tarjetero de lujo con diseño exclusivo', 'Louis Vuitton x Takashi Murakami', 'H', 150.00);
 INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
-('P059', 12, 11, 'Micheal Kors Shoulder bag', 'Este minipochette con nuestro logotipo imperio metalizado resulta ideal para viajar sin mucho peso. ', 'Michael Kors', 'M', 90.00);
--- Artículos para el producto 'P059'
-INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
-('A231', 'P059', 'Micheal Kors Shoulder bag - Logo', 'Única', 'Multicolor', 10, '#000000', 'Este minipochette con nuestro logotipo imperio metalizado resulta ideal para viajar sin mucho peso.');
-INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES
-('A231', 4),
-('A231', 3);
-
--- Insertar productos para top handle mujer
+-- NECKLACES (id_galeria 22)
+('P024', 23, 22, 'Collar Blue Melted Stars', 'Collar elegante con diseño de estrellas derretidas azules', 'BrandH', 'M', 80.00);
 INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
-('P051', 13, 12, 'Alva Quilted Top Handle Bag', 'The Alva range returns in a brand new iteration that makes it the perfect day-to-night bag', 'Alva Quilted', 'M', 60.00),
-('P052', 13, 13, 'Aubrielle Canvas Two-Tone Top Handle Bag', 'The season for canvas bags is here, and the Aubrielle is an elegant way to get on the trend.', 'Aubrille Canvas', 'M', 75.00);
--- Artículos para el producto 'P051'
-INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
-('A208', 'P051', 'Alva Quilted Top Handle Bag - Cream', 'Única', 'Crema', 10, '#000000', 'The Alva range returns in a brand new iteration that makes it the perfect day-to-night bag');
--- Artículos para el producto 'P052'
-INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
-('A209', 'P052', 'Aubrielle Canvas Two-Tone Top Handle Bag', 'Única', 'Negro', 5, '#000000', 'The season for canvas bags is here, and the Aubrielle is an elegant way to get on the trend.');
-INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES
-('A208', 4),
-('A209', 4),
-('A208', 3),
-('A209', 3);
-
-
--- SHOES
-
--- Insertar productos para flats mujer
+-- FALDAS (id_galeria 25-28)
+('P025', 4, 25, 'A-Line Skirt', 'Falda de corte A, ideal para todos los días', 'BrandJ', 'M', 50.00),
+('P026', 4, 26, 'Pencil Skirt', 'Falda de tubo ajustada para ocasiones formales', 'BrandK', 'M', 60.00),
+('P027', 4, 27, 'Pleated Skirt', 'Falda plisada de largo medio', 'BrandL', 'M', 55.00),
+('P028', 4, 28, 'Mini Skirt', 'Falda corta para un look más casual', 'BrandM', 'M', 45.00);
 INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
-('P053', 16, 14, 'Hermine flats', 'Hermine son zapatos flats atrevidos con detalles metálicos.', 'Hermine', 'M', 120.00),
-('P054', 16, 15, 'Jolin flats', 'Jolin son unas elegantes bailarinas planas de cuero plateado.', 'Jolin', 'M', 100.00);
--- Artículos para el producto 'P053'
-INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
-('A210', 'P053', 'Hermine flats - Charol', '37', 'Negro', 3, '#000000', 'Hermine son zapatos flats atrevidos con detalles metálicos.'),
-('A211', 'P053', 'Hermine flats - Charol', '38', 'Negro', 2, '#000000', 'Hermine son zapatos flats atrevidos con detalles metálicos.'),
-('A212', 'P053', 'Hermine flats - Charol', '40', 'Negro', 1, '#000000', 'Hermine son zapatos flats atrevidos con detalles metálicos.');
--- Artículos para el producto 'P054'
-INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
-('A213', 'P054', 'Jolin flats - Metalic', '37', 'Metálico', 3, '#000000', 'Jolin son unas elegantes bailarinas planas de cuero plateado.'),
-('A214', 'P054', 'Jolin flats - Metalic', '38', 'Metálico', 2, '#000000', 'Jolin son unas elegantes bailarinas planas de cuero plateado.'),
-('A215', 'P054', 'Jolin flats - Metalic', '40', 'Metálico', 1, '#000000', 'Jolin son unas elegantes bailarinas planas de cuero plateado.');
-INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES
-('A210', 4),
-('A211', 5),
-('A212', 6),
-('A213', 4),
-('A214', 6),
-('A215', 4),
-('A210', 3),
-('A211', 3),
-('A212', 3),
-('A213', 3),
-('A214', 3),
-('A215', 3);
-
--- Insertar productos para heels mujer
+-- CAMISETAS (id_galeria 29-32)
+('P029', 5, 29, 'Basic T-Shirt', 'Camiseta básica de algodón, cómoda para el día a día', 'BrandN', 'H', 20.00),
+('P030', 5, 30, 'Graphic T-Shirt', 'Camiseta con diseño gráfico moderno', 'BrandO', 'H', 25.00),
+('P031', 5, 31, 'V-neck T-Shirt', 'Camiseta de cuello en V, ideal para días calurosos', 'BrandP', 'H', 22.00),
+('P032', 5, 32, 'Long Sleeve T-Shirt', 'Camiseta de manga larga, perfecta para el otoño', 'BrandQ', 'H', 28.00);
 INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
-('P055', 17, 16, 'Emily heels', ' Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.', 'Emily', 'M', 99.00),
-('P056', 17, 17, 'Leana heels', 'This ankle boot with laces fits all styles of heels dance, from the sexiest to the most urban thanks to its incomparable style.', 'Leana', 'M', 99.00);
--- Artículos para el producto 'P055'
-INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
-('A216', 'P055', 'Emily heels - Black', '37', 'Negro', 3, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.'),
-('A217', 'P055', 'Emily heels - Black', '38', 'Negro', 2, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.'),
-('A218', 'P055', 'Emily heels - White', '38', 'Blanco', 6, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.'),
-('A219', 'P055', 'Emily heels - White', '40', 'Blanco', 3, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.');
--- Artículos para el producto 'P056'
-INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
-('A220', 'P056', 'Leona heels - Black', '39', 'Negro', 8, '#000000', 'This ankle boot with laces fits all styles of heels dance, from the sexiest to the most urban thanks to its incomparable style.'),
-('A221', 'P056', 'Leona heels - Black', '40', 'Negro', 8, '#000000', 'This ankle boot with laces fits all styles of heels dance, from the sexiest to the most urban thanks to its incomparable style.'),
-('A222', 'P056', 'Leona heels - Black', '36', 'Negro', 8, '#000000', 'This ankle boot with laces fits all styles of heels dance, from the sexiest to the most urban thanks to its incomparable style.');
-INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES
-('A216', 4),
-('A217', 5),
-('A218', 6),
-('A219', 4),
-('A220', 6),
-('A221', 4),
-('A222', 5),
-('A216', 3),
-('A217', 3),
-('A218', 3),
-('A219', 3),
-('A220', 3),
-('A221', 3),
-('A222', 3);
-
--- Insertar productos para tabis mujer
+-- TOPS (id_galeria 33-36)
+('P033', 6, 33, 'Body Top', 'Top de cuerpo ajustado, ideal para combinar con faldas', 'BrandR', 'M', 35.00),
+('P034', 6, 34, 'Crop Top', 'Top corto, muy de moda', 'BrandS', 'M', 30.00),
+('P035', 6, 35, 'Blouse', 'Blusa elegante para ocasiones formales', 'BrandT', 'M', 50.00),
+('P036', 6, 36, 'Tank Top', 'Top sin mangas, ideal para el verano', 'BrandU', 'M', 18.00);
 INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
-('P057', 18, 18, 'Tabi leather sandals', 'Tabi flat leather sandals.', 'Maison Margiela', 'M', 130.00),
-('P058', 18, 19, 'Pumps Mary-Jane Tabi', 'Confeccionados en piel de napa suave con una correa ajustable en la parte frontal.', 'Maison Margiela', 'M', 200.00);
--- Artículos para el producto 'P057'
-INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
-('A223', 'P057', 'Tabi leather sandals - Black', '37', 'Negro', 3, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.'),
-('A224', 'P057', 'Tabi leather sandals - Black', '38', 'Negro', 2, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.'),
-('A225', 'P057', 'Tabi leather sandals - Black', '39', 'Negro', 6, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.'),
-('A226', 'P057', 'Tabi leather sandals - Black', '40', 'Negro', 3, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.');
--- Artículos para el producto 'P058'
-INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
-('A227', 'P058', 'Pumps Mary-Jane Tabi - Blue', '37', 'Negro', 3, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.'),
-('A228', 'P058', 'Pumps Mary-Jane Tabi - Blue', '38', 'Negro', 2, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.'),
-('A229', 'P058', 'Pumps Mary-Jane Tabi - Blue', '39', 'Negro', 6, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.'),
-('A230', 'P058', 'Pumps Mary-Jane Tabi - Blue', '40', 'Negro', 3, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.');
-INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES
-('A223', 4),
-('A224', 5),
-('A225', 6),
-('A226', 4),
-('A227', 6),
-('A228', 4),
-('A229', 5),
-('A230', 7),
-('A223', 3),
-('A224', 3),
-('A225', 3),
-('A226', 3),
-('A227', 3),
-('A228', 3),
-('A229', 3),
-('A230', 3);
-
--- ACCESSORIES
+-- PANTALONES (id_galeria 37-40)
+('P037', 7, 37, 'Slim Fit Jeans', 'Jeans de corte ajustado, ideal para el día a día', 'BrandV', 'H', 55.00),
+('P038', 7, 38, 'Bootcut Jeans', 'Jeans de corte acampanado', 'BrandW', 'M', 60.00),
+('P039', 7, 39, 'Chinos', 'Pantalones chinos, versátiles y cómodos', 'BrandX', 'H', 50.00),
+('P040', 7, 40, 'Dress Trousers', 'Pantalones de vestir, adecuados para eventos formales', 'BrandY', 'M', 70.00);
+INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
+-- SUÉTERES (id_galeria 41-44)
+('P041', 8, 41, 'Knit Sweater', 'Suéter de punto suave, ideal para el invierno', 'BrandZ', 'M', 80.00),
+('P042', 8, 42, 'Cashmere Sweater', 'Suéter de cachemira de alta calidad', 'BrandA', 'M', 120.00),
+('P043', 8, 43, 'Cardigan', 'Cárdigan largo, cómodo para el otoño', 'BrandB', 'H', 60.00),
+('P044', 8, 44, 'Turtleneck Sweater', 'Suéter de cuello alto, ideal para el invierno', 'BrandC', 'H', 75.00);
+INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
+-- SUDADERAS (id_galeria 45-48)
+('P045', 9, 45, 'Hoodie Sweatshirt', 'Sudadera con capucha, cómoda y deportiva', 'BrandD', 'H', 45.00),
+('P046', 9, 46, 'Crewneck Sweatshirt', 'Sudadera de cuello redondo', 'BrandE', 'H', 40.00),
+('P047', 9, 47, 'Zip-up Sweatshirt', 'Sudadera con cremallera, fácil de poner y quitar', 'BrandF', 'M', 50.00),
+('P048', 9, 48, 'Fleece Sweatshirt', 'Sudadera de forro polar, muy abrigada', 'BrandG', 'H', 60.00);
+INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
+-- TOTES MUJER (id_galeria 49-50)
+('P049', 10, 49, 'Tote Bag Classic', 'Bolso grande y espacioso para todo el día', 'BrandT', 'M', 50.00),
+('P050', 10, 50, 'Tote Bag Modern', 'Bolso moderno y de gran capacidad', 'BrandU', 'M', 55.00);
+INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
+-- CLUTCHES (id_galeria 51-52)
+('P051', 11, 51, 'Leather Clutch', 'Clutch de cuero elegante', 'BrandV', 'M', 80.00),
+('P052', 11, 52, 'Silk Clutch', 'Clutch de seda, sofisticado y refinado', 'BrandW', 'M', 75.00);
+INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
+-- BOOTS (id_galeria 53-54)
+('P053', 14, 53, 'Leather Boots', 'Botas de cuero elegantes', 'BrandX', 'M', 120.00),
+('P054', 14, 54, 'Suede Boots', 'Botas de ante suaves y cómodas', 'BrandY', 'H', 110.00);
+INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
+-- SNEAKERS (id_galeria 55-56)
+('P055', 15, 55, 'Sporty Sneakers', 'Zapatillas deportivas para el día a día', 'BrandZ', 'H', 60.00),
+('P056', 15, 56, 'Casual Sneakers', 'Zapatillas casuales para el fin de semana', 'BrandA', 'M', 55.00);
+INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
+-- WATCHES (id_galeria 57-58)
+('P057', 19, 57, 'Leather Strap Watch', 'Reloj de pulsera con correa de cuero', 'BrandB', 'H', 90.00),
+('P058', 19, 58, 'Metal Strap Watch', 'Reloj de pulsera con correa metálica', 'BrandC', 'H', 120.00);
+INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
+-- HATS (id_galeria 59-60)
+('P059', 20, 59, 'Fedora Hat', 'Sombrero de ala ancha estilo fedora', 'BrandD', 'M', 50.00),
+('P063', 20, 60, 'Beanie Hat', 'Sombrero de lana ajustado, ideal para invierno', 'BrandE', 'H', 25.00);
 
 -- Insertar productos para eyewear mujer
 INSERT INTO productos (id_producto, id_subcategoria, id_galeria, nombre, descripcion, marca, sexo, precio) VALUES
@@ -499,6 +734,121 @@ INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES
 ('A235', 4),
 ('A235', 3);
 -- Insertar pro
+
+-- ARTÍCULOS PARA LOS PRODUCTOS ESPECÍFICOS
+
+-- Artículos para el producto 'P059' - Michael Kors Shoulder bag
+INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
+('A231', 'P059', 'Micheal Kors Shoulder bag - Logo', 'Única', 'Multicolor', 10, '#000000', 'Este minipochette con nuestro logotipo imperio metalizado resulta ideal para viajar sin mucho peso.');
+
+INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES
+('A231', 4),
+('A231', 3);
+
+-- Artículos para el producto 'P051' - Alva Quilted Top Handle Bag
+INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
+('A208', 'P051', 'Alva Quilted Top Handle Bag - Cream', 'Única', 'Crema', 10, '#F5F5DC', 'The Alva range returns in a brand new iteration that makes it the perfect day-to-night bag');
+
+-- Artículos para el producto 'P052' - Aubrielle Canvas Two-Tone Top Handle Bag
+INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
+('A209', 'P052', 'Aubrielle Canvas Two-Tone Top Handle Bag', 'Única', 'Negro', 5, '#000000', 'The season for canvas bags is here, and the Aubrielle is an elegant way to get on the trend.');
+
+INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES
+('A208', 4),
+('A209', 4),
+('A208', 3),
+('A209', 3);
+
+-- Artículos para el producto 'P053' - Hermine flats
+INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
+('A210', 'P053', 'Hermine flats - Charol', '37', 'Negro', 3, '#000000', 'Hermine son zapatos flats atrevidos con detalles metálicos.'),
+('A211', 'P053', 'Hermine flats - Charol', '38', 'Negro', 2, '#000000', 'Hermine son zapatos flats atrevidos con detalles metálicos.'),
+('A212', 'P053', 'Hermine flats - Charol', '40', 'Negro', 1, '#000000', 'Hermine son zapatos flats atrevidos con detalles metálicos.');
+
+-- Artículos para el producto 'P054' - Jolin flats
+INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
+('A213', 'P054', 'Jolin flats - Metalic', '37', 'Metálico', 3, '#C0C0C0', 'Jolin son unas elegantes bailarinas planas de cuero plateado.'),
+('A214', 'P054', 'Jolin flats - Metalic', '38', 'Metálico', 2, '#C0C0C0', 'Jolin son unas elegantes bailarinas planas de cuero plateado.'),
+('A215', 'P054', 'Jolin flats - Metalic', '40', 'Metálico', 1, '#C0C0C0', 'Jolin son unas elegantes bailarinas planas de cuero plateado.');
+
+INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES
+('A210', 4),
+('A211', 5),
+('A212', 6),
+('A213', 4),
+('A214', 6),
+('A215', 4),
+('A210', 3),
+('A211', 3),
+('A212', 3),
+('A213', 3),
+('A214', 3),
+('A215', 3);
+
+-- Artículos para el producto 'P055' - Emily heels
+INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
+('A216', 'P055', 'Emily heels - Black', '37', 'Negro', 3, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.'),
+('A217', 'P055', 'Emily heels - Black', '38', 'Negro', 2, '#000000', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.'),
+('A218', 'P055', 'Emily heels - White', '38', 'Blanco', 6, '#FFFFFF', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.'),
+('A219', 'P055', 'Emily heels - White', '40', 'Blanco', 3, '#FFFFFF', 'Emily has everything you need! It is easy to wear in every situation thanks to the contrast of the vegan suede and vegan leather materials.');
+
+-- Artículos para el producto 'P056' - Leana heels
+INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
+('A220', 'P056', 'Leona heels - Black', '39', 'Negro', 8, '#000000', 'This ankle boot with laces fits all styles of heels dance, from the sexiest to the most urban thanks to its incomparable style.'),
+('A221', 'P056', 'Leona heels - Black', '40', 'Negro', 8, '#000000', 'This ankle boot with laces fits all styles of heels dance, from the sexiest to the most urban thanks to its incomparable style.'),
+('A222', 'P056', 'Leona heels - Black', '36', 'Negro', 8, '#000000', 'This ankle boot with laces fits all styles of heels dance, from the sexiest to the most urban thanks to its incomparable style.');
+
+INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES
+('A216', 4),
+('A217', 5),
+('A218', 6),
+('A219', 4),
+('A220', 6),
+('A221', 4),
+('A222', 5),
+('A216', 3),
+('A217', 3),
+('A218', 3),
+('A219', 3),
+('A220', 3),
+('A221', 3),
+('A222', 3);
+
+-- Artículos para el producto 'P057' - Tabi leather sandals
+INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
+('A223', 'P057', 'Tabi leather sandals - Black', '37', 'Negro', 3, '#000000', 'Tabi flat leather sandals.'),
+('A224', 'P057', 'Tabi leather sandals - Black', '38', 'Negro', 2, '#000000', 'Tabi flat leather sandals.'),
+('A225', 'P057', 'Tabi leather sandals - Black', '39', 'Negro', 6, '#000000', 'Tabi flat leather sandals.'),
+('A226', 'P057', 'Tabi leather sandals - Black', '40', 'Negro', 3, '#000000', 'Tabi flat leather sandals.');
+
+-- Artículos para el producto 'P058' - Pumps Mary-Jane Tabi
+INSERT INTO articulos (id_articulo, id_producto, nombre, talla, color, stock, codigo_color, descripcion) VALUES
+('A227', 'P058', 'Pumps Mary-Jane Tabi - Blue', '37', 'Azul', 3, '#0000FF', 'Confeccionados en piel de napa suave con una correa ajustable en la parte frontal.'),
+('A228', 'P058', 'Pumps Mary-Jane Tabi - Blue', '38', 'Azul', 2, '#0000FF', 'Confeccionados en piel de napa suave con una correa ajustable en la parte frontal.'),
+('A229', 'P058', 'Pumps Mary-Jane Tabi - Blue', '39', 'Azul', 6, '#0000FF', 'Confeccionados en piel de napa suave con una correa ajustable en la parte frontal.'),
+('A230', 'P058', 'Pumps Mary-Jane Tabi - Blue', '40', 'Azul', 3, '#0000FF', 'Confeccionados en piel de napa suave con una correa ajustable en la parte frontal.');
+
+INSERT INTO articulos_con_estados (id_articulo, id_estado) VALUES
+('A223', 4),
+('A224', 5),
+('A225', 6),
+('A226', 4),
+('A227', 6),
+('A228', 4),
+('A229', 5),
+('A230', 7),
+('A223', 3),
+('A224', 3),
+('A225', 3),
+('A226', 3),
+('A227', 3),
+('A228', 3),
+('A229', 3),
+('A230', 3);
+
+-- ACCESSORIES
+
+
 
 -- Artículos para el producto 'P058'
 

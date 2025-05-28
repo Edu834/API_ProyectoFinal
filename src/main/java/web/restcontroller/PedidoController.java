@@ -72,7 +72,9 @@ public class PedidoController {
 	@GetMapping("/buscarPor/{idUsuario}")
 	public ResponseEntity<List<Pedido>> buscarPorUsuario(@PathVariable int idUsuario) {
 		List<Pedido> pedidos = pedidoService.buscarPorUsuario(idUsuario);
-		pedidos.remove(pedidoService.buscarPorUsuarioyEstado(idUsuario, "Carrito").getFirst());
+		if(!pedidoService.buscarPorUsuarioyEstado(idUsuario, "Carrito").isEmpty()) {
+			pedidos.remove(pedidoService.buscarPorUsuarioyEstado(idUsuario, "Carrito").getFirst());
+		}
 		
 		if (pedidos.isEmpty()) {
 			return ResponseEntity.noContent().build();
